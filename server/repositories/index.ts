@@ -27,6 +27,10 @@ export {
 } from "./part-category";
 
 export {
+  PartRepository,
+} from "./part";
+
+export {
   AttachmentRepository,
 } from "./attachment";
 
@@ -44,6 +48,8 @@ import {
 } from "./rbac";
 
 import { PartCategoryRepository } from "./part-category";
+import { PartRepository } from "./part";
+import { AttachmentRepository } from "./attachment";
 
 // ========================================
 // FACTORY FUNCTIONS
@@ -77,6 +83,8 @@ export function createRBACRepositories(db: D1Database) {
 export function createPartsRepositories(db: D1Database) {
   return {
     partCategoryRepo: new PartCategoryRepository(db),
+    partRepo: new PartRepository(db),
+    attachmentRepo: new AttachmentRepository(db),
   };
 }
 
