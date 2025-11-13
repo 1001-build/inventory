@@ -142,6 +142,7 @@ declare global {
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']
   const useNuxtDevTools: typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']
   const usePWA: typeof import('../../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index')['usePWA']
+  const useParts: typeof import('../../app/composables/useParts')['useParts']
   const usePinia: typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']
   const usePreviewMode: typeof import('../../node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']
   const usePrimaryAnimation: typeof import('../../app/composables/usePrimaryAnimation')['usePrimaryAnimation']
@@ -193,6 +194,7 @@ declare global {
   const useShowToast: typeof import('../../app/composables/useShowToast')['useShowToast']
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']
+  const useStock: typeof import('../../app/composables/useStock')['useStock']
   const useSubdomain: typeof import('../../app/composables/useSubdomain')['useSubdomain']
   const useSwitchLocalePath: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useSwitchLocalePath']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
@@ -216,6 +218,21 @@ declare global {
   // @ts-ignore
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
+  // @ts-ignore
+  export type { PartCategory, NewPartCategory } from '../../shared/types/part-category'
+  import('../../shared/types/part-category')
+  // @ts-ignore
+  export type { Part, NewPart, PartParameter, NewPartParameter } from '../../shared/types/part'
+  import('../../shared/types/part')
+  // @ts-ignore
+  export type { StockItem, NewStockItem, StockItemTracking, NewStockItemTracking } from '../../shared/types/stock-item'
+  import('../../shared/types/stock-item')
+  // @ts-ignore
+  export type { StockLocation, NewStockLocation, StockLocationType, NewStockLocationType } from '../../shared/types/stock-location'
+  import('../../shared/types/stock-location')
+  // @ts-ignore
+  export type { SafeUser, User, UserRole, NewUserRole, UserSettings, NewUserSettings } from '../../shared/types/user'
+  import('../../shared/types/user')
 }
 // for vue template auto import
 import { UnwrapRef } from 'vue'
@@ -362,6 +379,7 @@ declare module 'vue' {
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
     readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly usePWA: UnwrapRef<typeof import('../../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index')['usePWA']>
+    readonly useParts: UnwrapRef<typeof import('../../app/composables/useParts')['useParts']>
     readonly usePinia: UnwrapRef<typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']>
     readonly usePreviewMode: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/preview')['usePreviewMode']>
     readonly usePrimaryAnimation: UnwrapRef<typeof import('../../app/composables/usePrimaryAnimation')['usePrimaryAnimation']>
@@ -413,6 +431,7 @@ declare module 'vue' {
     readonly useShowToast: UnwrapRef<typeof import('../../app/composables/useShowToast')['useShowToast']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']>
+    readonly useStock: UnwrapRef<typeof import('../../app/composables/useStock')['useStock']>
     readonly useSubdomain: UnwrapRef<typeof import('../../app/composables/useSubdomain')['useSubdomain']>
     readonly useSwitchLocalePath: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/index')['useSwitchLocalePath']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>

@@ -75,7 +75,7 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
-    "../../../p/*.*"
+    "../../../1/*.*"
   ],
   "exclude": [
     "../node_modules",
@@ -119,8 +119,8 @@
     "../node_modules/shadcn-nuxt/dist/runtime",
     "../node_modules/@pinia/nuxt/runtime",
     "../node_modules/@pinia/nuxt/dist/runtime",
-    "../../../p/runtime",
-    "../../../p/dist/runtime",
+    "../../../1/runtime",
+    "../../../1/dist/runtime",
     "../node_modules/@formkit/auto-animate/nuxt/runtime",
     "../node_modules/@formkit/auto-animate/nuxt/dist/runtime",
     "../node_modules/@vite-pwa/nuxt/runtime",

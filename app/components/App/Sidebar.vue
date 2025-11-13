@@ -48,6 +48,81 @@
                             </SidebarMenuButton>
                         </SidebarMenuItem>
 
+                        <!-- Inventory Section (Mobile - Collapsible) -->
+                        <Collapsible v-model:open="inventoryOpen" class="group/collapsible md:hidden">
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <CollapsibleTrigger class="w-full flex items-center gap-2">
+                                        <Icon name="lucide:warehouse" />
+                                        Inventory
+                                        <Icon name="mdi:chevron-down" class="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                                    </CollapsibleTrigger>
+                                </SidebarMenuButton>
+                                <CollapsibleContent v-auto-animate>
+                                    <SidebarMenuSub>
+                                        <SidebarMenuSubItem>
+                                            <SidebarMenuSubButton asChild :isActive="route.path.startsWith('/parts/categories')">
+                                                <NuxtLink to="/parts/categories" class="flex items-center gap-2">
+                                                    <Icon name="lucide:folder-tree" /> Part Categories
+                                                </NuxtLink>
+                                            </SidebarMenuSubButton>
+                                        </SidebarMenuSubItem>
+                                        <SidebarMenuSubItem>
+                                            <SidebarMenuSubButton asChild :isActive="route.path === '/parts' || (route.path.startsWith('/parts/') && !route.path.startsWith('/parts/categories'))">
+                                                <NuxtLink to="/parts" class="flex items-center gap-2">
+                                                    <Icon name="lucide:package" /> Parts
+                                                </NuxtLink>
+                                            </SidebarMenuSubButton>
+                                        </SidebarMenuSubItem>
+                                        <SidebarMenuSubItem>
+                                            <SidebarMenuSubButton asChild :isActive="route.path.startsWith('/stock/locations')">
+                                                <NuxtLink to="/stock/locations" class="flex items-center gap-2">
+                                                    <Icon name="lucide:map-pin" /> Stock Locations
+                                                </NuxtLink>
+                                            </SidebarMenuSubButton>
+                                        </SidebarMenuSubItem>
+                                        <SidebarMenuSubItem>
+                                            <SidebarMenuSubButton asChild :isActive="route.path === '/stock' || (route.path.startsWith('/stock/') && !route.path.startsWith('/stock/locations'))">
+                                                <NuxtLink to="/stock" class="flex items-center gap-2">
+                                                    <Icon name="lucide:boxes" /> Stock Items
+                                                </NuxtLink>
+                                            </SidebarMenuSubButton>
+                                        </SidebarMenuSubItem>
+                                    </SidebarMenuSub>
+                                </CollapsibleContent>
+                            </SidebarMenuItem>
+                        </Collapsible>
+
+                        <!-- Inventory Section (Desktop - Direct Links) -->
+                        <SidebarMenuItem class="hidden md:block">
+                            <SidebarMenuButton asChild :isActive="route.path.startsWith('/parts/categories')">
+                                <NuxtLink to="/parts/categories" class="flex items-center gap-2">
+                                    <Icon name="lucide:folder-tree" /> Part Categories
+                                </NuxtLink>
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                        <SidebarMenuItem class="hidden md:block">
+                            <SidebarMenuButton asChild :isActive="route.path === '/parts' || (route.path.startsWith('/parts/') && !route.path.startsWith('/parts/categories'))">
+                                <NuxtLink to="/parts" class="flex items-center gap-2">
+                                    <Icon name="lucide:package" /> Parts
+                                </NuxtLink>
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                        <SidebarMenuItem class="hidden md:block">
+                            <SidebarMenuButton asChild :isActive="route.path.startsWith('/stock/locations')">
+                                <NuxtLink to="/stock/locations" class="flex items-center gap-2">
+                                    <Icon name="lucide:map-pin" /> Stock Locations
+                                </NuxtLink>
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                        <SidebarMenuItem class="hidden md:block">
+                            <SidebarMenuButton asChild :isActive="route.path === '/stock' || (route.path.startsWith('/stock/') && !route.path.startsWith('/stock/locations'))">
+                                <NuxtLink to="/stock" class="flex items-center gap-2">
+                                    <Icon name="lucide:boxes" /> Stock Items
+                                </NuxtLink>
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+
                         <!-- Settings -->
                         <SidebarMenuItem>
                             <SidebarMenuButton asChild :isActive="route.path === '/settings'">
@@ -110,6 +185,7 @@ const route = useRoute()
 
 // Section open states
 const helpOpen = ref(false)
+const inventoryOpen = ref(false)
 
 onMounted(() => {
     if (!userStore.userProfile) {

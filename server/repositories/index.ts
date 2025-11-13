@@ -21,6 +21,28 @@ export {
   PermissionRepository,
 } from "./rbac";
 
+// Parts repositories
+export {
+  PartCategoryRepository,
+} from "./part-category";
+
+export {
+  PartRepository,
+} from "./part";
+
+export {
+  AttachmentRepository,
+} from "./attachment";
+
+// Stock repositories
+export {
+  StockLocationRepository,
+} from "./stock-location";
+
+export {
+  StockItemRepository,
+} from "./stock-item";
+
 // Import for factory functions
 import {
   UserRepository,
@@ -33,6 +55,12 @@ import {
   UserRoleRepository,
   PermissionRepository,
 } from "./rbac";
+
+import { PartCategoryRepository } from "./part-category";
+import { PartRepository } from "./part";
+import { AttachmentRepository } from "./attachment";
+import { StockLocationRepository } from "./stock-location";
+import { StockItemRepository } from "./stock-item";
 
 // ========================================
 // FACTORY FUNCTIONS
@@ -61,12 +89,35 @@ export function createRBACRepositories(db: D1Database) {
 }
 
 /**
+ * Create all parts repositories
+ */
+export function createPartsRepositories(db: D1Database) {
+  return {
+    partCategoryRepo: new PartCategoryRepository(db),
+    partRepo: new PartRepository(db),
+    attachmentRepo: new AttachmentRepository(db),
+  };
+}
+
+/**
+ * Create all stock repositories
+ */
+export function createStockRepositories(db: D1Database) {
+  return {
+    stockLocationRepo: new StockLocationRepository(db),
+    stockItemRepo: new StockItemRepository(db),
+  };
+}
+
+/**
  * Create all repositories
  */
 export function createRepositories(db: D1Database) {
   return {
     ...createIdentityRepositories(db),
     ...createRBACRepositories(db),
+    ...createPartsRepositories(db),
+    ...createStockRepositories(db),
   };
 }
 

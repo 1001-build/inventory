@@ -1,48 +1,48 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseStatus, setResponseHeader, send, setResponseHeaders, getRequestURL, getRequestHeader, getResponseHeader, getRequestHeaders, getResponseStatus, createError, useSession, getQuery as getQuery$1, appendResponseHeader, removeResponseHeader, getHeader, getRequestIP, setHeader, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseStatus, setResponseHeader, send, setResponseHeaders, getRequestURL, getRequestHeader, getResponseHeader, getRequestHeaders, getResponseStatus, createError, useSession, getQuery as getQuery$1, appendResponseHeader, removeResponseHeader, getHeader, getRequestIP, setHeader, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readMultipartFormData, getResponseStatusText } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import crypto$1 from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { drizzle } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/drizzle-orm/d1/index.js';
-import { Hash } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/@adonisjs/hash/build/index.js';
-import { Scrypt } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/@adonisjs/hash/build/src/drivers/scrypt.js';
-import { ZodError, z } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/zod/index.js';
-import { SignJWT, jwtVerify } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/jose/dist/webapi/index.js';
-import validator from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/validator/index.js';
-import { relations, isNull, isNotNull, lte, lt, gte, gt, inArray, like, ne, eq, and, asc, desc, count } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/drizzle-orm/index.js';
-import { integer, text, sqliteTable, index, unique } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/drizzle-orm/sqlite-core/index.js';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr, { destr as destr$1 } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/unstorage/drivers/fs.mjs';
-import { digest, hash as hash$1 } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, defu as defu$1 } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/radix3/dist/index.mjs';
+import { drizzle } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/drizzle-orm/d1/index.js';
+import { Hash } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/@adonisjs/hash/build/index.js';
+import { Scrypt } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/@adonisjs/hash/build/src/drivers/scrypt.js';
+import { ZodError, z } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/zod/index.js';
+import { relations, isNotNull, isNull, lte, lt, gte, gt, inArray, like, ne, eq, and, asc, desc, count, or } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/drizzle-orm/index.js';
+import { SignJWT, jwtVerify } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/jose/dist/webapi/index.js';
+import validator from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/validator/index.js';
+import { integer, text, sqliteTable, index, unique, real } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/drizzle-orm/sqlite-core/index.js';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr, { destr as destr$1 } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/unstorage/drivers/fs.mjs';
+import { digest, hash as hash$1 } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, defu as defu$1 } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/nitropack/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/nitropack/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/nitropack/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/nitropack/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { stringify, uneval } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/devalue/index.js';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/errx/dist/index.js';
-import { isVNode, toValue, isRef } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/vue/index.mjs';
+import { stringify, uneval } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/devalue/index.js';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/errx/dist/index.js';
+import { isVNode, toValue, isRef } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/vue/index.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1, basename, isAbsolute } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/pathe/dist/index.mjs';
-import { getIcons } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/@iconify/utils/lib/index.mjs';
-import { collections } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.nuxt/nuxt-icon-server-bundle.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/unhead/dist/server.mjs';
-import { renderToString } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/vue/server-renderer/index.mjs';
-import { walkResolver } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/unhead/dist/utils.mjs';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/ipx/dist/index.mjs';
+import { dirname as dirname$1, resolve as resolve$1, basename, isAbsolute } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/pathe/dist/index.mjs';
+import { getIcons } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/@iconify/utils/lib/index.mjs';
+import { collections } from 'file:///Users/alsey89/Documents/code/1001/inventory/.nuxt/nuxt-icon-server-bundle.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/unhead/dist/server.mjs';
+import { renderToString } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/vue/server-renderer/index.mjs';
+import { walkResolver } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/unhead/dist/utils.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/alsey89/Documents/code/1001/inventory/node_modules/ipx/dist/index.mjs';
 
 const HASH_RE = /#/g;
 const AMPERSAND_RE = /&/g;
@@ -294,7 +294,7 @@ function stringifyParsedURL(parsed) {
   return proto + auth + host + pathname + search + hash;
 }
 
-const serverAssets = [{"baseName":"server","dir":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/alsey89/Documents/code/1001/inventory/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -306,11 +306,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/alsey89/Documents/code/1001/inventory","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/alsey89/Documents/code/1001/inventory/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/alsey89/Documents/code/1001/inventory/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/alsey89/Documents/code/1001/inventory/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/alsey89/Documents/code/1001/inventory/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -1495,14 +1495,14 @@ const _inlineRuntimeConfig = {
   },
   "wrangler": {
     "configPath": "./wrangler.staging.jsonc",
-    "persistDir": "/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.wrangler/state/v3"
+    "persistDir": "/Users/alsey89/Documents/code/1001/inventory/.wrangler/state/v3"
   },
   "ipx": {
     "baseURL": "/_ipx",
     "alias": {},
     "fs": {
       "dir": [
-        "/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/public"
+        "/Users/alsey89/Documents/code/1001/inventory/public"
       ]
     },
     "http": {
@@ -1703,16 +1703,16 @@ const ERROR_CODES = {
   // ========================================
   INTERNAL_ERROR: "INTERNAL_ERROR"};
 
-var __defProp$4 = Object.defineProperty;
-var __defNormalProp$4 = (obj, key, value) => key in obj ? __defProp$4(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField$4 = (obj, key, value) => __defNormalProp$4(obj, key + "" , value);
+var __defProp$7 = Object.defineProperty;
+var __defNormalProp$7 = (obj, key, value) => key in obj ? __defProp$7(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$7 = (obj, key, value) => __defNormalProp$7(obj, key + "" , value);
 class AppError extends Error {
   constructor(message, statusCode = 500, code, details) {
     super(message);
     this.statusCode = statusCode;
     this.code = code;
     this.details = details;
-    __publicField$4(this, "traceId");
+    __publicField$7(this, "traceId");
     this.name = this.constructor.name;
     Error.captureStackTrace(this, this.constructor);
   }
@@ -2039,13 +2039,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _5oiYQsz7JxfzYMCbppsi5qNpo3nwinUo5tfsP9Wuzo = (function(nitro) {
+const _l2b8UXpoUcxY3IIBly_GwOJ3k6MP2jlZnBB2wTRSWY = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-const rootDir = "/Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template";
+const rootDir = "/Users/alsey89/Documents/code/1001/inventory";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -2068,7 +2068,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _qhB7TtNOwMUSmwzXqzSWK8V1GOJTLMHq7J35KcZYxw = (nitroApp) => {
+const _rNf0_xR6wLENDeG2PkKkio6GnGZGluS310HRhXgTpo = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -2137,7 +2137,7 @@ function onConsoleLog(callback) {
   consola$1.wrapConsole();
 }
 
-const _X2yq_Ox8imq7YrZyLd6nezgHFGC39UmEARsJl4agWSw = defineNitroPlugin((nitroApp) => {
+const _9ghfe2TBWkTJ3UJNsDyrGHAavx3fKgaUF5jsTDolmiI = defineNitroPlugin((nitroApp) => {
   if (process.env.NUXT_OAUTH_FACEBOOK_CLIENT_ID && process.env.NUXT_OAUTH_FACEBOOK_CLIENT_SECRET || process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_ID && process.env.NUXT_OAUTH_INSTAGRAM_CLIENT_SECRET) {
     nitroApp.hooks.hook("render:html", (html) => {
       html.head.unshift(`
@@ -2429,7 +2429,7 @@ const _proxy$1 = _getPlatformProxy$1().catch((error) => {
   return proxy;
 });
 globalThis.__env__ = _proxy$1.then((proxy) => proxy.env);
-const _JvY7H9GFLeuoNTETpbtvuEg8X2Cl9dhOZepjUOt8Lmg = (function(nitroApp) {
+const _zkfVBYjBqbaZ38ahXxEhCYSlrkuTYkK9Rzo9MVsyaw = (function(nitroApp) {
   nitroApp.hooks.hook("request", async (event) => {
     const proxy = await _proxy$1;
     event.context.cf = proxy.cf;
@@ -2515,7 +2515,7 @@ const _proxy = _getPlatformProxy().catch((error) => {
   return proxy;
 });
 globalThis.__env__ = _proxy.then((proxy) => proxy.env);
-const _7X8K9eutEHACOm1FYhNTY_nBXsmyF7nPkLxTbNPRTWk = (function(nitroApp) {
+const _PDJfuspNp8NTzaFMAvCNYb3so8r0vGe_ZxuoKhnLRM = (function(nitroApp) {
   nitroApp.hooks.hook("request", async (event) => {
     const proxy = await _proxy;
     event.context.cf = proxy.cf;
@@ -2595,11 +2595,11 @@ class _CacheStub {
 }
 
 const plugins = [
-  _5oiYQsz7JxfzYMCbppsi5qNpo3nwinUo5tfsP9Wuzo,
-_qhB7TtNOwMUSmwzXqzSWK8V1GOJTLMHq7J35KcZYxw,
-_X2yq_Ox8imq7YrZyLd6nezgHFGC39UmEARsJl4agWSw,
-_JvY7H9GFLeuoNTETpbtvuEg8X2Cl9dhOZepjUOt8Lmg,
-_7X8K9eutEHACOm1FYhNTY_nBXsmyF7nPkLxTbNPRTWk
+  _l2b8UXpoUcxY3IIBly_GwOJ3k6MP2jlZnBB2wTRSWY,
+_rNf0_xR6wLENDeG2PkKkio6GnGZGluS310HRhXgTpo,
+_9ghfe2TBWkTJ3UJNsDyrGHAavx3fKgaUF5jsTDolmiI,
+_zkfVBYjBqbaZ38ahXxEhCYSlrkuTYkK9Rzo9MVsyaw,
+_PDJfuspNp8NTzaFMAvCNYb3so8r0vGe_ZxuoKhnLRM
 ];
 
 const assets = {};
@@ -2627,7 +2627,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _a1GIGv = eventHandler((event) => {
+const _zT3BqI = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -2691,7 +2691,7 @@ const _a1GIGv = eventHandler((event) => {
   return readAsset(id);
 });
 
-const _4TykT4 = defineEventHandler((event) => {
+const _VPjb9F = defineEventHandler((event) => {
   if (!event.path.startsWith("/api/")) {
     return;
   }
@@ -2704,7 +2704,7 @@ const _4TykT4 = defineEventHandler((event) => {
   setHeader(event, "X-Request-ID", requestId);
 });
 
-const _jjdv7U = defineEventHandler(async (event) => {
+const _XVxkA_ = defineEventHandler(async (event) => {
   var _a, _b, _c, _d, _e;
   if (!event.path.startsWith("/api/")) {
     return;
@@ -2755,7 +2755,7 @@ function isPublicRoute$1(path) {
   return publicRoutes.some((route) => path.startsWith(route));
 }
 
-const _lF2lZp = defineEventHandler(async (event) => {
+const _7McTUu = defineEventHandler(async (event) => {
   var _a;
   if (!event.path.startsWith("/api/")) {
     return;
@@ -2799,7 +2799,7 @@ function isPublicRoute(path) {
 
 const warnOnceSet = /* @__PURE__ */ new Set();
 const DEFAULT_ENDPOINT = "https://api.iconify.design";
-const _iiLzli = defineCachedEventHandler(async (event) => {
+const _jYRdhk = defineCachedEventHandler(async (event) => {
   const url = getRequestURL(event);
   if (!url)
     return createError({ status: 400, message: "Invalid icon request" });
@@ -2857,12 +2857,12 @@ const _iiLzli = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
-const _K4lNUl = eventHandler(async (event) => {
+const _r9VvAb = eventHandler(async (event) => {
   await clearUserSession(event);
   return { loggedOut: true };
 });
 
-const _5O1sve = eventHandler(async (event) => {
+const _WjwiH_ = eventHandler(async (event) => {
   const session = await getUserSession(event);
   if (Object.keys(session).length > 0) {
     await sessionHooks.callHookParallel("fetch", session, event);
@@ -2928,8 +2928,8 @@ function setSSRError(ssrContext, error) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getServerEntry = () => import('file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
-const getClientManifest = () => import('file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///Users/alsey89/Documents/code/1001/inventory/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///Users/alsey89/Documents/code/1001/inventory/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   if (!manifest) {
@@ -3177,7 +3177,7 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-const _u2LLnR = lazyEventHandler(() => {
+const _jxicdJ = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -3195,61 +3195,111 @@ const _u2LLnR = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_UiQiHv = () => Promise.resolve().then(function () { return health_get$1; });
-const _lazy_e7QIhM = () => Promise.resolve().then(function () { return resetAndSeed_post$1; });
-const _lazy_DC3pMj = () => Promise.resolve().then(function () { return confirm_post$1; });
-const _lazy_ttUIMa = () => Promise.resolve().then(function () { return reset_put$1; });
-const _lazy_C6cLkR = () => Promise.resolve().then(function () { return request_post$1; });
-const _lazy__azIm0 = () => Promise.resolve().then(function () { return signin_post$1; });
-const _lazy_PZhmo2 = () => Promise.resolve().then(function () { return signout_post$1; });
-const _lazy_ZXyPDJ = () => Promise.resolve().then(function () { return signup_post$1; });
-const _lazy_s8X541 = () => Promise.resolve().then(function () { return index_get$5; });
-const _lazy_c0ulAp = () => Promise.resolve().then(function () { return _id__delete$1; });
-const _lazy_IUsc7O = () => Promise.resolve().then(function () { return _id__get$3; });
-const _lazy_5MODy5 = () => Promise.resolve().then(function () { return _id__put$1; });
-const _lazy_t6HS9q = () => Promise.resolve().then(function () { return index_get$3; });
-const _lazy_JXghd3 = () => Promise.resolve().then(function () { return index_post$1; });
-const _lazy_3VzC2d = () => Promise.resolve().then(function () { return _id__get$1; });
-const _lazy_ND9wnX = () => Promise.resolve().then(function () { return index_get$1; });
-const _lazy_36vCNq = () => Promise.resolve().then(function () { return profile_get$1; });
-const _lazy_JgQlIp = () => Promise.resolve().then(function () { return profile_put$1; });
-const _lazy_F22go1 = () => Promise.resolve().then(function () { return roles_get$1; });
-const _lazy_eusg0m = () => Promise.resolve().then(function () { return roles_put$1; });
-const _lazy_ooIOfY = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_Vd0HrV = () => Promise.resolve().then(function () { return health_get$1; });
+const _lazy_nlQupA = () => Promise.resolve().then(function () { return resetAndSeed_post$1; });
+const _lazy_ZBL_7B = () => Promise.resolve().then(function () { return confirm_post$1; });
+const _lazy_PdeX39 = () => Promise.resolve().then(function () { return reset_put$1; });
+const _lazy_DEnjuJ = () => Promise.resolve().then(function () { return request_post$1; });
+const _lazy_3xttR3 = () => Promise.resolve().then(function () { return signin_post$1; });
+const _lazy_PP3Bgb = () => Promise.resolve().then(function () { return signout_post$1; });
+const _lazy_246EG3 = () => Promise.resolve().then(function () { return signup_post$1; });
+const _lazy_wlqwZ9 = () => Promise.resolve().then(function () { return _id__delete$9; });
+const _lazy_nz4apG = () => Promise.resolve().then(function () { return _id__get$b; });
+const _lazy__X6dgF = () => Promise.resolve().then(function () { return _id__put$9; });
+const _lazy_ZUMYRz = () => Promise.resolve().then(function () { return move_post$3; });
+const _lazy_57Tr7f = () => Promise.resolve().then(function () { return index_get$d; });
+const _lazy_Us2PjU = () => Promise.resolve().then(function () { return index_post$9; });
+const _lazy_K6xVRe = () => Promise.resolve().then(function () { return _id__delete$7; });
+const _lazy_ai6hkc = () => Promise.resolve().then(function () { return _id__get$9; });
+const _lazy_dR1fEo = () => Promise.resolve().then(function () { return _id__put$7; });
+const _lazy_j8NsM4 = () => Promise.resolve().then(function () { return index_get$b; });
+const _lazy_gXv3Yk = () => Promise.resolve().then(function () { return index_post$7; });
+const _lazy_24xCKL = () => Promise.resolve().then(function () { return index_get$9; });
+const _lazy_S4MOsG = () => Promise.resolve().then(function () { return _id__delete$5; });
+const _lazy_m3RJSi = () => Promise.resolve().then(function () { return _id__get$7; });
+const _lazy_9q0SzR = () => Promise.resolve().then(function () { return _id__put$5; });
+const _lazy_3sWKPK = () => Promise.resolve().then(function () { return index_get$7; });
+const _lazy_l3LZX_ = () => Promise.resolve().then(function () { return index_post$5; });
+const _lazy_RXUgn0 = () => Promise.resolve().then(function () { return _id__delete$3; });
+const _lazy_5kqWxd = () => Promise.resolve().then(function () { return _id__get$5; });
+const _lazy_uI0yD3 = () => Promise.resolve().then(function () { return _id__put$3; });
+const _lazy_JlpDPR = () => Promise.resolve().then(function () { return adjust_post$1; });
+const _lazy_oVR22l = () => Promise.resolve().then(function () { return move_post$1; });
+const _lazy_F161Iq = () => Promise.resolve().then(function () { return index_get$5; });
+const _lazy_NLn6Mo = () => Promise.resolve().then(function () { return index_post$3; });
+const _lazy_xAtYDz = () => Promise.resolve().then(function () { return _id__delete$1; });
+const _lazy_R4eApP = () => Promise.resolve().then(function () { return _id__get$3; });
+const _lazy_tyT2ls = () => Promise.resolve().then(function () { return _id__put$1; });
+const _lazy_Pe3hmc = () => Promise.resolve().then(function () { return index_get$3; });
+const _lazy_klEjVE = () => Promise.resolve().then(function () { return index_post$1; });
+const _lazy_VgRKZe = () => Promise.resolve().then(function () { return tree_get$1; });
+const _lazy_y7Pnzw = () => Promise.resolve().then(function () { return upload_post$1; });
+const _lazy_SEh0Wv = () => Promise.resolve().then(function () { return _id__get$1; });
+const _lazy_TC3lvT = () => Promise.resolve().then(function () { return index_get$1; });
+const _lazy_SEXXYW = () => Promise.resolve().then(function () { return profile_get$1; });
+const _lazy_ql4ZWB = () => Promise.resolve().then(function () { return profile_put$1; });
+const _lazy_AWbr4e = () => Promise.resolve().then(function () { return roles_get$1; });
+const _lazy_OjenG_ = () => Promise.resolve().then(function () { return roles_put$1; });
+const _lazy_xzKMg5 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '', handler: _a1GIGv, lazy: false, middleware: true, method: undefined },
-  { route: '', handler: _4TykT4, lazy: false, middleware: true, method: undefined },
-  { route: '', handler: _jjdv7U, lazy: false, middleware: true, method: undefined },
-  { route: '', handler: _lF2lZp, lazy: false, middleware: true, method: undefined },
-  { route: '/api/health', handler: _lazy_UiQiHv, lazy: true, middleware: false, method: "get" },
-  { route: '/api/reset-and-seed', handler: _lazy_e7QIhM, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/auth/email/confirm', handler: _lazy_DC3pMj, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/auth/password/reset', handler: _lazy_ttUIMa, lazy: true, middleware: false, method: "put" },
-  { route: '/api/v1/auth/password/reset/request', handler: _lazy_C6cLkR, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/auth/signin', handler: _lazy__azIm0, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/auth/signout', handler: _lazy_PZhmo2, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/auth/signup', handler: _lazy_ZXyPDJ, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/permissions', handler: _lazy_s8X541, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/roles/:id', handler: _lazy_c0ulAp, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/v1/roles/:id', handler: _lazy_IUsc7O, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/roles/:id', handler: _lazy_5MODy5, lazy: true, middleware: false, method: "put" },
-  { route: '/api/v1/roles', handler: _lazy_t6HS9q, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/roles', handler: _lazy_JXghd3, lazy: true, middleware: false, method: "post" },
-  { route: '/api/v1/user/:id', handler: _lazy_3VzC2d, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/user', handler: _lazy_ND9wnX, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/user/profile', handler: _lazy_36vCNq, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/user/profile', handler: _lazy_JgQlIp, lazy: true, middleware: false, method: "put" },
-  { route: '/api/v1/users/:userId/roles', handler: _lazy_F22go1, lazy: true, middleware: false, method: "get" },
-  { route: '/api/v1/users/:userId/roles', handler: _lazy_eusg0m, lazy: true, middleware: false, method: "put" },
-  { route: '/__nuxt_error', handler: _lazy_ooIOfY, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_nuxt_icon/:collection', handler: _iiLzli, lazy: false, middleware: false, method: undefined },
-  { route: '/api/_auth/session', handler: _K4lNUl, lazy: false, middleware: false, method: "delete" },
-  { route: '/api/_auth/session', handler: _5O1sve, lazy: false, middleware: false, method: "get" },
+  { route: '', handler: _zT3BqI, lazy: false, middleware: true, method: undefined },
+  { route: '', handler: _VPjb9F, lazy: false, middleware: true, method: undefined },
+  { route: '', handler: _XVxkA_, lazy: false, middleware: true, method: undefined },
+  { route: '', handler: _7McTUu, lazy: false, middleware: true, method: undefined },
+  { route: '/api/health', handler: _lazy_Vd0HrV, lazy: true, middleware: false, method: "get" },
+  { route: '/api/reset-and-seed', handler: _lazy_nlQupA, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/auth/email/confirm', handler: _lazy_ZBL_7B, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/auth/password/reset', handler: _lazy_PdeX39, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/auth/password/reset/request', handler: _lazy_DEnjuJ, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/auth/signin', handler: _lazy_3xttR3, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/auth/signout', handler: _lazy_PP3Bgb, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/auth/signup', handler: _lazy_246EG3, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/part-categories/:id', handler: _lazy_wlqwZ9, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/v1/part-categories/:id', handler: _lazy_nz4apG, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/part-categories/:id', handler: _lazy__X6dgF, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/part-categories/:id/move', handler: _lazy_ZUMYRz, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/part-categories', handler: _lazy_57Tr7f, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/part-categories', handler: _lazy_Us2PjU, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/parts/:id', handler: _lazy_K6xVRe, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/v1/parts/:id', handler: _lazy_ai6hkc, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/parts/:id', handler: _lazy_dR1fEo, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/parts', handler: _lazy_j8NsM4, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/parts', handler: _lazy_gXv3Yk, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/permissions', handler: _lazy_24xCKL, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/roles/:id', handler: _lazy_S4MOsG, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/v1/roles/:id', handler: _lazy_m3RJSi, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/roles/:id', handler: _lazy_9q0SzR, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/roles', handler: _lazy_3sWKPK, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/roles', handler: _lazy_l3LZX_, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/stock-items/:id', handler: _lazy_RXUgn0, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/v1/stock-items/:id', handler: _lazy_5kqWxd, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/stock-items/:id', handler: _lazy_uI0yD3, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/stock-items/:id/adjust', handler: _lazy_JlpDPR, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/stock-items/:id/move', handler: _lazy_oVR22l, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/stock-items', handler: _lazy_F161Iq, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/stock-items', handler: _lazy_NLn6Mo, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/stock-locations/:id', handler: _lazy_xAtYDz, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/v1/stock-locations/:id', handler: _lazy_R4eApP, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/stock-locations/:id', handler: _lazy_tyT2ls, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/stock-locations', handler: _lazy_Pe3hmc, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/stock-locations', handler: _lazy_klEjVE, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/stock-locations/tree', handler: _lazy_VgRKZe, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/upload', handler: _lazy_y7Pnzw, lazy: true, middleware: false, method: "post" },
+  { route: '/api/v1/user/:id', handler: _lazy_SEh0Wv, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/user', handler: _lazy_TC3lvT, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/user/profile', handler: _lazy_SEXXYW, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/user/profile', handler: _lazy_ql4ZWB, lazy: true, middleware: false, method: "put" },
+  { route: '/api/v1/users/:userId/roles', handler: _lazy_AWbr4e, lazy: true, middleware: false, method: "get" },
+  { route: '/api/v1/users/:userId/roles', handler: _lazy_OjenG_, lazy: true, middleware: false, method: "put" },
+  { route: '/__nuxt_error', handler: _lazy_xzKMg5, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_nuxt_icon/:collection', handler: _jYRdhk, lazy: false, middleware: false, method: undefined },
+  { route: '/api/_auth/session', handler: _r9VvAb, lazy: false, middleware: false, method: "delete" },
+  { route: '/api/_auth/session', handler: _WjwiH_, lazy: false, middleware: false, method: "get" },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _u2LLnR, lazy: false, middleware: false, method: undefined },
-  { route: '/_fonts/**', handler: _lazy_ooIOfY, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_ooIOfY, lazy: true, middleware: false, method: undefined }
+  { route: '/_ipx/**', handler: _jxicdJ, lazy: false, middleware: false, method: undefined },
+  { route: '/_fonts/**', handler: _lazy_xzKMg5, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_xzKMg5, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3506,7 +3556,6 @@ const baseFields = {
   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(() => /* @__PURE__ */ new Date()).notNull(),
   deletedAt: integer("deleted_at", { mode: "timestamp" })
 };
-const globalBaseFields = baseFields;
 const migrations = sqliteTable(
   "_migrations",
   {
@@ -3524,7 +3573,9 @@ const migrations = sqliteTable(
       enum: ["PENDING", "APPLIED", "FAILED", "ROLLED_BACK"]
     }).notNull(),
     errorMessage: text("error_message"),
-    environment: text("environment", { enum: ["local", "staging", "production"] }).notNull()
+    environment: text("environment", {
+      enum: ["local", "staging", "production"]
+    }).notNull()
   },
   (table) => ({
     statusIdx: index("migrations_status_idx").on(table.status),
@@ -3692,15 +3743,530 @@ const userRolesRelations = relations(userRoles, ({ one }) => ({
   })
 }));
 
+const partCategories = sqliteTable(
+  "part_categories",
+  {
+    ...baseFields,
+    // Core fields
+    name: text("name").notNull(),
+    description: text("description"),
+    // Tree structure (simple parent_id approach)
+    parentId: text("parent_id"),
+    // Computed pathstring for efficient tree queries (e.g., "1/5/12")
+    // Updated on create/move operations
+    pathstring: text("pathstring").notNull(),
+    level: integer("level").notNull().default(0),
+    // Structural categories cannot have parts directly assigned
+    // Parts must be assigned to child categories
+    structural: integer("structural", { mode: "boolean" }).default(false).notNull(),
+    // Default location for parts in this category
+    defaultLocationId: text("default_location_id"),
+    // Default keywords to apply to new parts in this category
+    defaultKeywords: text("default_keywords"),
+    // Icon for display (e.g., "mdi:package-variant")
+    icon: text("icon"),
+    // Metadata for extensibility
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    // Tree navigation indexes
+    parentIdx: index("part_categories_parent_idx").on(table.parentId),
+    pathstringIdx: index("part_categories_pathstring_idx").on(table.pathstring),
+    levelIdx: index("part_categories_level_idx").on(table.level),
+    // Common queries
+    nameIdx: index("part_categories_name_idx").on(table.name),
+    deletedIdx: index("part_categories_deleted_idx").on(table.deletedAt)
+    // Ensure unique names at same level (optional - commented out for now)
+    // uniqueNamePerParent: unique("part_categories_name_parent_unique").on(
+    //   table.name,
+    //   table.parentId
+    // ),
+  })
+);
+const parts = sqliteTable(
+  "parts",
+  {
+    ...baseFields,
+    // Core identification
+    name: text("name").notNull(),
+    fullName: text("full_name"),
+    // Auto-generated with category path
+    description: text("description"),
+    // Category relationship
+    categoryId: text("category_id").notNull(),
+    // Part numbers
+    IPN: text("ipn"),
+    // Internal Part Number (unique)
+    revision: text("revision"),
+    // Keywords for search
+    keywords: text("keywords"),
+    // Part attributes (boolean flags)
+    active: integer("active", { mode: "boolean" }).default(true).notNull(),
+    virtual: integer("virtual", { mode: "boolean" }).default(false).notNull(),
+    // Does not physically exist (e.g., software license)
+    template: integer("template", { mode: "boolean" }).default(false).notNull(),
+    // Can have variants
+    assembly: integer("assembly", { mode: "boolean" }).default(false).notNull(),
+    // Can be built from components
+    component: integer("component", { mode: "boolean" }).default(false).notNull(),
+    // Can be used in assemblies
+    trackable: integer("trackable", { mode: "boolean" }).default(false).notNull(),
+    // Can have serial/batch numbers
+    purchaseable: integer("purchaseable", { mode: "boolean" }).default(false).notNull(),
+    // Can be purchased
+    salable: integer("salable", { mode: "boolean" }).default(false).notNull(),
+    // Can be sold
+    testable: integer("testable", { mode: "boolean" }).default(false).notNull(),
+    // Can have test results
+    locked: integer("locked", { mode: "boolean" }).default(false).notNull(),
+    // Prevents editing (for production parts)
+    // Stock settings
+    defaultLocationId: text("default_location_id"),
+    // FK to stock_locations
+    minimumStock: real("minimum_stock").default(0),
+    defaultExpiry: integer("default_expiry"),
+    // Days until expiry
+    // Units of measure
+    units: text("units"),
+    // e.g., "pcs", "m", "kg", "L"
+    // Additional info
+    notes: text("notes"),
+    link: text("link"),
+    // External URL
+    // Image
+    imageId: text("image_id"),
+    // FK to attachments table
+    // Audit fields
+    createdById: text("created_by_id").notNull(),
+    updatedById: text("updated_by_id").notNull(),
+    // Metadata for extensibility
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    // Critical indexes
+    categoryIdx: index("parts_category_idx").on(table.categoryId),
+    ipnUnique: unique("parts_ipn_unique").on(table.IPN),
+    nameIdx: index("parts_name_idx").on(table.name),
+    activeIdx: index("parts_active_idx").on(table.active),
+    deletedIdx: index("parts_deleted_idx").on(table.deletedAt),
+    // Attribute filters
+    purchaseableIdx: index("parts_purchaseable_idx").on(table.purchaseable),
+    salableIdx: index("parts_salable_idx").on(table.salable),
+    assemblyIdx: index("parts_assembly_idx").on(table.assembly),
+    // Search optimization
+    createdAtIdx: index("parts_created_at_idx").on(table.createdAt)
+  })
+);
+const partParameterTemplates = sqliteTable(
+  "part_parameter_templates",
+  {
+    ...baseFields,
+    name: text("name").notNull(),
+    description: text("description"),
+    units: text("units")
+    // e.g., "V", "Ω", "F"
+  },
+  (table) => ({
+    nameIdx: index("part_parameter_templates_name_idx").on(table.name)
+  })
+);
+const partParameters = sqliteTable(
+  "part_parameters",
+  {
+    ...baseFields,
+    partId: text("part_id").notNull(),
+    templateId: text("template_id"),
+    // Optional: link to template
+    // If not using template, specify name directly
+    name: text("name"),
+    value: text("value").notNull(),
+    units: text("units")
+  },
+  (table) => ({
+    partIdx: index("part_parameters_part_idx").on(table.partId),
+    templateIdx: index("part_parameters_template_idx").on(table.templateId)
+  })
+);
+const attachments = sqliteTable(
+  "attachments",
+  {
+    ...baseFields,
+    fileName: text("file_name").notNull(),
+    fileType: text("file_type").notNull(),
+    // MIME type
+    fileSize: integer("file_size").notNull(),
+    // bytes
+    // R2 storage
+    r2Key: text("r2_key").notNull(),
+    // Full R2 object key
+    r2Url: text("r2_url").notNull(),
+    // Public or signed URL
+    // For images: thumbnail
+    thumbnailR2Key: text("thumbnail_r2_key"),
+    thumbnailR2Url: text("thumbnail_r2_url"),
+    // Audit
+    uploadedById: text("uploaded_by_id").notNull()
+  },
+  (table) => ({
+    r2KeyIdx: index("attachments_r2_key_idx").on(table.r2Key),
+    uploadedByIdx: index("attachments_uploaded_by_idx").on(table.uploadedById)
+  })
+);
+const partCategoryRelations = relations(partCategories, ({ one, many }) => ({
+  // Self-referential for tree structure
+  parent: one(partCategories, {
+    fields: [partCategories.parentId],
+    references: [partCategories.id],
+    relationName: "partCategoryTree"
+  }),
+  children: many(partCategories, {
+    relationName: "partCategoryTree"
+  }),
+  // Parts in this category
+  parts: many(parts)
+  // Default location (will be defined when stock_locations is created)
+  // defaultLocation: one(stockLocations, {
+  //   fields: [partCategories.defaultLocationId],
+  //   references: [stockLocations.id],
+  // }),
+}));
+const partRelations = relations(parts, ({ one, many }) => ({
+  // Category
+  category: one(partCategories, {
+    fields: [parts.categoryId],
+    references: [partCategories.id]
+  }),
+  // Image
+  image: one(attachments, {
+    fields: [parts.imageId],
+    references: [attachments.id]
+  }),
+  // Parameters
+  parameters: many(partParameters),
+  // Created/Updated by
+  createdBy: one(users, {
+    fields: [parts.createdById],
+    references: [users.id],
+    relationName: "partCreatedBy"
+  }),
+  updatedBy: one(users, {
+    fields: [parts.updatedById],
+    references: [users.id],
+    relationName: "partUpdatedBy"
+  })
+  // Future: stock items, BOM items, supplier parts, etc.
+}));
+const partParameterRelations = relations(partParameters, ({ one }) => ({
+  part: one(parts, {
+    fields: [partParameters.partId],
+    references: [parts.id]
+  }),
+  template: one(partParameterTemplates, {
+    fields: [partParameters.templateId],
+    references: [partParameterTemplates.id]
+  })
+}));
+const partParameterTemplateRelations = relations(
+  partParameterTemplates,
+  ({ many }) => ({
+    parameters: many(partParameters)
+  })
+);
+const attachmentRelations = relations(attachments, ({ one }) => ({
+  uploadedBy: one(users, {
+    fields: [attachments.uploadedById],
+    references: [users.id]
+  })
+}));
+
+const stockLocationTypes = sqliteTable(
+  "stock_location_types",
+  {
+    ...baseFields,
+    name: text("name").notNull(),
+    description: text("description"),
+    icon: text("icon"),
+    // Metadata for extensibility
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    nameIdx: index("stock_location_types_name_idx").on(table.name)
+  })
+);
+const stockLocations = sqliteTable(
+  "stock_locations",
+  {
+    ...baseFields,
+    // Core fields
+    name: text("name").notNull(),
+    description: text("description"),
+    // Tree structure (similar to part categories)
+    parentId: text("parent_id"),
+    pathstring: text("pathstring").notNull(),
+    level: integer("level").notNull().default(0),
+    // Location type
+    locationTypeId: text("location_type_id"),
+    // Structural locations cannot have stock items directly
+    structural: integer("structural", { mode: "boolean" }).default(false).notNull(),
+    // Icon for display
+    customIcon: text("custom_icon"),
+    // Metadata
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    parentIdx: index("stock_locations_parent_idx").on(table.parentId),
+    pathstringIdx: index("stock_locations_pathstring_idx").on(table.pathstring),
+    levelIdx: index("stock_locations_level_idx").on(table.level),
+    nameIdx: index("stock_locations_name_idx").on(table.name),
+    locationTypeIdx: index("stock_locations_location_type_idx").on(table.locationTypeId),
+    deletedIdx: index("stock_locations_deleted_idx").on(table.deletedAt)
+  })
+);
+const stockItems = sqliteTable(
+  "stock_items",
+  {
+    ...baseFields,
+    // Part reference
+    partId: text("part_id").notNull(),
+    // Location
+    locationId: text("location_id").notNull(),
+    // Quantity (decimal for non-serial items)
+    quantity: real("quantity").notNull().default(1),
+    // Batch and serial tracking
+    batch: text("batch"),
+    serial: text("serial"),
+    // Status
+    status: text("status", {
+      enum: ["OK", "DAMAGED", "DESTROYED", "REJECTED", "LOST", "QUARANTINED"]
+    }).notNull().default("OK"),
+    // Stocktake
+    stocktakeDate: integer("stocktake_date", { mode: "timestamp" }),
+    stocktakeUserId: text("stocktake_user_id"),
+    // Supplier and order references
+    supplierPartId: text("supplier_part_id"),
+    // FK to supplier_parts (future)
+    purchaseOrderId: text("purchase_order_id"),
+    // FK to purchase_orders (future)
+    // Sales order reference
+    salesOrderId: text("sales_order_id"),
+    // FK to sales_orders (future)
+    // Build reference
+    buildId: text("build_id"),
+    // FK to build_orders (future)
+    // Hierarchical stock items (for assemblies)
+    belongsToId: text("belongs_to_id"),
+    // FK to stock_items (parent item)
+    parentId: text("parent_id"),
+    // FK to stock_items (for sub-items)
+    // Expiry
+    expiryDate: integer("expiry_date", { mode: "timestamp" }),
+    // Packaging
+    packaging: text("packaging"),
+    // Additional info
+    notes: text("notes"),
+    link: text("link"),
+    // Owner (for consignment stock)
+    ownerId: text("owner_id"),
+    // FK to users
+    // Metadata
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    partIdx: index("stock_items_part_idx").on(table.partId),
+    locationIdx: index("stock_items_location_idx").on(table.locationId),
+    batchIdx: index("stock_items_batch_idx").on(table.batch),
+    serialUnique: unique("stock_items_serial_unique").on(table.serial),
+    statusIdx: index("stock_items_status_idx").on(table.status),
+    expiryIdx: index("stock_items_expiry_idx").on(table.expiryDate),
+    deletedIdx: index("stock_items_deleted_idx").on(table.deletedAt)
+  })
+);
+const stockItemTracking = sqliteTable(
+  "stock_item_tracking",
+  {
+    ...baseFields,
+    stockItemId: text("stock_item_id").notNull(),
+    // Tracking type
+    trackingType: text("tracking_type", {
+      enum: [
+        "CREATED",
+        "MOVED",
+        "COUNTED",
+        "ADDED",
+        "REMOVED",
+        "UPDATED",
+        "ASSIGNED_SERIAL",
+        "ASSIGNED_BATCH",
+        "MERGED",
+        "SPLIT",
+        "BUILD_OUTPUT",
+        "PURCHASE_ORDER_RECEIVED",
+        "SALES_ORDER_SHIPPED",
+        "RETURNED",
+        "INSTALLED",
+        "REMOVED_FROM_ASSEMBLY"
+      ]
+    }).notNull(),
+    // Quantity change (can be negative for removals)
+    quantity: real("quantity"),
+    // Location tracking
+    locationIdFrom: text("location_id_from"),
+    locationIdTo: text("location_id_to"),
+    // Notes
+    notes: text("notes"),
+    // User who performed the action
+    userId: text("user_id").notNull(),
+    // Deltas (before/after state)
+    deltas: text("deltas", { mode: "json" }).$type(),
+    // Metadata
+    metadata: text("metadata", { mode: "json" }).$type()
+  },
+  (table) => ({
+    stockItemIdx: index("stock_item_tracking_stock_item_idx").on(table.stockItemId),
+    trackingTypeIdx: index("stock_item_tracking_tracking_type_idx").on(table.trackingType),
+    userIdx: index("stock_item_tracking_user_idx").on(table.userId),
+    createdAtIdx: index("stock_item_tracking_created_at_idx").on(table.createdAt)
+  })
+);
+const stockItemTestResults = sqliteTable(
+  "stock_item_test_results",
+  {
+    ...baseFields,
+    stockItemId: text("stock_item_id").notNull(),
+    testTemplateId: text("test_template_id"),
+    // FK to test_templates (future)
+    // Result
+    result: integer("result", { mode: "boolean" }).notNull(),
+    value: text("value"),
+    notes: text("notes"),
+    // Attachment
+    attachmentId: text("attachment_id"),
+    // User who performed test
+    userId: text("user_id").notNull()
+  },
+  (table) => ({
+    stockItemIdx: index("stock_item_test_results_stock_item_idx").on(table.stockItemId),
+    userIdx: index("stock_item_test_results_user_idx").on(table.userId),
+    resultIdx: index("stock_item_test_results_result_idx").on(table.result)
+  })
+);
+const stockLocationTypeRelations = relations(stockLocationTypes, ({ many }) => ({
+  locations: many(stockLocations)
+}));
+const stockLocationRelations = relations(stockLocations, ({ one, many }) => ({
+  // Self-referential for tree structure
+  parent: one(stockLocations, {
+    fields: [stockLocations.parentId],
+    references: [stockLocations.id],
+    relationName: "stockLocationTree"
+  }),
+  children: many(stockLocations, {
+    relationName: "stockLocationTree"
+  }),
+  // Location type
+  locationType: one(stockLocationTypes, {
+    fields: [stockLocations.locationTypeId],
+    references: [stockLocationTypes.id]
+  }),
+  // Stock items in this location
+  stockItems: many(stockItems)
+}));
+const stockItemRelations = relations(stockItems, ({ one, many }) => ({
+  // Part
+  part: one(parts, {
+    fields: [stockItems.partId],
+    references: [parts.id]
+  }),
+  // Location
+  location: one(stockLocations, {
+    fields: [stockItems.locationId],
+    references: [stockLocations.id]
+  }),
+  // Owner
+  owner: one(users, {
+    fields: [stockItems.ownerId],
+    references: [users.id]
+  }),
+  // Stocktake user
+  stocktakeUser: one(users, {
+    fields: [stockItems.stocktakeUserId],
+    references: [users.id]
+  }),
+  // Hierarchical (for assemblies)
+  belongsTo: one(stockItems, {
+    fields: [stockItems.belongsToId],
+    references: [stockItems.id],
+    relationName: "stockItemHierarchy"
+  }),
+  parent: one(stockItems, {
+    fields: [stockItems.parentId],
+    references: [stockItems.id],
+    relationName: "stockItemParent"
+  }),
+  // Tracking history
+  trackingHistory: many(stockItemTracking),
+  // Test results
+  testResults: many(stockItemTestResults)
+}));
+const stockItemTrackingRelations = relations(stockItemTracking, ({ one }) => ({
+  stockItem: one(stockItems, {
+    fields: [stockItemTracking.stockItemId],
+    references: [stockItems.id]
+  }),
+  user: one(users, {
+    fields: [stockItemTracking.userId],
+    references: [users.id]
+  }),
+  locationFrom: one(stockLocations, {
+    fields: [stockItemTracking.locationIdFrom],
+    references: [stockLocations.id],
+    relationName: "trackingLocationFrom"
+  }),
+  locationTo: one(stockLocations, {
+    fields: [stockItemTracking.locationIdTo],
+    references: [stockLocations.id],
+    relationName: "trackingLocationTo"
+  })
+}));
+const stockItemTestResultRelations = relations(stockItemTestResults, ({ one }) => ({
+  stockItem: one(stockItems, {
+    fields: [stockItemTestResults.stockItemId],
+    references: [stockItems.id]
+  }),
+  user: one(users, {
+    fields: [stockItemTestResults.userId],
+    references: [users.id]
+  })
+}));
+
 const schema = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
+  attachmentRelations: attachmentRelations,
+  attachments: attachments,
   auditLogs: auditLogs,
   baseFields: baseFields,
-  globalBaseFields: globalBaseFields,
   migrations: migrations,
+  partCategories: partCategories,
+  partCategoryRelations: partCategoryRelations,
+  partParameterRelations: partParameterRelations,
+  partParameterTemplateRelations: partParameterTemplateRelations,
+  partParameterTemplates: partParameterTemplates,
+  partParameters: partParameters,
+  partRelations: partRelations,
+  parts: parts,
   permissions: permissions,
   roles: roles,
   rolesRelations: rolesRelations,
+  stockItemRelations: stockItemRelations,
+  stockItemTestResultRelations: stockItemTestResultRelations,
+  stockItemTestResults: stockItemTestResults,
+  stockItemTracking: stockItemTracking,
+  stockItemTrackingRelations: stockItemTrackingRelations,
+  stockItems: stockItems,
+  stockLocationRelations: stockLocationRelations,
+  stockLocationTypeRelations: stockLocationTypeRelations,
+  stockLocationTypes: stockLocationTypes,
+  stockLocations: stockLocations,
   userRoles: userRoles,
   userRolesRelations: userRolesRelations,
   userSettings: userSettings,
@@ -4040,31 +4606,14 @@ const resetAndSeed_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defin
   default: resetAndSeed_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
-var __defProp$3 = Object.defineProperty;
-var __defNormalProp$3 = (obj, key, value) => key in obj ? __defProp$3(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField$3 = (obj, key, value) => __defNormalProp$3(obj, key + "" , value);
+var __defProp$6 = Object.defineProperty;
+var __defNormalProp$6 = (obj, key, value) => key in obj ? __defProp$6(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$6 = (obj, key, value) => __defNormalProp$6(obj, key + "" , value);
 class BaseRepository {
   constructor(db) {
     this.db = db;
-    __publicField$3(this, "drizzle");
+    __publicField$6(this, "drizzle");
     this.drizzle = drizzle(db, { schema });
-  }
-  /**
-   * Helper to add soft delete filter to queries
-   * Returns a SQL condition that checks if deletedAt is NULL
-   *
-   * @example
-   * // Single condition
-   * .where(this.notDeleted(schema.users))
-   *
-   * // Multiple conditions
-   * .where(and(
-   *   eq(schema.users.email, email),
-   *   this.notDeleted(schema.users)
-   * ))
-   */
-  notDeleted(table) {
-    return isNull(table.deletedAt);
   }
   /**
    * Build a SQL filter condition from a Filter object
@@ -4152,6 +4701,148 @@ class BaseRepository {
   }
 }
 
+class QueryHelpers {
+  /**
+   * Filter out soft-deleted records
+   * Combines deletedAt IS NULL with additional conditions
+   *
+   * @param table - The table with deletedAt column
+   * @param additionalConditions - Optional conditions to AND together
+   * @returns SQL condition combining notDeleted + additional conditions
+   *
+   * @example
+   * // Simple usage
+   * .where(QueryHelpers.notDeleted(users))
+   *
+   * @example
+   * // With conditions
+   * .where(QueryHelpers.notDeleted(users, eq(users.id, userId)))
+   *
+   * @example
+   * // Multiple conditions
+   * .where(QueryHelpers.notDeleted(
+   *   users,
+   *   eq(users.isActive, true),
+   *   eq(users.role, 'ADMIN')
+   * ))
+   */
+  static notDeleted(table, ...additionalConditions) {
+    const validConditions = additionalConditions.filter(
+      (c) => c !== void 0
+    );
+    return and(isNull(table.deletedAt), ...validConditions);
+  }
+  /**
+   * Multi-column text search
+   * Searches across multiple columns with LIKE %term% (OR condition)
+   *
+   * @param columns - Array of columns to search
+   * @param searchTerm - Search term to look for
+   * @returns SQL OR condition, or undefined if searchTerm is empty
+   *
+   * @example
+   * // Search across name and email
+   * const searchCondition = QueryHelpers.search(
+   *   [users.name, users.email],
+   *   'john'
+   * )
+   * .where(QueryHelpers.notDeleted(users, searchCondition))
+   */
+  static search(columns, searchTerm) {
+    if (!searchTerm || searchTerm.trim() === "") return void 0;
+    const term = `%${searchTerm.trim()}%`;
+    const conditions = columns.map((col) => like(col, term));
+    return or(...conditions);
+  }
+  /**
+   * Date range filter
+   * Filters column between start and end dates (inclusive)
+   *
+   * @param column - The date column to filter
+   * @param start - Start date (inclusive)
+   * @param end - End date (inclusive)
+   * @returns SQL condition, or undefined if both start and end are missing
+   *
+   * @example
+   * // Filter by date range
+   * const dateCondition = QueryHelpers.dateRange(
+   *   users.createdAt,
+   *   new Date('2024-01-01'),
+   *   new Date('2024-12-31')
+   * )
+   * .where(QueryHelpers.notDeleted(users, dateCondition))
+   *
+   * @example
+   * // Only start date (all records after)
+   * QueryHelpers.dateRange(users.createdAt, startDate)
+   */
+  static dateRange(column, start, end) {
+    const conditions = [];
+    if (start) {
+      conditions.push(gte(column, start));
+    }
+    if (end) {
+      conditions.push(lte(column, end));
+    }
+    return conditions.length > 0 ? and(...conditions) : void 0;
+  }
+  /**
+   * Execute paginated query with total count
+   * Returns standardized pagination response
+   *
+   * @param baseQuery - The drizzle query to paginate (without limit/offset)
+   * @param totalCount - Total number of records matching the query
+   * @param options - Pagination options (page, limit)
+   * @returns Object with data, total, pages, page, limit
+   *
+   * @example
+   * // Standard pagination
+   * const condition = QueryHelpers.notDeleted(users)
+   * const baseQuery = db.select().from(users).where(condition)
+   * const [{ count: total }] = await db
+   *   .select({ count: drizzleCount() })
+   *   .from(users)
+   *   .where(condition)
+   *
+   * return QueryHelpers.paginated(baseQuery, total, { page: 1, limit: 10 })
+   * // Returns: { data: [...], total: 150, pages: 15, page: 1, limit: 10 }
+   */
+  static async paginated(baseQuery, totalCount, options) {
+    const { page, limit } = options;
+    const offset = (page - 1) * limit;
+    const data = await baseQuery.limit(limit).offset(offset);
+    return {
+      data,
+      total: totalCount,
+      pages: Math.ceil(totalCount / limit),
+      page,
+      limit
+    };
+  }
+  /**
+   * Active records filter (not deleted AND isActive = true)
+   * Common pattern for filtering active, non-deleted records
+   *
+   * @param table - The table with deletedAt and isActive columns
+   * @param additionalConditions - Optional conditions to AND together
+   * @returns SQL condition
+   *
+   * @example
+   * .where(QueryHelpers.activeOnly(users))
+   */
+  static activeOnly(table, ...additionalConditions) {
+    const conditions = [isNull(table.deletedAt)];
+    if (table.isActive !== void 0) {
+      conditions.push(table.isActive);
+    }
+    conditions.push(...additionalConditions);
+    const validConditions = conditions.filter(
+      (c) => c !== void 0
+    );
+    return and(...validConditions);
+  }
+}
+
 class UserRepository extends BaseRepository {
   constructor(db) {
     super(db);
@@ -4161,9 +4852,9 @@ class UserRepository extends BaseRepository {
    */
   async findByEmail(email) {
     const result = await this.drizzle.select().from(users).where(
-      and(
-        eq(users.email, email.toLowerCase()),
-        this.notDeleted(users)
+      QueryHelpers.notDeleted(
+        users,
+        eq(users.email, email.toLowerCase())
       )
     ).limit(1);
     return result[0] || null;
@@ -4172,7 +4863,7 @@ class UserRepository extends BaseRepository {
    * Find user by ID (database-scoped)
    */
   async findById(id) {
-    const result = await this.drizzle.select().from(users).where(and(eq(users.id, id), this.notDeleted(users))).limit(1);
+    const result = await this.drizzle.select().from(users).where(QueryHelpers.notDeleted(users, eq(users.id, id))).limit(1);
     return result[0] || null;
   }
   /**
@@ -4181,7 +4872,7 @@ class UserRepository extends BaseRepository {
   async count(filters) {
     return this.countRecords(
       users,
-      this.notDeleted(users),
+      QueryHelpers.notDeleted(users),
       filters
     );
   }
@@ -4189,7 +4880,7 @@ class UserRepository extends BaseRepository {
    * List users (database-scoped) with optional filters and sorting
    */
   async list(limit = 100, offset = 0, filters, sortBy, sortOrder) {
-    const conditions = [this.notDeleted(users)];
+    const conditions = [QueryHelpers.notDeleted(users)];
     if (filters && filters.length > 0) {
       const filterCondition = this.buildFilters(users, filters);
       if (filterCondition) {
@@ -4225,7 +4916,7 @@ class UserRepository extends BaseRepository {
    * Update user
    */
   async update(id, data) {
-    const [user] = await this.drizzle.update(users).set({ ...data, updatedAt: /* @__PURE__ */ new Date() }).where(and(eq(users.id, id), this.notDeleted(users))).returning();
+    const [user] = await this.drizzle.update(users).set({ ...data, updatedAt: /* @__PURE__ */ new Date() }).where(QueryHelpers.notDeleted(users, eq(users.id, id))).returning();
     return user || null;
   }
   /**
@@ -4257,9 +4948,9 @@ class UserSettingsRepository extends BaseRepository {
   async getSettings(userId) {
     var _a;
     const result = await this.drizzle.select().from(userSettings).where(
-      and(
-        eq(userSettings.userId, userId),
-        this.notDeleted(userSettings)
+      QueryHelpers.notDeleted(
+        userSettings,
+        eq(userSettings.userId, userId)
       )
     ).limit(1);
     return ((_a = result[0]) == null ? void 0 : _a.settings) || {};
@@ -4462,17 +5153,17 @@ const passwordSchema = z.string().min(
   })
 );
 
-var __defProp$2 = Object.defineProperty;
-var __defNormalProp$2 = (obj, key, value) => key in obj ? __defProp$2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField$2 = (obj, key, value) => __defNormalProp$2(obj, typeof key !== "symbol" ? key + "" : key, value);
+var __defProp$5 = Object.defineProperty;
+var __defNormalProp$5 = (obj, key, value) => key in obj ? __defProp$5(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$5 = (obj, key, value) => __defNormalProp$5(obj, typeof key !== "symbol" ? key + "" : key, value);
 class IdentityService {
   constructor(event, userRepo, userSettingsRepo, auditLogRepo) {
     this.event = event;
     this.userRepo = userRepo;
     this.userSettingsRepo = userSettingsRepo;
     this.auditLogRepo = auditLogRepo;
-    __publicField$2(this, "db");
-    __publicField$2(this, "userId");
+    __publicField$5(this, "db");
+    __publicField$5(this, "userId");
     this.db = getDatabase(event);
     this.userId = event.context.userId;
   }
@@ -4965,9 +5656,1140 @@ const signup_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.definePrope
   default: signup_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
-var __defProp$1 = Object.defineProperty;
-var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField$1 = (obj, key, value) => __defNormalProp$1(obj, key + "" , value);
+class PartCategoryRepository extends BaseRepository {
+  constructor(db) {
+    super(db);
+  }
+  /**
+   * Find category by ID
+   */
+  async findById(id) {
+    const result = await this.drizzle.select().from(partCategories).where(
+      QueryHelpers.notDeleted(
+        partCategories,
+        eq(partCategories.id, id)
+      )
+    ).limit(1);
+    return result[0] || null;
+  }
+  /**
+   * Find all categories with pagination and search
+   */
+  async findAll(limit = 100, offset = 0, searchTerm, filters, sortBy = "name", sortOrder = "asc") {
+    const conditions = [QueryHelpers.notDeleted(partCategories)];
+    if (searchTerm) {
+      conditions.push(
+        QueryHelpers.search(
+          [partCategories.name, partCategories.description],
+          searchTerm
+        )
+      );
+    }
+    if (filters && filters.length > 0) {
+      const filterCondition = this.buildFilters(partCategories, filters);
+      if (filterCondition) {
+        conditions.push(filterCondition);
+      }
+    }
+    const validConditions = conditions.filter((c) => c !== void 0);
+    let query = this.drizzle.select().from(partCategories).where(and(...validConditions)).limit(limit).offset(offset);
+    query = this.applySort(query, partCategories, sortBy, sortOrder);
+    return query;
+  }
+  /**
+   * Find categories by parent ID
+   * Pass null to get root categories
+   */
+  async findByParentId(parentId) {
+    const condition = parentId === null ? isNull(partCategories.parentId) : eq(partCategories.parentId, parentId);
+    const result = await this.drizzle.select().from(partCategories).where(QueryHelpers.notDeleted(partCategories, condition)).orderBy(partCategories.name);
+    return result;
+  }
+  /**
+   * Create a new category
+   * Automatically calculates pathstring and level
+   */
+  async create(data) {
+    let pathstring;
+    let level;
+    if (data.parentId) {
+      const parent = await this.findById(data.parentId);
+      if (!parent) {
+        throw new Error("Parent category not found");
+      }
+      level = parent.level + 1;
+      pathstring = parent.pathstring;
+    } else {
+      level = 0;
+      pathstring = "";
+    }
+    const [category] = await this.drizzle.insert(partCategories).values({
+      ...data,
+      pathstring,
+      level
+    }).returning();
+    const finalPathstring = data.parentId ? `${pathstring}/${category.id}` : category.id;
+    await this.drizzle.update(partCategories).set({ pathstring: finalPathstring }).where(eq(partCategories.id, category.id));
+    return {
+      ...category,
+      pathstring: finalPathstring
+    };
+  }
+  /**
+   * Update category fields
+   */
+  async update(id, data) {
+    const [category] = await this.drizzle.update(partCategories).set({
+      ...data,
+      updatedAt: /* @__PURE__ */ new Date()
+    }).where(eq(partCategories.id, id)).returning();
+    return category;
+  }
+  /**
+   * Soft delete a category
+   */
+  async softDelete(id) {
+    await this.drizzle.update(partCategories).set({ deletedAt: /* @__PURE__ */ new Date() }).where(eq(partCategories.id, id));
+  }
+  /**
+   * Get ancestors (parent chain) for a category
+   * Returns array from root to immediate parent
+   */
+  async getAncestors(id) {
+    const category = await this.findById(id);
+    if (!category || !category.parentId) {
+      return [];
+    }
+    const ancestorIds = category.pathstring.split("/").filter(Boolean);
+    if (ancestorIds.length === 0) {
+      return [];
+    }
+    const parentIds = ancestorIds.slice(0, -1);
+    if (parentIds.length === 0) {
+      return [];
+    }
+    const ancestors = await this.drizzle.select().from(partCategories).where(
+      and(
+        inArray(partCategories.id, parentIds),
+        isNull(partCategories.deletedAt)
+      )
+    );
+    return ancestors.sort((a, b) => a.level - b.level);
+  }
+  /**
+   * Get descendants (all children recursively) for a category
+   */
+  async getDescendants(id, maxDepth) {
+    const category = await this.findById(id);
+    if (!category) {
+      return [];
+    }
+    const descendants = await this.drizzle.select().from(partCategories).where(
+      and(
+        like(partCategories.pathstring, `${category.pathstring}/%`),
+        isNull(partCategories.deletedAt)
+      )
+    );
+    if (maxDepth !== void 0) {
+      const maxLevel = category.level + maxDepth;
+      return descendants.filter((d) => d.level <= maxLevel);
+    }
+    return descendants;
+  }
+  /**
+   * Move category to a new parent
+   * Updates pathstring and level for the category and all descendants
+   */
+  async moveToParent(id, newParentId) {
+    const category = await this.findById(id);
+    if (!category) {
+      throw new Error("Category not found");
+    }
+    let newPathstring;
+    let newLevel;
+    if (newParentId) {
+      const newParent = await this.findById(newParentId);
+      if (!newParent) {
+        throw new Error("New parent category not found");
+      }
+      if (newParent.pathstring.startsWith(category.pathstring)) {
+        throw new Error("Cannot move category to its own descendant");
+      }
+      newLevel = newParent.level + 1;
+      newPathstring = `${newParent.pathstring}/${category.id}`;
+    } else {
+      newLevel = 0;
+      newPathstring = category.id;
+    }
+    const levelDiff = newLevel - category.level;
+    const oldPathstring = category.pathstring;
+    await this.drizzle.update(partCategories).set({
+      parentId: newParentId,
+      pathstring: newPathstring,
+      level: newLevel,
+      updatedAt: /* @__PURE__ */ new Date()
+    }).where(eq(partCategories.id, id));
+    const descendants = await this.getDescendants(id);
+    for (const descendant of descendants) {
+      const updatedPathstring = descendant.pathstring.replace(
+        oldPathstring,
+        newPathstring
+      );
+      const updatedLevel = descendant.level + levelDiff;
+      await this.drizzle.update(partCategories).set({
+        pathstring: updatedPathstring,
+        level: updatedLevel,
+        updatedAt: /* @__PURE__ */ new Date()
+      }).where(eq(partCategories.id, descendant.id));
+    }
+  }
+  /**
+   * Count parts in a category
+   * If cascade is true, includes parts in subcategories
+   */
+  async countParts(id, cascade = false) {
+    if (cascade) {
+      const category = await this.findById(id);
+      if (!category) {
+        return 0;
+      }
+      const [result] = await this.drizzle.select({ count: count() }).from(parts).where(
+        and(
+          or(
+            eq(parts.categoryId, id),
+            like(parts.categoryId, `${category.pathstring}/%`)
+          ),
+          isNull(parts.deletedAt)
+        )
+      );
+      return result.count;
+    } else {
+      const [result] = await this.drizzle.select({ count: count() }).from(parts).where(
+        and(
+          eq(parts.categoryId, id),
+          isNull(parts.deletedAt)
+        )
+      );
+      return result.count;
+    }
+  }
+  /**
+   * Count total categories
+   */
+  async count(filters) {
+    const conditions = [QueryHelpers.notDeleted(partCategories)];
+    if (filters && filters.length > 0) {
+      const filterCondition = this.buildFilters(partCategories, filters);
+      if (filterCondition) {
+        conditions.push(filterCondition);
+      }
+    }
+    const [result] = await this.drizzle.select({ count: count() }).from(partCategories).where(and(...conditions));
+    return result.count;
+  }
+}
+
+var __defProp$4 = Object.defineProperty;
+var __defNormalProp$4 = (obj, key, value) => key in obj ? __defProp$4(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$4 = (obj, key, value) => __defNormalProp$4(obj, typeof key !== "symbol" ? key + "" : key, value);
+class PartCategoryService {
+  constructor(event, db, partCategoryRepo, auditLogRepo, partRepo) {
+    this.event = event;
+    this.partCategoryRepo = partCategoryRepo;
+    this.auditLogRepo = auditLogRepo;
+    this.partRepo = partRepo;
+    __publicField$4(this, "db");
+    __publicField$4(this, "userId");
+    if (!db) {
+      throw new InternalServerError("Database not found in event context");
+    }
+    this.db = db;
+    this.userId = event.context.userId;
+  }
+  /**
+   * Helper to log audit events
+   */
+  async logAudit(action, entityId, metadata) {
+    if (!this.userId) return;
+    return this.auditLogRepo.log(
+      this.userId,
+      action,
+      "PartCategory",
+      entityId,
+      {
+        requestId: this.event.context.requestId,
+        endpoint: this.event.context.endpoint,
+        method: this.event.context.method,
+        ipAddress: this.event.context.ipAddress,
+        userAgent: this.event.context.userAgent,
+        metadata
+      }
+    );
+  }
+  // ========================================
+  // CREATE
+  // ========================================
+  /**
+   * Create a new part category
+   */
+  async createCategory(data) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    if (data.parentId) {
+      const parent = await this.partCategoryRepo.findById(data.parentId);
+      if (!parent) {
+        throw new ValidationError("Parent category not found", {
+          field: "parentId",
+          value: data.parentId
+        });
+      }
+      if (parent.structural) {
+        const partCount = await this.partCategoryRepo.countParts(
+          data.parentId,
+          false
+        );
+        if (partCount > 0) {
+          throw new ValidationError(
+            "Cannot create child category under structural category that has parts assigned",
+            {
+              field: "parentId",
+              parentId: data.parentId,
+              partCount
+            }
+          );
+        }
+      }
+    }
+    const category = await this.partCategoryRepo.create(data);
+    await this.logAudit("PART_CATEGORY_CREATED", category.id, {
+      name: category.name,
+      parentId: category.parentId
+    });
+    return category;
+  }
+  // ========================================
+  // READ
+  // ========================================
+  /**
+   * Get category by ID with related data
+   */
+  async getCategory(id) {
+    const category = await this.partCategoryRepo.findById(id);
+    if (!category) {
+      throw new ValidationError("Category not found", {
+        field: "id",
+        value: id
+      });
+    }
+    const ancestors = await this.partCategoryRepo.getAncestors(id);
+    const children = await this.partCategoryRepo.findByParentId(id);
+    const partCount = await this.partCategoryRepo.countParts(id, false);
+    return {
+      category,
+      ancestors,
+      children,
+      partCount
+    };
+  }
+  /**
+   * List categories with pagination and search
+   */
+  async listCategories(limit = 100, offset = 0, searchTerm, filters, sortBy = "name", sortOrder = "asc") {
+    const [categories, total] = await Promise.all([
+      this.partCategoryRepo.findAll(
+        limit,
+        offset,
+        searchTerm,
+        filters,
+        sortBy,
+        sortOrder
+      ),
+      this.partCategoryRepo.count(filters)
+    ]);
+    return {
+      data: categories,
+      total
+    };
+  }
+  /**
+   * Get category tree (hierarchical structure)
+   * Returns root categories with nested children
+   */
+  async getCategoryTree(maxDepth) {
+    const rootCategories = await this.partCategoryRepo.findByParentId(null);
+    const buildTree = async (categories, currentDepth = 0) => {
+      if (maxDepth !== void 0 && currentDepth >= maxDepth) {
+        return categories.map((cat) => ({ ...cat, children: [] }));
+      }
+      const result = [];
+      for (const category of categories) {
+        const children = await this.partCategoryRepo.findByParentId(
+          category.id
+        );
+        const childrenWithNested = await buildTree(children, currentDepth + 1);
+        result.push({
+          ...category,
+          children: childrenWithNested
+        });
+      }
+      return result;
+    };
+    return buildTree(rootCategories);
+  }
+  // ========================================
+  // UPDATE
+  // ========================================
+  /**
+   * Update category
+   */
+  async updateCategory(id, data) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const existingCategory = await this.partCategoryRepo.findById(id);
+    if (!existingCategory) {
+      throw new ValidationError("Category not found", {
+        field: "id",
+        value: id
+      });
+    }
+    if (data.structural === true && !existingCategory.structural) {
+      const partCount = await this.partCategoryRepo.countParts(id, false);
+      if (partCount > 0) {
+        throw new ValidationError(
+          "Cannot make category structural because parts are already assigned to it",
+          {
+            field: "structural",
+            categoryId: id,
+            partCount
+          }
+        );
+      }
+    }
+    const updatedCategory = await this.partCategoryRepo.update(id, data);
+    await this.logAudit("PART_CATEGORY_UPDATED", id, {
+      changes: data
+    });
+    return updatedCategory;
+  }
+  /**
+   * Move category to new parent
+   */
+  async moveCategory(id, newParentId) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const category = await this.partCategoryRepo.findById(id);
+    if (!category) {
+      throw new ValidationError("Category not found", {
+        field: "id",
+        value: id
+      });
+    }
+    if (newParentId) {
+      const newParent = await this.partCategoryRepo.findById(newParentId);
+      if (!newParent) {
+        throw new ValidationError("New parent category not found", {
+          field: "newParentId",
+          value: newParentId
+        });
+      }
+      if (newParent.pathstring.startsWith(category.pathstring)) {
+        throw new ValidationError(
+          "Cannot move category to its own descendant",
+          {
+            categoryId: id,
+            newParentId
+          }
+        );
+      }
+    }
+    await this.partCategoryRepo.moveToParent(id, newParentId);
+    await this.logAudit("PART_CATEGORY_MOVED", id, {
+      oldParentId: category.parentId,
+      newParentId
+    });
+  }
+  // ========================================
+  // DELETE
+  // ========================================
+  /**
+   * Delete category (soft delete)
+   * cascade: if true, deletes all descendant categories and parts
+   */
+  async deleteCategory(id, cascade = false) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const category = await this.partCategoryRepo.findById(id);
+    if (!category) {
+      throw new ValidationError("Category not found", {
+        field: "id",
+        value: id
+      });
+    }
+    if (!cascade) {
+      const partCount = await this.partCategoryRepo.countParts(id, false);
+      if (partCount > 0) {
+        throw new ValidationError(
+          "Cannot delete category with parts. Use cascade=true to delete all parts.",
+          {
+            categoryId: id,
+            partCount
+          }
+        );
+      }
+      const children = await this.partCategoryRepo.findByParentId(id);
+      if (children.length > 0) {
+        throw new ValidationError(
+          "Cannot delete category with child categories. Use cascade=true to delete all children.",
+          {
+            categoryId: id,
+            childCount: children.length
+          }
+        );
+      }
+    } else {
+      const descendants = await this.partCategoryRepo.getDescendants(id);
+      const sortedDescendants = descendants.sort((a, b) => b.level - a.level);
+      for (const descendant of sortedDescendants) {
+        await this.partCategoryRepo.softDelete(descendant.id);
+        await this.logAudit("PART_CATEGORY_DELETED", descendant.id, {
+          cascade: true,
+          parentCategoryId: id
+        });
+      }
+    }
+    await this.partCategoryRepo.softDelete(id);
+    await this.logAudit("PART_CATEGORY_DELETED", id, {
+      cascade
+    });
+  }
+}
+function createPartCategoryService(event) {
+  const db = getDatabase(event);
+  if (!db) {
+    throw new InternalServerError("Database not available in context");
+  }
+  return new PartCategoryService(
+    event,
+    db,
+    new PartCategoryRepository(db),
+    new AuditLogRepository(db),
+    void 0
+    // partRepo will be added when PartRepository is implemented
+  );
+}
+
+const createPartCategorySchema = z.object({
+  name: z.string().min(1, "Name is required").max(250, "Name must be less than 250 characters").trim(),
+  description: z.string().max(1e3, "Description must be less than 1000 characters").trim().optional().nullable(),
+  parentId: z.string().uuid("Parent ID must be a valid UUID").optional().nullable(),
+  structural: z.boolean().default(false).describe("If true, parts cannot be directly assigned to this category"),
+  defaultLocationId: z.string().uuid("Default location ID must be a valid UUID").optional().nullable(),
+  defaultKeywords: z.string().max(250, "Default keywords must be less than 250 characters").trim().optional().nullable(),
+  icon: z.string().max(100, "Icon must be less than 100 characters").trim().optional().nullable(),
+  metadata: z.record(z.unknown()).optional().nullable().describe("Additional metadata as JSON object")
+});
+const updatePartCategorySchema = createPartCategorySchema.partial();
+const movePartCategorySchema = z.object({
+  newParentId: z.string().uuid("New parent ID must be a valid UUID").nullable().describe("New parent category ID, or null to move to root")
+});
+const deletePartCategorySchema = z.object({
+  cascade: z.enum(["true", "false"]).transform((val) => val === "true").default("false").describe("If true, deletes all child categories and parts")
+});
+const partCategoryIdSchema = z.object({
+  id: z.string().uuid("Category ID must be a valid UUID")
+});
+const listPartCategoriesSchema = z.object({
+  // Pagination
+  page: z.string().regex(/^\d+$/, "Page must be a number").transform(Number).default("1"),
+  perPage: z.string().regex(/^\d+$/, "Per page must be a number").transform(Number).refine((val) => val <= 100, "Per page cannot exceed 100").default("20"),
+  // Search
+  search: z.string().max(250, "Search term must be less than 250 characters").trim().optional(),
+  // Filters
+  parentId: z.string().uuid("Parent ID must be a valid UUID").optional().describe("Filter by parent category"),
+  structural: z.enum(["true", "false"]).transform((val) => val === "true").optional().describe("Filter by structural flag"),
+  // Sorting
+  sortBy: z.enum(["name", "createdAt", "updatedAt", "level"]).default("name").describe("Field to sort by"),
+  sortOrder: z.enum(["asc", "desc"]).default("asc").describe("Sort direction"),
+  // Tree options
+  tree: z.enum(["true", "false"]).transform((val) => val === "true").default("false").describe("Return hierarchical tree structure instead of flat list"),
+  maxDepth: z.string().regex(/^\d+$/, "Max depth must be a number").transform(Number).optional().describe("Maximum tree depth (only applicable when tree=true)")
+});
+z.object({
+  maxDepth: z.string().regex(/^\d+$/, "Max depth must be a number").transform(Number).optional().describe("Maximum tree depth to retrieve"),
+  parentId: z.string().uuid("Parent ID must be a valid UUID").optional().nullable().describe("Get tree starting from this parent (default: root)")
+});
+
+const _id__delete$8 = defineEventHandler(async (event) => {
+  const params = partCategoryIdSchema.parse(event.context.params);
+  const rawQuery = getQuery$1(event);
+  const query = deletePartCategorySchema.parse(rawQuery);
+  const service = createPartCategoryService(event);
+  await service.deleteCategory(params.id, query.cascade);
+  return createSuccessResponse("Part category deleted successfully", null);
+});
+
+const _id__delete$9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__delete$8
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__get$a = defineEventHandler(async (event) => {
+  const params = partCategoryIdSchema.parse(event.context.params);
+  const service = createPartCategoryService(event);
+  const result = await service.getCategory(params.id);
+  return createSuccessResponse("Part category retrieved successfully", result);
+});
+
+const _id__get$b = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__get$a
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__put$8 = defineEventHandler(async (event) => {
+  const params = partCategoryIdSchema.parse(event.context.params);
+  const body = await readBody(event);
+  const validated = updatePartCategorySchema.parse(body);
+  const service = createPartCategoryService(event);
+  const category = await service.updateCategory(params.id, validated);
+  return createSuccessResponse("Part category updated successfully", category);
+});
+
+const _id__put$9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__put$8
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const move_post$2 = defineEventHandler(async (event) => {
+  const params = partCategoryIdSchema.parse(event.context.params);
+  const body = await readBody(event);
+  const validated = movePartCategorySchema.parse(body);
+  const service = createPartCategoryService(event);
+  await service.moveCategory(params.id, validated.newParentId);
+  return createSuccessResponse("Part category moved successfully", null);
+});
+
+const move_post$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: move_post$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_get$c = defineEventHandler(async (event) => {
+  const rawQuery = getQuery$1(event);
+  const query = listPartCategoriesSchema.parse(rawQuery);
+  const service = createPartCategoryService(event);
+  if (query.tree) {
+    const tree = await service.getCategoryTree(query.maxDepth);
+    return createSuccessResponse("Category tree retrieved successfully", tree);
+  }
+  const { limit, offset } = calculateLimitOffset(query.page, query.perPage);
+  const filters = [];
+  if (query.parentId) {
+    filters.push({ field: "parentId", operator: "eq", value: query.parentId });
+  }
+  if (query.structural !== void 0) {
+    filters.push({ field: "structural", operator: "eq", value: query.structural });
+  }
+  const result = await service.listCategories(
+    limit,
+    offset,
+    query.search,
+    filters,
+    query.sortBy,
+    query.sortOrder
+  );
+  const response = buildPaginatedResponse(
+    result.data,
+    query.page,
+    query.perPage,
+    result.total
+  );
+  return createSuccessResponse(
+    "Part categories retrieved successfully",
+    response.items,
+    response.pagination
+  );
+});
+
+const index_get$d = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_get$c
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_post$8 = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const validated = createPartCategorySchema.parse(body);
+  const service = createPartCategoryService(event);
+  const category = await service.createCategory(validated);
+  return createSuccessResponse("Part category created successfully", category);
+});
+
+const index_post$9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_post$8
+}, Symbol.toStringTag, { value: 'Module' }));
+
+class PartRepository extends BaseRepository {
+  constructor(db) {
+    super(db);
+  }
+  /**
+   * Find part by ID with relations
+   */
+  async findById(id) {
+    const result = await this.drizzle.select().from(parts).where(
+      QueryHelpers.notDeleted(
+        parts,
+        eq(parts.id, id)
+      )
+    ).limit(1);
+    return result[0] || null;
+  }
+  /**
+   * Find all parts with pagination and filters
+   */
+  async findAll(limit = 100, offset = 0, searchTerm, filters, sortBy = "name", sortOrder = "asc") {
+    const conditions = [QueryHelpers.notDeleted(parts)];
+    if (searchTerm) {
+      conditions.push(
+        or(
+          like(parts.name, `%${searchTerm}%`),
+          like(parts.description, `%${searchTerm}%`),
+          like(parts.IPN, `%${searchTerm}%`),
+          like(parts.keywords, `%${searchTerm}%`)
+        )
+      );
+    }
+    if (filters && filters.length > 0) {
+      const filterCondition = this.buildFilters(parts, filters);
+      if (filterCondition) {
+        conditions.push(filterCondition);
+      }
+    }
+    const validConditions = conditions.filter((c) => c !== void 0);
+    let query = this.drizzle.select().from(parts).where(and(...validConditions)).limit(limit).offset(offset);
+    query = this.applySort(query, parts, sortBy, sortOrder);
+    return query;
+  }
+  /**
+   * Find parts by category
+   * @param categoryId Category ID
+   * @param cascade If true, includes parts from subcategories
+   */
+  async findByCategory(categoryId, cascade = false, limit = 100, offset = 0) {
+    if (cascade) {
+      const [category] = await this.drizzle.select().from(partCategories).where(eq(partCategories.id, categoryId)).limit(1);
+      if (!category) {
+        return [];
+      }
+      return this.drizzle.select().from(parts).innerJoin(
+        partCategories,
+        eq(parts.categoryId, partCategories.id)
+      ).where(
+        and(
+          or(
+            eq(parts.categoryId, categoryId),
+            like(partCategories.pathstring, `${category.pathstring}/%`)
+          ),
+          isNull(parts.deletedAt),
+          isNull(partCategories.deletedAt)
+        )
+      ).limit(limit).offset(offset);
+    } else {
+      return this.drizzle.select().from(parts).where(
+        QueryHelpers.notDeleted(
+          parts,
+          eq(parts.categoryId, categoryId)
+        )
+      ).limit(limit).offset(offset);
+    }
+  }
+  /**
+   * Find part by IPN (Internal Part Number)
+   */
+  async findByIPN(ipn) {
+    const result = await this.drizzle.select().from(parts).where(
+      QueryHelpers.notDeleted(
+        parts,
+        eq(parts.IPN, ipn)
+      )
+    ).limit(1);
+    return result[0] || null;
+  }
+  /**
+   * Create a new part
+   */
+  async create(data) {
+    const fullName = data.fullName || data.name;
+    const [part] = await this.drizzle.insert(parts).values({
+      ...data,
+      fullName
+    }).returning();
+    return part;
+  }
+  /**
+   * Update part fields
+   */
+  async update(id, data) {
+    const [part] = await this.drizzle.update(parts).set({
+      ...data,
+      updatedAt: /* @__PURE__ */ new Date()
+    }).where(eq(parts.id, id)).returning();
+    return part;
+  }
+  /**
+   * Soft delete a part
+   */
+  async softDelete(id) {
+    await this.drizzle.update(parts).set({ deletedAt: /* @__PURE__ */ new Date() }).where(eq(parts.id, id));
+  }
+  /**
+   * Count total parts
+   */
+  async count(filters) {
+    const conditions = [QueryHelpers.notDeleted(parts)];
+    if (filters && filters.length > 0) {
+      const filterCondition = this.buildFilters(parts, filters);
+      if (filterCondition) {
+        conditions.push(filterCondition);
+      }
+    }
+    const [result] = await this.drizzle.select({ count: count() }).from(parts).where(and(...conditions));
+    return result.count;
+  }
+  /**
+   * Count parts in a category
+   * @param categoryId Category ID
+   * @param cascade If true, includes parts from subcategories
+   */
+  async countByCategory(categoryId, cascade = false) {
+    if (cascade) {
+      const [category] = await this.drizzle.select().from(partCategories).where(eq(partCategories.id, categoryId)).limit(1);
+      if (!category) {
+        return 0;
+      }
+      const [result] = await this.drizzle.select({ count: count() }).from(parts).innerJoin(
+        partCategories,
+        eq(parts.categoryId, partCategories.id)
+      ).where(
+        and(
+          or(
+            eq(parts.categoryId, categoryId),
+            like(partCategories.pathstring, `${category.pathstring}/%`)
+          ),
+          isNull(parts.deletedAt),
+          isNull(partCategories.deletedAt)
+        )
+      );
+      return result.count;
+    } else {
+      const [result] = await this.drizzle.select({ count: count() }).from(parts).where(
+        and(
+          eq(parts.categoryId, categoryId),
+          isNull(parts.deletedAt)
+        )
+      );
+      return result.count;
+    }
+  }
+  /**
+   * Search parts by text across multiple fields
+   */
+  async search(searchTerm, limit = 50, offset = 0) {
+    return this.drizzle.select().from(parts).where(
+      and(
+        or(
+          like(parts.name, `%${searchTerm}%`),
+          like(parts.description, `%${searchTerm}%`),
+          like(parts.IPN, `%${searchTerm}%`),
+          like(parts.keywords, `%${searchTerm}%`)
+        ),
+        isNull(parts.deletedAt)
+      )
+    ).limit(limit).offset(offset).orderBy(parts.name);
+  }
+  /**
+   * Batch create parts
+   * Useful for imports
+   */
+  async batchCreate(partsData) {
+    if (partsData.length === 0) {
+      return [];
+    }
+    const parts$1 = await this.drizzle.insert(parts).values(partsData).returning();
+    return parts$1;
+  }
+}
+
+var __defProp$3 = Object.defineProperty;
+var __defNormalProp$3 = (obj, key, value) => key in obj ? __defProp$3(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$3 = (obj, key, value) => __defNormalProp$3(obj, typeof key !== "symbol" ? key + "" : key, value);
+class PartService {
+  constructor(event, db, partRepo, partCategoryRepo, auditLogRepo) {
+    this.event = event;
+    this.partRepo = partRepo;
+    this.partCategoryRepo = partCategoryRepo;
+    this.auditLogRepo = auditLogRepo;
+    __publicField$3(this, "db");
+    __publicField$3(this, "userId");
+    if (!db) {
+      throw new InternalServerError("Database not found in event context");
+    }
+    this.db = db;
+    this.userId = event.context.userId;
+  }
+  async logAudit(action, entityId, metadata) {
+    if (!this.userId) return;
+    return this.auditLogRepo.log(this.userId, action, "Part", entityId, {
+      requestId: this.event.context.requestId,
+      endpoint: this.event.context.endpoint,
+      method: this.event.context.method,
+      ipAddress: this.event.context.ipAddress,
+      userAgent: this.event.context.userAgent,
+      metadata
+    });
+  }
+  async createPart(data) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const category = await this.partCategoryRepo.findById(data.categoryId);
+    if (!category) {
+      throw new ValidationError("Category not found", {
+        field: "categoryId",
+        value: data.categoryId
+      });
+    }
+    if (category.structural) {
+      throw new ValidationError(
+        "Cannot assign parts to structural category",
+        { field: "categoryId", categoryId: data.categoryId }
+      );
+    }
+    if (data.IPN) {
+      const existing = await this.partRepo.findByIPN(data.IPN);
+      if (existing) {
+        throw new ValidationError("IPN already exists", {
+          field: "IPN",
+          value: data.IPN,
+          existingPartId: existing.id
+        });
+      }
+    }
+    const part = await this.partRepo.create({
+      ...data,
+      createdById: this.userId,
+      updatedById: this.userId
+    });
+    await this.logAudit("PART_CREATED", part.id, { name: part.name });
+    return part;
+  }
+  async updatePart(id, data) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const existing = await this.partRepo.findById(id);
+    if (!existing) {
+      throw new ValidationError("Part not found", { field: "id", value: id });
+    }
+    if (existing.locked) {
+      throw new ValidationError("Cannot update locked part", {
+        partId: id,
+        locked: true
+      });
+    }
+    if (data.IPN && data.IPN !== existing.IPN) {
+      const ipnExists = await this.partRepo.findByIPN(data.IPN);
+      if (ipnExists && ipnExists.id !== id) {
+        throw new ValidationError("IPN already exists", {
+          field: "IPN",
+          value: data.IPN
+        });
+      }
+    }
+    const part = await this.partRepo.update(id, {
+      ...data,
+      updatedById: this.userId
+    });
+    await this.logAudit("PART_UPDATED", id, { changes: data });
+    return part;
+  }
+  async deletePart(id) {
+    if (!this.userId) {
+      throw new AuthenticationError("User not authenticated");
+    }
+    const existing = await this.partRepo.findById(id);
+    if (!existing) {
+      throw new ValidationError("Part not found", { field: "id", value: id });
+    }
+    if (existing.locked) {
+      throw new ValidationError("Cannot delete locked part", {
+        partId: id,
+        locked: true
+      });
+    }
+    await this.partRepo.softDelete(id);
+    await this.logAudit("PART_DELETED", id);
+  }
+  async getPart(id) {
+    const part = await this.partRepo.findById(id);
+    if (!part) {
+      throw new ValidationError("Part not found", { field: "id", value: id });
+    }
+    return part;
+  }
+  async listParts(limit = 100, offset = 0, searchTerm, filters, sortBy = "name", sortOrder = "asc") {
+    const [parts, total] = await Promise.all([
+      this.partRepo.findAll(limit, offset, searchTerm, filters, sortBy, sortOrder),
+      this.partRepo.count(filters)
+    ]);
+    return { data: parts, total };
+  }
+  async searchParts(searchTerm, limit = 50, offset = 0) {
+    return this.partRepo.search(searchTerm, limit, offset);
+  }
+}
+function createPartService(event) {
+  const db = getDatabase(event);
+  if (!db) {
+    throw new InternalServerError("Database not available in context");
+  }
+  return new PartService(
+    event,
+    db,
+    new PartRepository(db),
+    new PartCategoryRepository(db),
+    new AuditLogRepository(db)
+  );
+}
+
+const createPartSchema = z.object({
+  name: z.string().min(1, "Name is required").max(250).trim(),
+  description: z.string().max(1e3).trim().optional().nullable(),
+  categoryId: z.string().uuid("Category ID must be a valid UUID"),
+  IPN: z.string().max(100).trim().optional().nullable(),
+  revision: z.string().max(50).trim().optional().nullable(),
+  keywords: z.string().max(250).trim().optional().nullable(),
+  // Boolean attributes
+  active: z.boolean().default(true),
+  virtual: z.boolean().default(false),
+  template: z.boolean().default(false),
+  assembly: z.boolean().default(false),
+  component: z.boolean().default(false),
+  trackable: z.boolean().default(false),
+  purchaseable: z.boolean().default(false),
+  salable: z.boolean().default(false),
+  testable: z.boolean().default(false),
+  locked: z.boolean().default(false),
+  // Stock settings
+  defaultLocationId: z.string().uuid().optional().nullable(),
+  minimumStock: z.number().nonnegative().default(0),
+  defaultExpiry: z.number().int().positive().optional().nullable(),
+  // Units
+  units: z.string().max(50).trim().optional().nullable(),
+  // Additional
+  notes: z.string().max(5e3).trim().optional().nullable(),
+  link: z.string().url().max(500).optional().nullable(),
+  imageId: z.string().uuid().optional().nullable(),
+  metadata: z.record(z.unknown()).optional().nullable()
+});
+const updatePartSchema = createPartSchema.partial().omit({ categoryId: true }).extend({
+  categoryId: z.string().uuid().optional()
+});
+const partIdSchema = z.object({
+  id: z.string().uuid("Part ID must be a valid UUID")
+});
+const listPartsSchema = z.object({
+  page: z.string().regex(/^\d+$/).transform(Number).default("1"),
+  perPage: z.string().regex(/^\d+$/).transform(Number).refine((val) => val <= 100).default("20"),
+  search: z.string().max(250).trim().optional(),
+  categoryId: z.string().uuid().optional(),
+  active: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  purchaseable: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  salable: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  assembly: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  sortBy: z.enum(["name", "createdAt", "updatedAt", "IPN"]).default("name"),
+  sortOrder: z.enum(["asc", "desc"]).default("asc")
+});
+
+const _id__delete$6 = defineEventHandler(async (event) => {
+  const params = partIdSchema.parse(event.context.params);
+  const service = createPartService(event);
+  await service.deletePart(params.id);
+  return createSuccessResponse("Part deleted successfully", null);
+});
+
+const _id__delete$7 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__delete$6
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__get$8 = defineEventHandler(async (event) => {
+  const params = partIdSchema.parse(event.context.params);
+  const service = createPartService(event);
+  const part = await service.getPart(params.id);
+  return createSuccessResponse("Part retrieved successfully", part);
+});
+
+const _id__get$9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__get$8
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__put$6 = defineEventHandler(async (event) => {
+  const params = partIdSchema.parse(event.context.params);
+  const body = await readBody(event);
+  const validated = updatePartSchema.parse(body);
+  const service = createPartService(event);
+  const part = await service.updatePart(params.id, validated);
+  return createSuccessResponse("Part updated successfully", part);
+});
+
+const _id__put$7 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__put$6
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_get$a = defineEventHandler(async (event) => {
+  const rawQuery = getQuery$1(event);
+  const query = listPartsSchema.parse(rawQuery);
+  const service = createPartService(event);
+  const { limit, offset } = calculateLimitOffset(query.page, query.perPage);
+  const filters = [];
+  if (query.categoryId) filters.push({ field: "categoryId", operator: "eq", value: query.categoryId });
+  if (query.active !== void 0) filters.push({ field: "active", operator: "eq", value: query.active });
+  if (query.purchaseable !== void 0) filters.push({ field: "purchaseable", operator: "eq", value: query.purchaseable });
+  if (query.salable !== void 0) filters.push({ field: "salable", operator: "eq", value: query.salable });
+  if (query.assembly !== void 0) filters.push({ field: "assembly", operator: "eq", value: query.assembly });
+  const result = await service.listParts(limit, offset, query.search, filters, query.sortBy, query.sortOrder);
+  const response = buildPaginatedResponse(result.data, query.page, query.perPage, result.total);
+  return createSuccessResponse("Parts retrieved successfully", response.items, response.pagination);
+});
+
+const index_get$b = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_get$a
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_post$6 = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const validated = createPartSchema.parse(body);
+  const service = createPartService(event);
+  const part = await service.createPart(validated);
+  return createSuccessResponse("Part created successfully", part);
+});
+
+const index_post$7 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_post$6
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var __defProp$2 = Object.defineProperty;
+var __defNormalProp$2 = (obj, key, value) => key in obj ? __defProp$2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$2 = (obj, key, value) => __defNormalProp$2(obj, key + "" , value);
 class RoleRepository extends BaseRepository {
   /**
    * Create a new role
@@ -4991,21 +6813,21 @@ class RoleRepository extends BaseRepository {
    * Get role by ID
    */
   async getRoleById(roleId) {
-    const [role] = await this.drizzle.select().from(roles).where(and(eq(roles.id, roleId), this.notDeleted(roles)));
+    const [role] = await this.drizzle.select().from(roles).where(QueryHelpers.notDeleted(roles, eq(roles.id, roleId)));
     return role || null;
   }
   /**
    * Get role by name
    */
   async getRoleByName(name) {
-    const [role] = await this.drizzle.select().from(roles).where(and(eq(roles.name, name), this.notDeleted(roles)));
+    const [role] = await this.drizzle.select().from(roles).where(QueryHelpers.notDeleted(roles, eq(roles.name, name)));
     return role || null;
   }
   /**
    * Count roles with optional filters
    */
   async countRoles(filters, options) {
-    const conditions = [this.notDeleted(roles)];
+    const conditions = [QueryHelpers.notDeleted(roles)];
     if ((options == null ? void 0 : options.includeSystem) === false) {
       conditions.push(eq(roles.isSystem, false));
     }
@@ -5016,7 +6838,7 @@ class RoleRepository extends BaseRepository {
    * List all roles with optional filters and sorting
    */
   async listRoles(limit, offset, filters, sortBy, sortOrder, options) {
-    const conditions = [this.notDeleted(roles)];
+    const conditions = [QueryHelpers.notDeleted(roles)];
     if ((options == null ? void 0 : options.includeSystem) === false) {
       conditions.push(eq(roles.isSystem, false));
     }
@@ -5050,7 +6872,7 @@ class RoleRepository extends BaseRepository {
     const [role] = await this.drizzle.update(roles).set({
       ...data,
       updatedAt: /* @__PURE__ */ new Date()
-    }).where(and(eq(roles.id, roleId), this.notDeleted(roles))).returning();
+    }).where(QueryHelpers.notDeleted(roles, eq(roles.id, roleId))).returning();
     return role || null;
   }
   /**
@@ -5066,7 +6888,7 @@ class RoleRepository extends BaseRepository {
     }
     const [deleted] = await this.drizzle.update(roles).set({
       deletedAt: /* @__PURE__ */ new Date()
-    }).where(and(eq(roles.id, roleId), this.notDeleted(roles))).returning();
+    }).where(QueryHelpers.notDeleted(roles, eq(roles.id, roleId))).returning();
     return !!deleted;
   }
   /**
@@ -5100,7 +6922,7 @@ class RoleRepository extends BaseRepository {
 class UserRoleRepository extends BaseRepository {
   constructor(database) {
     super(database);
-    __publicField$1(this, "roleRepo");
+    __publicField$2(this, "roleRepo");
     this.roleRepo = new RoleRepository(database);
   }
   /**
@@ -5109,10 +6931,10 @@ class UserRoleRepository extends BaseRepository {
   async assignRoleToUser(userId, roleId) {
     const now = /* @__PURE__ */ new Date();
     const existing = await this.drizzle.select().from(userRoles).where(
-      and(
+      QueryHelpers.notDeleted(
+        userRoles,
         eq(userRoles.userId, userId),
-        eq(userRoles.roleId, roleId),
-        this.notDeleted(userRoles)
+        eq(userRoles.roleId, roleId)
       )
     );
     if (existing.length > 0) {
@@ -5135,10 +6957,10 @@ class UserRoleRepository extends BaseRepository {
     const [removed] = await this.drizzle.update(userRoles).set({
       deletedAt: /* @__PURE__ */ new Date()
     }).where(
-      and(
+      QueryHelpers.notDeleted(
+        userRoles,
         eq(userRoles.userId, userId),
-        eq(userRoles.roleId, roleId),
-        this.notDeleted(userRoles)
+        eq(userRoles.roleId, roleId)
       )
     ).returning();
     return !!removed;
@@ -5151,11 +6973,11 @@ class UserRoleRepository extends BaseRepository {
       role: roles
     }).from(userRoles).innerJoin(
       roles,
-      and(
-        eq(userRoles.roleId, roles.id),
-        this.notDeleted(roles)
+      QueryHelpers.notDeleted(
+        roles,
+        eq(userRoles.roleId, roles.id)
       )
-    ).where(and(eq(userRoles.userId, userId), this.notDeleted(userRoles)));
+    ).where(QueryHelpers.notDeleted(userRoles, eq(userRoles.userId, userId)));
     return userRoleAssignments.map((ur) => ur.role);
   }
   /**
@@ -5186,18 +7008,18 @@ class UserRoleRepository extends BaseRepository {
       user: users
     }).from(userRoles).innerJoin(
       users,
-      and(
-        eq(userRoles.userId, users.id),
-        this.notDeleted(users)
+      QueryHelpers.notDeleted(
+        users,
+        eq(userRoles.userId, users.id)
       )
-    ).where(and(eq(userRoles.roleId, roleId), this.notDeleted(userRoles)));
+    ).where(QueryHelpers.notDeleted(userRoles, eq(userRoles.roleId, roleId)));
     return userRoleAssignments.map((ur) => ur.user);
   }
   /**
    * Replace all roles for a user (removes all existing, assigns new ones)
    */
   async replaceUserRoles(userId, roleIds) {
-    const existing = await this.drizzle.select().from(userRoles).where(and(eq(userRoles.userId, userId), this.notDeleted(userRoles)));
+    const existing = await this.drizzle.select().from(userRoles).where(QueryHelpers.notDeleted(userRoles, eq(userRoles.userId, userId)));
     for (const assignment of existing) {
       await this.drizzle.update(userRoles).set({ deletedAt: /* @__PURE__ */ new Date() }).where(eq(userRoles.id, assignment.id));
     }
@@ -5214,7 +7036,7 @@ class PermissionRepository extends BaseRepository {
    * Get permission by code
    */
   async getPermissionByCode(code) {
-    const [permission] = await this.drizzle.select().from(permissions).where(and(eq(permissions.code, code), this.notDeleted(permissions)));
+    const [permission] = await this.drizzle.select().from(permissions).where(QueryHelpers.notDeleted(permissions, eq(permissions.code, code)));
     return permission || null;
   }
   /**
@@ -5223,7 +7045,7 @@ class PermissionRepository extends BaseRepository {
   async countPermissions(filters) {
     return this.countRecords(
       permissions,
-      this.notDeleted(permissions),
+      QueryHelpers.notDeleted(permissions),
       filters
     );
   }
@@ -5231,7 +7053,7 @@ class PermissionRepository extends BaseRepository {
    * List all permissions with optional filters and sorting
    */
   async listPermissions(limit, offset, filters, sortBy, sortOrder) {
-    const conditions = [this.notDeleted(permissions)];
+    const conditions = [QueryHelpers.notDeleted(permissions)];
     if (filters && filters.length > 0) {
       const filterCondition = this.buildFilters(permissions, filters);
       if (filterCondition) {
@@ -5260,7 +7082,7 @@ class PermissionRepository extends BaseRepository {
    */
   async listPermissionsByCategory(category) {
     return this.drizzle.select().from(permissions).where(
-      and(eq(permissions.category, category), this.notDeleted(permissions))
+      QueryHelpers.notDeleted(permissions, eq(permissions.category, category))
     ).orderBy(permissions.code);
   }
   /**
@@ -5270,25 +7092,22 @@ class PermissionRepository extends BaseRepository {
   async validatePermissions(codes) {
     if (codes.length === 0) return true;
     const found = await this.drizzle.select().from(permissions).where(
-      and(
-        inArray(permissions.code, codes),
-        this.notDeleted(permissions)
-      )
+      QueryHelpers.notDeleted(permissions, inArray(permissions.code, codes))
     );
     return found.length === codes.length;
   }
 }
 
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var __defProp$1 = Object.defineProperty;
+var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField$1 = (obj, key, value) => __defNormalProp$1(obj, typeof key !== "symbol" ? key + "" : key, value);
 class RBACService {
   constructor(database, config) {
-    __publicField(this, "roleRepo");
-    __publicField(this, "userRoleRepo");
-    __publicField(this, "permissionRepo");
-    __publicField(this, "userRepo");
-    __publicField(this, "config");
+    __publicField$1(this, "roleRepo");
+    __publicField$1(this, "userRoleRepo");
+    __publicField$1(this, "permissionRepo");
+    __publicField$1(this, "userRepo");
+    __publicField$1(this, "config");
     var _a, _b;
     this.roleRepo = new RoleRepository(database);
     this.userRoleRepo = new UserRoleRepository(database);
@@ -5540,7 +7359,7 @@ const rbac = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   requirePermission: requirePermission
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const index_get$4 = defineEventHandler(async (event) => {
+const index_get$8 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:view");
   const query = parseListQuery(event);
   const allowedSortFields = ["code", "category", "description"];
@@ -5567,12 +7386,12 @@ const index_get$4 = defineEventHandler(async (event) => {
   );
 });
 
-const index_get$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const index_get$9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: index_get$4
+  default: index_get$8
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const _id__delete = defineEventHandler(async (event) => {
+const _id__delete$4 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:delete");
   const roleId = getRouterParam(event, "id");
   if (!roleId) {
@@ -5586,12 +7405,12 @@ const _id__delete = defineEventHandler(async (event) => {
   return createSuccessResponse("Role deleted successfully", { deleted: true });
 });
 
-const _id__delete$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const _id__delete$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: _id__delete
+  default: _id__delete$4
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const _id__get$2 = defineEventHandler(async (event) => {
+const _id__get$6 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:view");
   const roleId = getRouterParam(event, "id");
   if (!roleId) {
@@ -5605,9 +7424,9 @@ const _id__get$2 = defineEventHandler(async (event) => {
   return createSuccessResponse("Role retrieved successfully", role);
 });
 
-const _id__get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const _id__get$7 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: _id__get$2
+  default: _id__get$6
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const updateRoleSchema = z.object({
@@ -5615,7 +7434,7 @@ const updateRoleSchema = z.object({
   description: z.string().optional(),
   permissions: z.array(z.string()).optional()
 });
-const _id__put = defineEventHandler(async (event) => {
+const _id__put$4 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:update");
   const roleId = getRouterParam(event, "id");
   if (!roleId) {
@@ -5642,12 +7461,12 @@ const _id__put = defineEventHandler(async (event) => {
   return createSuccessResponse("Role updated successfully", role);
 });
 
-const _id__put$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const _id__put$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: _id__put
+  default: _id__put$4
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const index_get$2 = defineEventHandler(async (event) => {
+const index_get$6 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:view");
   const query = parseListQuery(event);
   const rawQuery = getQuery$1(event);
@@ -5676,9 +7495,9 @@ const index_get$2 = defineEventHandler(async (event) => {
   );
 });
 
-const index_get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const index_get$7 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: index_get$2
+  default: index_get$6
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const createRoleSchema = z.object({
@@ -5686,7 +7505,7 @@ const createRoleSchema = z.object({
   description: z.string().optional(),
   permissions: z.array(z.string())
 });
-const index_post = defineEventHandler(async (event) => {
+const index_post$4 = defineEventHandler(async (event) => {
   await requirePermission(event, "roles:create");
   const body = await readBody(event);
   const validated = createRoleSchema.parse(body);
@@ -5708,9 +7527,826 @@ const index_post = defineEventHandler(async (event) => {
   return createSuccessResponse("Role created successfully", role);
 });
 
+const index_post$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_post$4
+}, Symbol.toStringTag, { value: 'Module' }));
+
+class StockItemService {
+  constructor(stockItemRepo, partRepo, stockLocationRepo, auditLogRepo, userId) {
+    this.stockItemRepo = stockItemRepo;
+    this.partRepo = partRepo;
+    this.stockLocationRepo = stockLocationRepo;
+    this.auditLogRepo = auditLogRepo;
+    this.userId = userId;
+  }
+  requireAuth() {
+    if (!this.userId) {
+      throw new Error("Authentication required");
+    }
+    return this.userId;
+  }
+  async createStockItem(data) {
+    const userId = this.requireAuth();
+    const part = await this.partRepo.findById(data.partId);
+    if (!part) {
+      throw new Error("Part not found");
+    }
+    const location = await this.stockLocationRepo.findById(data.locationId);
+    if (!location) {
+      throw new Error("Stock location not found");
+    }
+    if (data.quantity <= 0) {
+      throw new Error("Quantity must be greater than 0");
+    }
+    if (data.serial) {
+      const existing = await this.stockItemRepo.findBySerial(data.serial);
+      if (existing) {
+        throw new Error("Serial number already exists");
+      }
+      if (data.quantity !== 1) {
+        throw new Error("Serialized items must have quantity of 1");
+      }
+    }
+    const stockItem = await this.stockItemRepo.create(data);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_ITEM_CREATED",
+      "StockItem",
+      stockItem.id,
+      { stockItem }
+    );
+    return stockItem;
+  }
+  async updateStockItem(id, data) {
+    const userId = this.requireAuth();
+    const stockItem = await this.stockItemRepo.findById(id);
+    if (!stockItem) {
+      throw new Error("Stock item not found");
+    }
+    const updated = await this.stockItemRepo.update(id, data);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_ITEM_UPDATED",
+      "StockItem",
+      id,
+      { before: stockItem, after: updated }
+    );
+    return updated;
+  }
+  async deleteStockItem(id) {
+    const userId = this.requireAuth();
+    const stockItem = await this.stockItemRepo.findById(id);
+    if (!stockItem) {
+      throw new Error("Stock item not found");
+    }
+    await this.stockItemRepo.softDelete(id);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_ITEM_DELETED",
+      "StockItem",
+      id,
+      { stockItem }
+    );
+  }
+  async moveStockItem(id, newLocationId) {
+    const userId = this.requireAuth();
+    const stockItem = await this.stockItemRepo.findById(id);
+    if (!stockItem) {
+      throw new Error("Stock item not found");
+    }
+    const location = await this.stockLocationRepo.findById(newLocationId);
+    if (!location) {
+      throw new Error("Stock location not found");
+    }
+    const moved = await this.stockItemRepo.move(id, newLocationId);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_ITEM_MOVED",
+      "StockItem",
+      id,
+      {
+        from: stockItem.locationId,
+        to: newLocationId
+      }
+    );
+    return moved;
+  }
+  async adjustQuantity(id, adjustment) {
+    const userId = this.requireAuth();
+    const stockItem = await this.stockItemRepo.findById(id);
+    if (!stockItem) {
+      throw new Error("Stock item not found");
+    }
+    if (stockItem.serial) {
+      throw new Error("Cannot adjust quantity of serialized items");
+    }
+    const adjusted = await this.stockItemRepo.adjustQuantity(id, adjustment);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_ITEM_ADJUSTED",
+      "StockItem",
+      id,
+      {
+        oldQuantity: stockItem.quantity,
+        adjustment,
+        newQuantity: adjusted.quantity
+      }
+    );
+    return adjusted;
+  }
+  async getStockItem(id) {
+    const stockItem = await this.stockItemRepo.findById(id);
+    if (!stockItem) {
+      throw new Error("Stock item not found");
+    }
+    return stockItem;
+  }
+  async listStockItems(limit = 100, offset = 0, searchTerm, filters, sortBy, sortOrder) {
+    const data = await this.stockItemRepo.findAll(
+      limit,
+      offset,
+      searchTerm,
+      filters,
+      sortBy,
+      sortOrder
+    );
+    const total = await this.stockItemRepo.count(filters);
+    return { data, total };
+  }
+  async getStockItemsByPart(partId, limit = 100, offset = 0) {
+    return this.stockItemRepo.findByPart(partId, limit, offset);
+  }
+  async getStockItemsByLocation(locationId, limit = 100, offset = 0) {
+    return this.stockItemRepo.findByLocation(locationId, limit, offset);
+  }
+  async getPartStockLevel(partId, status = "OK") {
+    return this.stockItemRepo.getTotalQuantity(partId, status);
+  }
+}
+function createStockItemService(event) {
+  const { stockItemRepo, partRepo, stockLocationRepo, auditLogRepo } = event.context.repositories;
+  const userId = event.context.userId;
+  return new StockItemService(
+    stockItemRepo,
+    partRepo,
+    stockLocationRepo,
+    auditLogRepo,
+    userId
+  );
+}
+
+const stockStatusEnum = z.enum([
+  "OK",
+  "DAMAGED",
+  "DESTROYED",
+  "REJECTED",
+  "LOST",
+  "QUARANTINED"
+]);
+const createStockItemSchema = z.object({
+  partId: z.string().uuid("Part ID must be a valid UUID"),
+  locationId: z.string().uuid("Location ID must be a valid UUID"),
+  quantity: z.number().positive("Quantity must be greater than 0"),
+  batch: z.string().max(100).trim().optional().nullable(),
+  serial: z.string().max(100).trim().optional().nullable(),
+  status: stockStatusEnum.default("OK"),
+  expiryDate: z.string().datetime().optional().nullable(),
+  purchasePrice: z.number().nonnegative().optional().nullable(),
+  notes: z.string().max(5e3).trim().optional().nullable()
+});
+const updateStockItemSchema = z.object({
+  status: stockStatusEnum.optional(),
+  expiryDate: z.string().datetime().optional().nullable(),
+  purchasePrice: z.number().nonnegative().optional().nullable(),
+  notes: z.string().max(5e3).trim().optional().nullable(),
+  batch: z.string().max(100).trim().optional().nullable()
+});
+const stockItemIdSchema = z.object({
+  id: z.string().uuid("Stock Item ID must be a valid UUID")
+});
+const moveStockItemSchema = z.object({
+  id: z.string().uuid("Stock Item ID must be a valid UUID"),
+  locationId: z.string().uuid("Location ID must be a valid UUID")
+});
+const adjustQuantitySchema = z.object({
+  id: z.string().uuid("Stock Item ID must be a valid UUID"),
+  adjustment: z.number().refine((val) => val !== 0, "Adjustment cannot be zero")
+});
+const listStockItemsSchema = z.object({
+  page: z.string().regex(/^\d+$/).transform(Number).default("1"),
+  perPage: z.string().regex(/^\d+$/).transform(Number).refine((val) => val <= 100).default("20"),
+  search: z.string().max(250).trim().optional(),
+  partId: z.string().uuid().optional(),
+  locationId: z.string().uuid().optional(),
+  status: stockStatusEnum.optional(),
+  batch: z.string().max(100).trim().optional(),
+  sortBy: z.enum(["createdAt", "updatedAt", "quantity", "expiryDate"]).default("createdAt"),
+  sortOrder: z.enum(["asc", "desc"]).default("desc")
+});
+z.object({
+  partId: z.string().uuid("Part ID must be a valid UUID"),
+  status: stockStatusEnum.optional().default("OK")
+});
+
+const _id__delete$2 = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const validated = stockItemIdSchema.parse({ id });
+  const service = createStockItemService(event);
+  await service.deleteStockItem(validated.id);
+  return createSuccessResponse("Stock item deleted successfully", null);
+});
+
+const _id__delete$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__delete$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__get$4 = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const validated = stockItemIdSchema.parse({ id });
+  const service = createStockItemService(event);
+  const stockItem = await service.getStockItem(validated.id);
+  return createSuccessResponse("Stock item retrieved successfully", stockItem);
+});
+
+const _id__get$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__get$4
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__put$2 = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const validated = stockItemIdSchema.parse({ id });
+  const body = await readBody(event);
+  const data = updateStockItemSchema.parse(body);
+  const updateData = {
+    ...data,
+    expiryDate: data.expiryDate ? new Date(data.expiryDate) : void 0
+  };
+  const service = createStockItemService(event);
+  const stockItem = await service.updateStockItem(validated.id, updateData);
+  return createSuccessResponse("Stock item updated successfully", stockItem);
+});
+
+const _id__put$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__put$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const adjust_post = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const body = await readBody(event);
+  const validated = adjustQuantitySchema.parse({ id, ...body });
+  const service = createStockItemService(event);
+  const stockItem = await service.adjustQuantity(validated.id, validated.adjustment);
+  return createSuccessResponse("Stock quantity adjusted successfully", stockItem);
+});
+
+const adjust_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: adjust_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const move_post = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const body = await readBody(event);
+  const validated = moveStockItemSchema.parse({ id, ...body });
+  const service = createStockItemService(event);
+  const stockItem = await service.moveStockItem(validated.id, validated.locationId);
+  return createSuccessResponse("Stock item moved successfully", stockItem);
+});
+
+const move_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: move_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_get$4 = defineEventHandler(async (event) => {
+  const rawQuery = getQuery$1(event);
+  const query = listStockItemsSchema.parse(rawQuery);
+  const service = createStockItemService(event);
+  const { limit, offset } = calculateLimitOffset(query.page, query.perPage);
+  const filters = [];
+  if (query.partId) filters.push({ field: "partId", operator: "eq", value: query.partId });
+  if (query.locationId) filters.push({ field: "locationId", operator: "eq", value: query.locationId });
+  if (query.status) filters.push({ field: "status", operator: "eq", value: query.status });
+  if (query.batch) filters.push({ field: "batch", operator: "eq", value: query.batch });
+  const result = await service.listStockItems(limit, offset, query.search, filters, query.sortBy, query.sortOrder);
+  const response = buildPaginatedResponse(result.data, query.page, query.perPage, result.total);
+  return createSuccessResponse("Stock items retrieved successfully", response.items, response.pagination);
+});
+
+const index_get$5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_get$4
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_post$2 = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const validated = createStockItemSchema.parse(body);
+  const data = {
+    ...validated,
+    expiryDate: validated.expiryDate ? new Date(validated.expiryDate) : void 0
+  };
+  const service = createStockItemService(event);
+  const stockItem = await service.createStockItem(data);
+  return createSuccessResponse("Stock item created successfully", stockItem);
+});
+
+const index_post$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_post$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+class StockLocationService {
+  constructor(stockLocationRepo, stockItemRepo, auditLogRepo, userId) {
+    this.stockLocationRepo = stockLocationRepo;
+    this.stockItemRepo = stockItemRepo;
+    this.auditLogRepo = auditLogRepo;
+    this.userId = userId;
+  }
+  requireAuth() {
+    if (!this.userId) {
+      throw new Error("Authentication required");
+    }
+    return this.userId;
+  }
+  async createLocation(data) {
+    const userId = this.requireAuth();
+    if (data.parentId) {
+      const parent = await this.stockLocationRepo.findById(data.parentId);
+      if (!parent) {
+        throw new Error("Parent location not found");
+      }
+    }
+    const location = await this.stockLocationRepo.create(data);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_LOCATION_CREATED",
+      "StockLocation",
+      location.id,
+      { location }
+    );
+    return location;
+  }
+  async updateLocation(id, data) {
+    const userId = this.requireAuth();
+    const location = await this.stockLocationRepo.findById(id);
+    if (!location) {
+      throw new Error("Stock location not found");
+    }
+    const updated = await this.stockLocationRepo.update(id, data);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_LOCATION_UPDATED",
+      "StockLocation",
+      id,
+      { before: location, after: updated }
+    );
+    return updated;
+  }
+  async deleteLocation(id, cascade = false) {
+    const userId = this.requireAuth();
+    const location = await this.stockLocationRepo.findById(id);
+    if (!location) {
+      throw new Error("Stock location not found");
+    }
+    const stockItems = await this.stockItemRepo.findByLocation(id, 1, 0);
+    if (stockItems.length > 0) {
+      throw new Error("Cannot delete location with stock items. Move or remove stock items first.");
+    }
+    if (cascade) {
+      const descendants = await this.stockLocationRepo.getDescendants(id);
+      for (const descendant of descendants.reverse()) {
+        await this.stockLocationRepo.softDelete(descendant.id);
+      }
+    } else {
+      const children = await this.stockLocationRepo.findByParentId(id);
+      if (children.length > 0) {
+        throw new Error("Cannot delete location with child locations. Use cascade delete or remove children first.");
+      }
+    }
+    await this.stockLocationRepo.softDelete(id);
+    await this.auditLogRepo.log(
+      userId,
+      "STOCK_LOCATION_DELETED",
+      "StockLocation",
+      id,
+      { location, cascade }
+    );
+  }
+  async getLocation(id) {
+    const location = await this.stockLocationRepo.findById(id);
+    if (!location) {
+      throw new Error("Stock location not found");
+    }
+    return location;
+  }
+  async listLocations(limit = 100, offset = 0, searchTerm, filters, sortBy, sortOrder) {
+    const data = await this.stockLocationRepo.findAll(
+      limit,
+      offset,
+      searchTerm,
+      filters,
+      sortBy,
+      sortOrder
+    );
+    const total = await this.stockLocationRepo.count(filters);
+    return { data, total };
+  }
+  async getLocationTree(parentId) {
+    return this.stockLocationRepo.findByParentId(parentId || null);
+  }
+  async getAncestors(id) {
+    return this.stockLocationRepo.getAncestors(id);
+  }
+  async getDescendants(id, maxDepth) {
+    return this.stockLocationRepo.getDescendants(id, maxDepth);
+  }
+}
+function createStockLocationService(event) {
+  const { stockLocationRepo, stockItemRepo, auditLogRepo } = event.context.repositories;
+  const userId = event.context.userId;
+  return new StockLocationService(
+    stockLocationRepo,
+    stockItemRepo,
+    auditLogRepo,
+    userId
+  );
+}
+
+const createStockLocationSchema = z.object({
+  name: z.string().min(1, "Name is required").max(200).trim(),
+  description: z.string().max(1e3).trim().optional().nullable(),
+  parentId: z.string().uuid("Parent ID must be a valid UUID").optional().nullable(),
+  structural: z.boolean().default(false),
+  external: z.boolean().default(false)
+});
+const updateStockLocationSchema = createStockLocationSchema.partial().omit({ parentId: true });
+const stockLocationIdSchema = z.object({
+  id: z.string().uuid("Stock Location ID must be a valid UUID")
+});
+const deleteStockLocationSchema = z.object({
+  id: z.string().uuid("Stock Location ID must be a valid UUID"),
+  cascade: z.enum(["true", "false"]).transform((val) => val === "true").optional().default("false")
+});
+const listStockLocationsSchema = z.object({
+  page: z.string().regex(/^\d+$/).transform(Number).default("1"),
+  perPage: z.string().regex(/^\d+$/).transform(Number).refine((val) => val <= 100).default("20"),
+  search: z.string().max(250).trim().optional(),
+  parentId: z.string().uuid().optional(),
+  structural: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  external: z.enum(["true", "false"]).transform((val) => val === "true").optional(),
+  sortBy: z.enum(["name", "createdAt", "updatedAt"]).default("name"),
+  sortOrder: z.enum(["asc", "desc"]).default("asc")
+});
+const getStockLocationTreeSchema = z.object({
+  parentId: z.string().uuid().optional()
+});
+
+const _id__delete = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const rawQuery = getQuery$1(event);
+  const validated = deleteStockLocationSchema.parse({ id, ...rawQuery });
+  const service = createStockLocationService(event);
+  await service.deleteLocation(validated.id, validated.cascade);
+  return createSuccessResponse("Stock location deleted successfully", null);
+});
+
+const _id__delete$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__delete
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__get$2 = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const validated = stockLocationIdSchema.parse({ id });
+  const service = createStockLocationService(event);
+  const location = await service.getLocation(validated.id);
+  return createSuccessResponse("Stock location retrieved successfully", location);
+});
+
+const _id__get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__get$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _id__put = defineEventHandler(async (event) => {
+  const id = getRouterParam(event, "id");
+  const validated = stockLocationIdSchema.parse({ id });
+  const body = await readBody(event);
+  const data = updateStockLocationSchema.parse(body);
+  const service = createStockLocationService(event);
+  const location = await service.updateLocation(validated.id, data);
+  return createSuccessResponse("Stock location updated successfully", location);
+});
+
+const _id__put$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _id__put
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_get$2 = defineEventHandler(async (event) => {
+  const rawQuery = getQuery$1(event);
+  const query = listStockLocationsSchema.parse(rawQuery);
+  const service = createStockLocationService(event);
+  const { limit, offset } = calculateLimitOffset(query.page, query.perPage);
+  const filters = [];
+  if (query.parentId) filters.push({ field: "parentId", operator: "eq", value: query.parentId });
+  if (query.structural !== void 0) filters.push({ field: "structural", operator: "eq", value: query.structural });
+  if (query.external !== void 0) filters.push({ field: "external", operator: "eq", value: query.external });
+  const result = await service.listLocations(limit, offset, query.search, filters, query.sortBy, query.sortOrder);
+  const response = buildPaginatedResponse(result.data, query.page, query.perPage, result.total);
+  return createSuccessResponse("Stock locations retrieved successfully", response.items, response.pagination);
+});
+
+const index_get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_get$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const index_post = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const validated = createStockLocationSchema.parse(body);
+  const service = createStockLocationService(event);
+  const location = await service.createLocation(validated);
+  return createSuccessResponse("Stock location created successfully", location);
+});
+
 const index_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: index_post
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const tree_get = defineEventHandler(async (event) => {
+  const rawQuery = getQuery$1(event);
+  const query = getStockLocationTreeSchema.parse(rawQuery);
+  const service = createStockLocationService(event);
+  const tree = await service.getLocationTree(query.parentId);
+  return createSuccessResponse("Stock location tree retrieved successfully", tree);
+});
+
+const tree_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: tree_get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+class R2StorageService {
+  constructor(event) {
+    this.event = event;
+    __publicField(this, "r2");
+    __publicField(this, "baseUrl");
+    var _a, _b, _c, _d;
+    this.r2 = (_b = (_a = event.context.cloudflare) == null ? void 0 : _a.env) == null ? void 0 : _b.R2;
+    if (!this.r2) {
+      throw new InternalServerError("R2 bucket not available in context");
+    }
+    this.baseUrl = ((_d = (_c = event.context.cloudflare) == null ? void 0 : _c.env) == null ? void 0 : _d.R2_PUBLIC_URL) || "https://r2.example.com";
+  }
+  /**
+   * Upload a file to R2
+   * @param buffer File buffer
+   * @param fileName Original file name
+   * @param mimeType MIME type of the file
+   * @param folder Folder to organize files (e.g., "part-images", "documents")
+   * @returns Object with key and URL
+   */
+  async uploadFile(buffer, fileName, mimeType, folder = "uploads") {
+    const key = this.generateKey(fileName, folder);
+    await this.r2.put(key, buffer, {
+      httpMetadata: {
+        contentType: mimeType
+      }
+    });
+    const url = this.getPublicUrl(key);
+    return { key, url };
+  }
+  /**
+   * Delete a file from R2
+   * @param key R2 object key
+   */
+  async deleteFile(key) {
+    await this.r2.delete(key);
+  }
+  /**
+   * Get a signed URL for temporary access to a file
+   * Note: R2 signed URLs require R2 API tokens
+   * For now, returns public URL
+   * @param key R2 object key
+   * @param expiresIn Expiration time in seconds
+   */
+  async getSignedUrl(key, expiresIn = 3600) {
+    return this.getPublicUrl(key);
+  }
+  /**
+   * Get public URL for an R2 object
+   * @param key R2 object key
+   */
+  getPublicUrl(key) {
+    return `${this.baseUrl}/${key}`;
+  }
+  /**
+   * Check if a file exists in R2
+   * @param key R2 object key
+   */
+  async fileExists(key) {
+    const object = await this.r2.get(key);
+    return object !== null;
+  }
+  /**
+   * Generate a unique key for a file
+   * Format: folder/YYYY/MM/uuid-filename.ext
+   * @param fileName Original file name
+   * @param folder Folder to organize files
+   */
+  generateKey(fileName, folder = "uploads") {
+    const sanitized = this.sanitizeFileName(fileName);
+    const now = /* @__PURE__ */ new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const uuid = crypto.randomUUID();
+    const lastDotIndex = sanitized.lastIndexOf(".");
+    const ext = lastDotIndex !== -1 ? sanitized.slice(lastDotIndex) : "";
+    const name = lastDotIndex !== -1 ? sanitized.slice(0, lastDotIndex) : sanitized;
+    return `${folder}/${year}/${month}/${uuid}-${name}${ext}`;
+  }
+  /**
+   * Sanitize file name to remove special characters
+   * @param fileName Original file name
+   */
+  sanitizeFileName(fileName) {
+    return fileName.toLowerCase().replace(/[^a-z0-9.-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  }
+  /**
+   * Get file metadata
+   * @param key R2 object key
+   */
+  async getFileMetadata(key) {
+    var _a;
+    const object = await this.r2.get(key);
+    if (!object) {
+      return null;
+    }
+    return {
+      size: object.size,
+      uploaded: object.uploaded,
+      contentType: (_a = object.httpMetadata) == null ? void 0 : _a.contentType
+    };
+  }
+}
+function createR2StorageService(event) {
+  return new R2StorageService(event);
+}
+
+class AttachmentRepository extends BaseRepository {
+  constructor(db) {
+    super(db);
+  }
+  /**
+   * Find attachment by ID
+   */
+  async findById(id) {
+    const result = await this.drizzle.select().from(attachments).where(
+      QueryHelpers.notDeleted(
+        attachments,
+        eq(attachments.id, id)
+      )
+    ).limit(1);
+    return result[0] || null;
+  }
+  /**
+   * Find attachment by R2 key
+   */
+  async findByR2Key(r2Key) {
+    const result = await this.drizzle.select().from(attachments).where(
+      QueryHelpers.notDeleted(
+        attachments,
+        eq(attachments.r2Key, r2Key)
+      )
+    ).limit(1);
+    return result[0] || null;
+  }
+  /**
+   * Create a new attachment
+   */
+  async create(data) {
+    const [attachment] = await this.drizzle.insert(attachments).values(data).returning();
+    return attachment;
+  }
+  /**
+   * Update attachment
+   */
+  async update(id, data) {
+    const [attachment] = await this.drizzle.update(attachments).set({
+      ...data,
+      updatedAt: /* @__PURE__ */ new Date()
+    }).where(eq(attachments.id, id)).returning();
+    return attachment;
+  }
+  /**
+   * Soft delete attachment
+   */
+  async softDelete(id) {
+    await this.drizzle.update(attachments).set({ deletedAt: /* @__PURE__ */ new Date() }).where(eq(attachments.id, id));
+  }
+  /**
+   * Find all attachments by uploader
+   */
+  async findByUploader(uploadedById, limit = 50, offset = 0) {
+    return this.drizzle.select().from(attachments).where(
+      QueryHelpers.notDeleted(
+        attachments,
+        eq(attachments.uploadedById, uploadedById)
+      )
+    ).limit(limit).offset(offset).orderBy(attachments.createdAt);
+  }
+}
+
+const MAX_FILE_SIZE = 50 * 1024 * 1024;
+const ALLOWED_MIME_TYPES = [
+  // Images
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "image/gif",
+  "image/webp",
+  "image/svg+xml",
+  // Documents
+  "application/pdf",
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  // xlsx
+  "application/vnd.ms-excel",
+  // xls
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  // docx
+  "application/msword",
+  // doc
+  "text/csv",
+  "text/plain"
+];
+const upload_post = defineEventHandler(async (event) => {
+  var _a;
+  const userId = event.context.userId;
+  if (!userId) {
+    throw new AuthenticationError("User not authenticated");
+  }
+  const formData = await readMultipartFormData(event);
+  if (!formData) {
+    throw new ValidationError("No file uploaded", { field: "file" });
+  }
+  const fileField = formData.find((field) => field.name === "file");
+  if (!fileField || !fileField.data) {
+    throw new ValidationError("No file uploaded", { field: "file" });
+  }
+  const folderField = formData.find((field) => field.name === "folder");
+  const folder = ((_a = folderField == null ? void 0 : folderField.data) == null ? void 0 : _a.toString()) || "uploads";
+  const fileName = fileField.filename || "unnamed-file";
+  const mimeType = fileField.type || "application/octet-stream";
+  const fileSize = fileField.data.length;
+  if (fileSize > MAX_FILE_SIZE) {
+    throw new ValidationError(
+      `File size exceeds maximum of ${MAX_FILE_SIZE / 1024 / 1024}MB`,
+      {
+        field: "file",
+        size: fileSize,
+        maxSize: MAX_FILE_SIZE
+      }
+    );
+  }
+  if (!ALLOWED_MIME_TYPES.includes(mimeType)) {
+    throw new ValidationError(`File type ${mimeType} is not allowed`, {
+      field: "file",
+      mimeType,
+      allowedTypes: ALLOWED_MIME_TYPES
+    });
+  }
+  const r2Service = createR2StorageService(event);
+  const { key, url } = await r2Service.uploadFile(
+    fileField.data,
+    fileName,
+    mimeType,
+    folder
+  );
+  const db = getDatabase(event);
+  const attachmentRepo = new AttachmentRepository(db);
+  const attachment = await attachmentRepo.create({
+    fileName,
+    fileType: mimeType,
+    fileSize,
+    r2Key: key,
+    r2Url: url,
+    uploadedById: userId
+  });
+  return createSuccessResponse("File uploaded successfully", attachment);
+});
+
+const upload_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: upload_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const _id__get = defineEventHandler(async (event) => {

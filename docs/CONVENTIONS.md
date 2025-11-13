@@ -22,17 +22,18 @@ This document consolidates all coding conventions, architectural patterns, and b
 
 1. [Architecture Overview](#architecture-overview)
 2. [Import Aliases](#import-aliases)
-3. [Environment Detection](#environment-detection)
-4. [Configuration & Environment Variables](#configuration--environment-variables)
-5. [Service Layer Pattern](#service-layer-pattern)
-6. [Repository Layer](#repository-layer)
-7. [API Response Format](#api-response-format)
-8. [Error Handling](#error-handling)
-9. [Pagination](#pagination)
-10. [Route Handlers](#route-handlers)
-11. [Testing](#testing)
-12. [Database Access](#database-access)
-13. [Field Naming](#field-naming)
+3. [Shared Types Pattern](#shared-types-pattern)
+4. [Environment Detection](#environment-detection)
+5. [Configuration & Environment Variables](#configuration--environment-variables)
+6. [Service Layer Pattern](#service-layer-pattern)
+7. [Repository Layer](#repository-layer)
+8. [API Response Format](#api-response-format)
+9. [Error Handling](#error-handling)
+10. [Pagination](#pagination)
+11. [Route Handlers](#route-handlers)
+12. [Testing](#testing)
+13. [Database Access](#database-access)
+14. [Field Naming](#field-naming)
 
 ---
 
@@ -64,9 +65,10 @@ This document consolidates all coding conventions, architectural patterns, and b
 │  Shared Layer (shared/)                                  │
 │  - shared/validators/*.ts (Zod schemas)                  │
 │  - shared/constants/*.ts (business rules)                │
-│  - shared/types/*.ts (shared TypeScript types)           │
+│  - shared/types/*.ts (type re-exports from server)       │
 │  ⚠️  NO dependencies on server/ or app/                  │
 │  ⚠️  Use relative imports within shared/                 │
+│  ⚠️  shared/types/ re-exports server types for frontend  │
 └──────────────────▲──────────────────────────────────────┬┘
                    │ imports ↑                    imports ↓
 ┌──────────────────┴──────────────────────────────────────▼┐
@@ -289,6 +291,203 @@ import { Input } from "@/components/ui/input";
 import { useAuth } from "@/composables/useAuth";
 import type { ApiResponse } from "~~/server/types/api";
 ```
+
+---
+
+## Shared Types Pattern
+
+### Overview
+
+This project uses **shared type re-exports** to provide type safety across the full stack while maintaining clean architectural boundaries. Database entity types are defined once in server schemas using Drizzle ORM's type inference, then re-exported through `shared/types/` for frontend use.
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Server Schema (Source of Truth)                        │
+│  server/database/schema/**/*.ts                         │
+│  ├── export type StockItem = typeof stockItems.$inferSelect │
+│  ├── export type Part = typeof parts.$inferSelect       │
+│  └── export type User = typeof users.$inferSelect       │
+└──────────────────┬──────────────────────────────────────┘
+                   │ Re-exported via ↓
+┌──────────────────▼──────────────────────────────────────┐
+│  Shared Types (Public API)                              │
+│  shared/types/**/*.ts                                    │
+│  ├── stock-item.ts → re-exports from server/schema/stock│
+│  ├── part.ts → re-exports from server/schema/parts      │
+│  └── user.ts → re-exports SafeUser (sensitive fields omitted) │
+└──────────────────┬──────────────────────────────────────┘
+                   │ Imported by ↓
+┌──────────────────▼──────────────────────────────────────┐
+│  Frontend & Backend Code                                │
+│  ├── Backend: import type { Part } from '#shared/types/part' │
+│  └── Frontend: import type { Part } from '#shared/types/part' │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Directory Structure
+
+```
+shared/types/
+├── stock-item.ts        # StockItem, NewStockItem, StockItemTracking
+├── stock-location.ts    # StockLocation, NewStockLocation
+├── part.ts              # Part, NewPart, PartParameter
+├── part-category.ts     # PartCategory, NewPartCategory
+└── user.ts              # SafeUser, User (with sensitive field filtering)
+```
+
+### Type Re-Export Pattern
+
+Each type file re-exports from the server schema:
+
+```typescript
+// shared/types/stock-item.ts
+/**
+ * Stock Item Types
+ * Re-exported from server schema for frontend use
+ */
+export type {
+  StockItem,
+  NewStockItem,
+  StockItemTracking,
+  NewStockItemTracking,
+} from "#server/database/schema/stock";
+```
+
+### SafeUser Pattern for Sensitive Data
+
+For types containing sensitive fields (like User with `passwordHash`), create a safe variant:
+
+```typescript
+// shared/types/user.ts
+import type { User as ServerUser } from "#server/database/schema/identity";
+
+/**
+ * SafeUser - User type without sensitive fields
+ * Use this type in frontend code to ensure no sensitive data is exposed
+ */
+export type SafeUser = Omit<ServerUser, "passwordHash">;
+
+/**
+ * Full User type (includes sensitive fields)
+ * Only use this in backend code or when explicitly needed
+ */
+export type User = ServerUser;
+
+// Also re-export related types
+export type {
+  UserRole,
+  NewUserRole,
+  UserSettings,
+  NewUserSettings,
+} from "#server/database/schema/identity";
+```
+
+### Usage Examples
+
+#### Backend Usage
+
+```typescript
+// server/services/part.ts
+import type { Part, NewPart } from "#shared/types/part";
+import type { SafeUser } from "#shared/types/user";
+
+export class PartService {
+  async createPart(data: NewPart): Promise<Part> {
+    // ...
+  }
+
+  async getPartCreator(partId: string): Promise<SafeUser> {
+    // Returns user without sensitive fields
+  }
+}
+```
+
+#### Frontend Usage
+
+```vue
+<!-- app/components/Parts/PartCard.vue -->
+<script setup lang="ts">
+import type { Part } from '#shared/types/part'
+import type { SafeUser } from '#shared/types/user'
+
+interface Props {
+  part: Part
+  creator?: SafeUser
+}
+
+const props = defineProps<Props>()
+</script>
+
+<template>
+  <div>
+    <h3>{{ part.name }}</h3>
+    <p>Created by: {{ creator?.firstName }} {{ creator?.lastName }}</p>
+  </div>
+</template>
+```
+
+#### API Response Typing
+
+```typescript
+// server/api/v1/parts/[id]/index.get.ts
+import { createSuccessResponse } from "#server/lib/response";
+import type { Part } from "#shared/types/part";
+
+export default defineEventHandler(async (event) => {
+  const partService = createPartService(event);
+  const part: Part = await partService.getPartById(id);
+
+  return createSuccessResponse("Part retrieved", part);
+});
+```
+
+### Benefits
+
+1. ✅ **Single Source of Truth**: Types defined once in Drizzle schema
+2. ✅ **Type Safety Across Stack**: Full TypeScript support in frontend
+3. ✅ **Auto-Sync with DB**: Schema changes automatically update types
+4. ✅ **Clean Boundaries**: Frontend imports from `shared/types/`, not directly from server schemas
+5. ✅ **Security**: SafeUser pattern prevents accidental exposure of sensitive fields
+6. ✅ **IDE Support**: Full autocomplete and IntelliSense everywhere
+7. ✅ **Maintainability**: Update schema once, types update everywhere
+
+### Rules & Best Practices
+
+1. **Backend type definitions**: Always define entity types in `server/database/schema/**/*.ts` using Drizzle's `$inferSelect` and `$inferInsert`
+2. **Shared re-exports only**: `shared/types/` should only contain re-exports, never define types directly
+3. **Use SafeUser pattern**: For types with sensitive fields, create an `Omit<>` variant in `shared/types/`
+4. **Frontend always imports from shared**: Frontend code should import from `#shared/types/**`, never from `~~/server/database/schema/**`
+5. **Backend can use either**: Backend can import from `#shared/types/**` or directly from `#server/database/schema/**`
+6. **Document sensitive fields**: Use JSDoc comments to mark which types have SafeUser variants
+7. **Group related types**: Keep all types for a domain in one file (e.g., all stock-related types in `stock-item.ts`)
+
+### When to Create New Type Files
+
+Create a new file in `shared/types/` when:
+- ✅ Adding a new database entity that frontend needs to display
+- ✅ Creating a new domain with multiple related types
+- ✅ Frontend components need to type props/state with backend entities
+
+Do NOT create new type files for:
+- ❌ Backend-only utilities or service types
+- ❌ Frontend-only UI state types
+- ❌ Temporary or internal types
+
+### Migration from Direct Imports
+
+If you have existing code importing directly from server schemas:
+
+```typescript
+// ❌ OLD: Direct import from server schema (in frontend)
+import type { Part } from '~~/server/database/schema/parts'
+
+// ✅ NEW: Import from shared types
+import type { Part } from '#shared/types/part'
+```
+
+The shared types are **identical** to the server types, just accessed through a cleaner boundary.
 
 ---
 

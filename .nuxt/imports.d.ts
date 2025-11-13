@@ -32,10 +32,17 @@ export { handleApiError, useErrorHandler } from '../app/composables/useErrorHand
 export { useExtendedFetch } from '../app/composables/useExtendedFetch';
 export { useIsMobile } from '../app/composables/useIsMobile';
 export { useMultitenancy } from '../app/composables/useMultitenancy';
+export { useParts } from '../app/composables/useParts';
 export { usePrimaryAnimation } from '../app/composables/usePrimaryAnimation';
 export { useShowToast } from '../app/composables/useShowToast';
+export { useStock } from '../app/composables/useStock';
 export { useSubdomain } from '../app/composables/useSubdomain';
 export { convertToInitials } from '../app/utils/stringutils';
+export { PartCategory, NewPartCategory } from '../shared/types/part-category';
+export { Part, NewPart, PartParameter, NewPartParameter } from '../shared/types/part';
+export { StockItem, NewStockItem, StockItemTracking, NewStockItemTracking } from '../shared/types/stock-item';
+export { StockLocation, NewStockLocation, StockLocationType, NewStockLocationType } from '../shared/types/stock-location';
+export { SafeUser, User, UserRole, NewUserRole, UserSettings, NewUserSettings } from '../shared/types/user';
 export { useUserStore } from '../app/stores/userStore';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';

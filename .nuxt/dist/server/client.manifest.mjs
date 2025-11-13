@@ -1,1 +1,1 @@
-export { default } from "file:///Users/alsey89/Documents/code/personal/fullstack-nuxt-cf-template/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///Users/alsey89/Documents/code/1001/inventory/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

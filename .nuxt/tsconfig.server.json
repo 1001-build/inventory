@@ -162,7 +162,7 @@
     "../node_modules/@nuxt/image/runtime/server",
     "../node_modules/shadcn-nuxt/runtime/server",
     "../node_modules/@pinia/nuxt/runtime/server",
-    "../../../p/runtime/server",
+    "../../../1/runtime/server",
     "../node_modules/@formkit/auto-animate/nuxt/runtime/server",
     "../node_modules/@vite-pwa/nuxt/runtime/server",
     "../node_modules/@nuxtjs/i18n/runtime/server",

@@ -10,7 +10,7 @@
                     <slot name="addon" />
                 </div>
             </div>
-            <div class="flex items-center gap-2 flex-shrink-0" v-if="!hasTabs">
+            <div class="flex items-center gap-2 flex-shrink-0">
                 <slot />
             </div>
         </header>
@@ -22,8 +22,6 @@ const route = useRoute();
 const metaTitle = computed(() => route.meta.title);
 const slots = useSlots();
 const hasDefaultSlot = computed(() => !!slots.default)
-const { tabs } = useSectionTabs()
-const hasTabs = computed(() => (tabs.value?.length ?? 0) > 0)
 const props = defineProps({
     showBack: {
         type: Boolean,
