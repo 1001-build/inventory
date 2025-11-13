@@ -80,7 +80,7 @@ const emit = defineEmits<{
   moved: []
 }>()
 
-const { moveCategory } = useParts()
+const partsStore = usePartsStore()
 
 const newParentId = ref<string | null>(null)
 const moving = ref(false)
@@ -91,7 +91,7 @@ const handleMove = async () => {
 
   moving.value = true
   try {
-    await moveCategory(props.category.id, newParentId.value)
+    await partsStore.moveCategory(props.category.id, newParentId.value)
     emit('moved')
     emit('update:open', false)
   } catch (error) {

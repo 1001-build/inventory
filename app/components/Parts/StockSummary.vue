@@ -90,7 +90,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { fetchStockItems } = useStock()
+const stockStore = useStockStore()
 
 interface StockLocationSummary {
   locationId: string
@@ -122,7 +122,7 @@ const stockStatusLabel = computed(() => {
 const loadStockSummary = async () => {
   loading.value = true
   try {
-    const response = await fetchStockItems({
+    const response = await stockStore.fetchStockItems({
       partId: props.partId,
       perPage: '1000'
     })

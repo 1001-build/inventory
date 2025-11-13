@@ -129,12 +129,12 @@ import type { PartCategory } from '#shared/types/part-category'
 
 useHead({ title: 'Part Categories' })
 
-const { fetchCategory } = useParts()
+const partsStore = usePartsStore()
 const categoryTree = ref()
 
 // Selected category state
 const selectedCategoryId = ref<string | undefined>()
-const selectedCategory = ref<PartCategory | null>(null)
+const selectedCategory = computed(() => partsStore.currentCategory)
 
 // Dialog states
 const deleteDialogOpen = ref(false)
@@ -147,12 +147,7 @@ const handleCategorySelect = async (category: PartCategory) => {
   selectedCategoryId.value = category.id
 
   // Fetch full category details
-  try {
-    const response = await fetchCategory(category.id)
-    selectedCategory.value = response.data
-  } catch (error) {
-    console.error('Failed to fetch category details:', error)
-  }
+  await partsStore.fetchCategory(category.id)
 }
 
 // Actions
@@ -187,7 +182,7 @@ const viewParts = () => {
 // Handle successful operations
 const handleDeleted = () => {
   selectedCategoryId.value = undefined
-  selectedCategory.value = null
+  partsStore.currentCategory = null
   categoryTree.value?.refresh()
 }
 

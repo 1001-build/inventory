@@ -56,10 +56,9 @@ const emit = defineEmits<{
   'update:modelValue': [value: string | null]
 }>()
 
-const { fetchParts } = useParts()
+const partsStore = usePartsStore()
 
-const parts = ref<Part[]>([])
-const loading = ref(false)
+const loading = computed(() => partsStore.loading)
 
 // Two-way binding for select value
 const selectedValue = computed({
@@ -69,9 +68,9 @@ const selectedValue = computed({
   }
 })
 
-// Filter parts
+// Filter parts from store
 const filteredParts = computed(() => {
-  let filtered = parts.value
+  let filtered = partsStore.parts
 
   // Filter by active status if enabled
   if (props.activeOnly) {
@@ -83,7 +82,6 @@ const filteredParts = computed(() => {
 
 // Load parts
 const loadParts = async () => {
-  loading.value = true
   try {
     const params: any = {
       perPage: '1000'
@@ -97,12 +95,9 @@ const loadParts = async () => {
       params.active = 'true'
     }
 
-    const response = await fetchParts(params)
-    parts.value = response.data
+    await partsStore.fetchParts(params)
   } catch (error) {
     console.error('Failed to load parts:', error)
-  } finally {
-    loading.value = false
   }
 }
 

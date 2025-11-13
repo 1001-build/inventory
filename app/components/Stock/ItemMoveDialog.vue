@@ -96,7 +96,7 @@ const emit = defineEmits<{
   moved: []
 }>()
 
-const { moveStockItem } = useStock()
+const stockStore = useStockStore()
 
 const newLocationId = ref<string>('')
 const notes = ref('')
@@ -114,7 +114,7 @@ const handleMove = async () => {
 
   moving.value = true
   try {
-    await moveStockItem(props.stockItem.id, newLocationId.value)
+    await stockStore.moveStockItem(props.stockItem.id, newLocationId.value)
     emit('moved')
     emit('update:open', false)
   } catch (error) {

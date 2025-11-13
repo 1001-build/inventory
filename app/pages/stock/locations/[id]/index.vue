@@ -160,30 +160,26 @@ import type { StockLocation } from '#shared/types/stock-location'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchLocation } = useStock()
+const stockStore = useStockStore()
 
 const locationId = computed(() => route.params.id as string)
 
-const location = ref<StockLocation | null>(null)
-const loading = ref(true)
+const location = computed(() => stockStore.currentLocation)
+const loading = computed(() => stockStore.loading)
 
 // Dialog states
 const deleteDialogOpen = ref(false)
 
 // Fetch location details
 const loadLocation = async () => {
-  loading.value = true
   try {
-    const response = await fetchLocation(locationId.value)
-    location.value = response.data
-
-    // Set page title
-    useHead({ title: `${location.value.name} - Stock Locations` })
+    const success = await stockStore.fetchLocation(locationId.value)
+    if (success && location.value) {
+      // Set page title
+      useHead({ title: `${location.value.name} - Stock Locations` })
+    }
   } catch (error) {
     console.error('Failed to fetch location:', error)
-    location.value = null
-  } finally {
-    loading.value = false
   }
 }
 

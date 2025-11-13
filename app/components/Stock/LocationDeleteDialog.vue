@@ -87,7 +87,7 @@ const emit = defineEmits<{
   deleted: []
 }>()
 
-const { deleteLocation } = useStock()
+const stockStore = useStockStore()
 
 const cascadeDelete = ref(false)
 const deleting = ref(false)
@@ -110,7 +110,7 @@ const handleDelete = async () => {
 
   deleting.value = true
   try {
-    await deleteLocation(props.location.id, cascadeDelete.value)
+    await stockStore.deleteLocation(props.location.id, cascadeDelete.value)
     emit('deleted')
     emit('update:open', false)
   } catch (error) {

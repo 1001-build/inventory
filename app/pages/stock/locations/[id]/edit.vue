@@ -69,38 +69,35 @@ import type { UpdateStockLocationInput } from '#shared/validators/stock-location
 
 const route = useRoute()
 const router = useRouter()
-const { fetchLocation, updateLocation } = useStock()
+const stockStore = useStockStore()
 
 const locationId = computed(() => route.params.id as string)
 
-const location = ref<StockLocation | null>(null)
-const loading = ref(true)
+const location = computed(() => stockStore.currentLocation)
+const loading = computed(() => stockStore.loading)
 const updating = ref(false)
 
 // Fetch location details
 const loadLocation = async () => {
-  loading.value = true
   try {
-    const response = await fetchLocation(locationId.value)
-    location.value = response.data
-
-    // Set page title
-    useHead({ title: `Edit ${location.value.name} - Stock Locations` })
+    const success = await stockStore.fetchLocation(locationId.value)
+    if (success && location.value) {
+      // Set page title
+      useHead({ title: `Edit ${location.value.name} - Stock Locations` })
+    }
   } catch (error) {
     console.error('Failed to fetch location:', error)
-    location.value = null
-  } finally {
-    loading.value = false
   }
 }
 
 const handleSubmit = async (data: UpdateStockLocationInput) => {
   updating.value = true
   try {
-    await updateLocation(locationId.value, data)
-
-    // Navigate back to location detail page
-    await router.push(`/stock/locations/${locationId.value}`)
+    const success = await stockStore.updateLocation(locationId.value, data)
+    if (success) {
+      // Navigate back to location detail page
+      await router.push(`/stock/locations/${locationId.value}`)
+    }
   } catch (error) {
     console.error('Failed to update location:', error)
   } finally {

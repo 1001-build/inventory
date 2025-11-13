@@ -141,7 +141,7 @@ const emit = defineEmits<{
   adjusted: []
 }>()
 
-const { adjustQuantity } = useStock()
+const stockStore = useStockStore()
 
 const adjustment = ref(0)
 const reason = ref('')
@@ -168,7 +168,7 @@ const handleAdjust = async () => {
 
   adjusting.value = true
   try {
-    await adjustQuantity(props.stockItem.id, adjustment.value)
+    await stockStore.adjustQuantity(props.stockItem.id, adjustment.value)
     emit('adjusted')
     emit('update:open', false)
   } catch (error) {

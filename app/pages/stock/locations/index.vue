@@ -143,16 +143,16 @@ import type { StockLocation } from '#shared/types/stock-location'
 
 useHead({ title: 'Stock Locations' })
 
-const { fetchLocation } = useStock()
+const stockStore = useStockStore()
 const locationTree = ref()
 
 // Selected location state
 const selectedLocationId = ref<string | undefined>()
-const selectedLocation = ref<StockLocation | null>(null)
+const selectedLocation = computed(() => stockStore.currentLocation)
 
 // Dialog states
 const deleteDialogOpen = ref(false)
-const locationToDelete = ref<StockLocation | null>(null)
+const locationToDelete = computed(() => selectedLocation.value)
 
 // Handle location selection from tree
 const handleLocationSelect = async (location: StockLocation) => {
@@ -160,8 +160,7 @@ const handleLocationSelect = async (location: StockLocation) => {
 
   // Fetch full location details
   try {
-    const response = await fetchLocation(location.id)
-    selectedLocation.value = response.data
+    await stockStore.fetchLocation(location.id)
   } catch (error) {
     console.error('Failed to fetch location details:', error)
   }
@@ -187,7 +186,6 @@ const handleAddChild = () => {
 }
 
 const handleDelete = () => {
-  locationToDelete.value = selectedLocation.value
   deleteDialogOpen.value = true
 }
 
@@ -200,7 +198,7 @@ const viewStockItems = () => {
 // Handle successful operations
 const handleDeleted = () => {
   selectedLocationId.value = undefined
-  selectedLocation.value = null
+  stockStore.currentLocation = null
   locationTree.value?.refresh()
 }
 

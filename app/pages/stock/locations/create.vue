@@ -32,7 +32,7 @@ import type { CreateStockLocationInput } from '#shared/validators/stock-location
 useHead({ title: 'Create Stock Location' })
 
 const route = useRoute()
-const { createLocation } = useStock()
+const stockStore = useStockStore()
 const router = useRouter()
 
 const creating = ref(false)
@@ -48,10 +48,11 @@ const handleSubmit = async (data: CreateStockLocationInput) => {
       data.parentId = parentId.value
     }
 
-    const response = await createLocation(data)
-
-    // Navigate to the new location detail page
-    await router.push(`/stock/locations/${response.data.id}`)
+    const newLocation = await stockStore.createLocation(data)
+    if (newLocation) {
+      // Navigate to the new location detail page
+      await router.push(`/stock/locations/${newLocation.id}`)
+    }
   } catch (error) {
     console.error('Failed to create location:', error)
   } finally {

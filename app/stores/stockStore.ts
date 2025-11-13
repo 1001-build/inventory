@@ -93,7 +93,7 @@ export const useStockStore = defineStore('stock', {
     /**
      * Fetch paginated list of stock locations
      * @param params - Filter and pagination parameters
-     * @returns Promise<boolean> - Success/failure
+     * @returns Promise<any> - API response payload with data and pagination
      */
     async fetchLocations(params?: Partial<ListStockLocationsInput>) {
       try {
@@ -108,12 +108,12 @@ export const useStockStore = defineStore('stock', {
 
         if (ok) {
           this.stockLocations = payload.data
-          return true
+          return payload
         }
-        return false
+        return { data: [], pagination: {} }
       } catch (err: any) {
         this.error = err.message
-        return false
+        return { data: [], pagination: {} }
       } finally {
         this.loading = false
       }
@@ -122,7 +122,7 @@ export const useStockStore = defineStore('stock', {
     /**
      * Fetch location tree structure (hierarchical)
      * @param parentId - Optional parent location ID to fetch subtree
-     * @returns Promise<boolean> - Success/failure
+     * @returns Promise<any> - API response payload with data
      */
     async fetchLocationTree(parentId?: string) {
       try {
@@ -140,12 +140,12 @@ export const useStockStore = defineStore('stock', {
 
         if (ok) {
           this.locationTree = payload.data
-          return true
+          return payload
         }
-        return false
+        return { data: [] }
       } catch (err: any) {
         this.error = err.message
-        return false
+        return { data: [] }
       } finally {
         this.loading = false
       }
@@ -278,7 +278,7 @@ export const useStockStore = defineStore('stock', {
     /**
      * Fetch paginated list of stock items
      * @param params - Filter and pagination parameters
-     * @returns Promise<boolean> - Success/failure
+     * @returns Promise<any> - API response payload with data and pagination
      */
     async fetchStockItems(params?: Partial<ListStockItemsInput>) {
       try {
@@ -293,12 +293,12 @@ export const useStockStore = defineStore('stock', {
 
         if (ok) {
           this.stockItems = payload.data
-          return true
+          return payload
         }
-        return false
+        return { data: [], pagination: {} }
       } catch (err: any) {
         this.error = err.message
-        return false
+        return { data: [], pagination: {} }
       } finally {
         this.loading = false
       }

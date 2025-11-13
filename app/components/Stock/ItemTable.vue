@@ -200,7 +200,7 @@ const emit = defineEmits<{
   delete: [item: StockItem]
 }>()
 
-const { fetchStockItems } = useStock()
+const stockStore = useStockStore()
 
 // State
 const stockItems = ref<StockItem[]>([])
@@ -229,7 +229,7 @@ const activeFilterCount = computed(() => {
 const loadStockItems = async () => {
   loading.value = true
   try {
-    const response = await fetchStockItems({
+    const response = await stockStore.fetchStockItems({
       partId: props.partId,
       locationId: props.locationId,
       search: searchQuery.value || undefined,

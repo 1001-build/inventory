@@ -58,7 +58,7 @@ const emit = defineEmits<{
   'update:modelValue': [value: string | null]
 }>()
 
-const { fetchLocations } = useStock()
+const stockStore = useStockStore()
 
 const locations = ref<StockLocation[]>([])
 const loading = ref(false)
@@ -81,7 +81,7 @@ const filteredLocations = computed(() => {
 const loadLocations = async () => {
   loading.value = true
   try {
-    const response = await fetchLocations({ limit: 1000 })
+    const response = await stockStore.fetchLocations({ limit: 1000 })
     locations.value = response.data
   } catch (error) {
     console.error('Failed to load locations:', error)

@@ -87,7 +87,7 @@ const emit = defineEmits<{
   deleted: []
 }>()
 
-const { deleteCategory } = useParts()
+const partsStore = usePartsStore()
 
 const cascadeDelete = ref(false)
 const deleting = ref(false)
@@ -110,7 +110,7 @@ const handleDelete = async () => {
 
   deleting.value = true
   try {
-    await deleteCategory(props.category.id, cascadeDelete.value)
+    await partsStore.deleteCategory(props.category.id, cascadeDelete.value)
     emit('deleted')
     emit('update:open', false)
   } catch (error) {

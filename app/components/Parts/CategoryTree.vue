@@ -53,21 +53,16 @@ const emit = defineEmits<{
   collapse: [categoryId: string]
 }>()
 
-const { fetchCategoryTree } = useParts()
+const partsStore = usePartsStore()
 
-const categories = ref<PartCategory[]>([])
-const loading = ref(true)
+const categories = computed(() => partsStore.categoryTree)
+const loading = computed(() => partsStore.loading)
 
 const loadCategories = async () => {
-  loading.value = true
   try {
-    const response = await fetchCategoryTree(props.rootOnly ? null : undefined)
-    categories.value = response.data
+    await partsStore.fetchCategoryTree(props.rootOnly ? null : undefined)
   } catch (error) {
     console.error('Failed to load category tree:', error)
-    categories.value = []
-  } finally {
-    loading.value = false
   }
 }
 

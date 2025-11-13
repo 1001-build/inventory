@@ -145,7 +145,7 @@ import type { StockItem } from '#shared/types/stock-item'
 useHead({ title: 'Stock Items' })
 
 const route = useRoute()
-const { deleteStockItem, fetchStockItems } = useStock()
+const stockStore = useStockStore()
 
 const viewMode = ref<'table' | 'grid'>('table')
 const stockItemTable = ref()
@@ -158,8 +158,8 @@ const filters = ref({
 })
 
 // Grid view data (only used in grid mode)
-const gridItems = ref<StockItem[]>([])
-const loadingGrid = ref(false)
+const gridItems = computed(() => stockStore.stockItems)
+const loadingGrid = computed(() => stockStore.loading)
 
 // Dialog states
 const moveDialogOpen = ref(false)
@@ -226,14 +226,16 @@ const confirmDelete = async () => {
 
   deleting.value = true
   try {
-    await deleteStockItem(itemToDelete.value.id)
-    deleteDialogOpen.value = false
+    const success = await stockStore.deleteStockItem(itemToDelete.value.id)
+    if (success) {
+      deleteDialogOpen.value = false
 
-    // Refresh the list
-    if (viewMode.value === 'table') {
-      stockItemTable.value?.refresh()
-    } else {
-      loadGridItems()
+      // Refresh the list
+      if (viewMode.value === 'table') {
+        stockItemTable.value?.refresh()
+      } else {
+        loadGridItems()
+      }
     }
   } catch (error) {
     console.error('Failed to delete stock item:', error)
@@ -243,20 +245,15 @@ const confirmDelete = async () => {
 }
 
 const loadGridItems = async () => {
-  loadingGrid.value = true
   try {
-    const response = await fetchStockItems({
+    await stockStore.fetchStockItems({
       partId: filters.value.partId || undefined,
       locationId: filters.value.locationId || undefined,
       ...activeFilters.value,
       limit: 50
     })
-    gridItems.value = response.data
   } catch (error) {
     console.error('Failed to load stock items:', error)
-    gridItems.value = []
-  } finally {
-    loadingGrid.value = false
   }
 }
 

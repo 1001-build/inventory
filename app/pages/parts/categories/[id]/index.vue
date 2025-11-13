@@ -142,12 +142,12 @@ import type { PartCategory } from '#shared/types/part-category'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchCategory } = useParts()
+const partsStore = usePartsStore()
 
 const categoryId = computed(() => route.params.id as string)
 
-const category = ref<PartCategory | null>(null)
-const loading = ref(true)
+const category = computed(() => partsStore.currentCategory)
+const loading = computed(() => partsStore.loading)
 
 // Dialog states
 const deleteDialogOpen = ref(false)
@@ -155,18 +155,11 @@ const moveDialogOpen = ref(false)
 
 // Fetch category details
 const loadCategory = async () => {
-  loading.value = true
-  try {
-    const response = await fetchCategory(categoryId.value)
-    category.value = response.data
+  const success = await partsStore.fetchCategory(categoryId.value)
 
+  if (success && partsStore.currentCategory) {
     // Set page title
-    useHead({ title: `${category.value.name} - Part Categories` })
-  } catch (error) {
-    console.error('Failed to fetch category:', error)
-    category.value = null
-  } finally {
-    loading.value = false
+    useHead({ title: `${partsStore.currentCategory.name} - Part Categories` })
   }
 }
 

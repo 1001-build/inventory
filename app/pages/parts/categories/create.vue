@@ -31,7 +31,7 @@ import type { CreatePartCategoryInput } from '#shared/validators/part-category'
 
 useHead({ title: 'Create Part Category' })
 
-const { createCategory } = useParts()
+const partsStore = usePartsStore()
 const router = useRouter()
 
 const creating = ref(false)
@@ -39,10 +39,12 @@ const creating = ref(false)
 const handleSubmit = async (data: CreatePartCategoryInput) => {
   creating.value = true
   try {
-    const response = await createCategory(data)
+    const newCategory = await partsStore.createCategory(data)
 
-    // Navigate to the new category detail page
-    await router.push(`/parts/categories/${response.data.id}`)
+    if (newCategory) {
+      // Navigate to the new category detail page
+      await router.push(`/parts/categories/${newCategory.id}`)
+    }
   } catch (error) {
     console.error('Failed to create category:', error)
   } finally {

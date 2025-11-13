@@ -53,7 +53,7 @@ const emit = defineEmits<{
   collapse: [locationId: string]
 }>()
 
-const { fetchLocationTree } = useStock()
+const stockStore = useStockStore()
 
 const locations = ref<StockLocation[]>([])
 const loading = ref(true)
@@ -61,7 +61,7 @@ const loading = ref(true)
 const loadLocations = async () => {
   loading.value = true
   try {
-    const response = await fetchLocationTree(props.rootOnly ? null : undefined)
+    const response = await stockStore.fetchLocationTree(props.rootOnly ? null : undefined)
     locations.value = response.data
   } catch (error) {
     console.error('Failed to load location tree:', error)

@@ -60,10 +60,9 @@ const emit = defineEmits<{
   'update:modelValue': [value: string | null]
 }>()
 
-const { fetchCategories } = useParts()
+const partsStore = usePartsStore()
 
-const categories = ref<PartCategory[]>([])
-const loading = ref(false)
+const loading = computed(() => partsStore.loading)
 
 // Two-way binding for select value
 const selectedValue = computed({
@@ -75,20 +74,17 @@ const selectedValue = computed({
 
 // Filter out excluded category
 const filteredCategories = computed(() => {
-  if (!props.excludeId) return categories.value
-  return categories.value.filter(cat => cat.id !== props.excludeId)
+  const categories = partsStore.partCategories
+  if (!props.excludeId) return categories
+  return categories.filter(cat => cat.id !== props.excludeId)
 })
 
 // Load categories
 const loadCategories = async () => {
-  loading.value = true
   try {
-    const response = await fetchCategories({ perPage: '1000' })
-    categories.value = response.data
+    await partsStore.fetchCategories({ perPage: '1000' })
   } catch (error) {
     console.error('Failed to load categories:', error)
-  } finally {
-    loading.value = false
   }
 }
 

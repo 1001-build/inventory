@@ -69,38 +69,33 @@ import type { UpdatePartCategoryInput } from '#shared/validators/part-category'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchCategory, updateCategory } = useParts()
+const partsStore = usePartsStore()
 
 const categoryId = computed(() => route.params.id as string)
 
-const category = ref<PartCategory | null>(null)
-const loading = ref(true)
+const category = computed(() => partsStore.currentCategory)
+const loading = computed(() => partsStore.loading)
 const updating = ref(false)
 
 // Fetch category details
 const loadCategory = async () => {
-  loading.value = true
-  try {
-    const response = await fetchCategory(categoryId.value)
-    category.value = response.data
+  const success = await partsStore.fetchCategory(categoryId.value)
 
+  if (success && partsStore.currentCategory) {
     // Set page title
-    useHead({ title: `Edit ${category.value.name} - Part Categories` })
-  } catch (error) {
-    console.error('Failed to fetch category:', error)
-    category.value = null
-  } finally {
-    loading.value = false
+    useHead({ title: `Edit ${partsStore.currentCategory.name} - Part Categories` })
   }
 }
 
 const handleSubmit = async (data: UpdatePartCategoryInput) => {
   updating.value = true
   try {
-    await updateCategory(categoryId.value, data)
+    const success = await partsStore.updateCategory(categoryId.value, data)
 
-    // Navigate back to category detail page
-    await router.push(`/parts/categories/${categoryId.value}`)
+    if (success) {
+      // Navigate back to category detail page
+      await router.push(`/parts/categories/${categoryId.value}`)
+    }
   } catch (error) {
     console.error('Failed to update category:', error)
   } finally {

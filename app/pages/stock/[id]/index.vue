@@ -186,13 +186,13 @@ import type { StockItem } from '#shared/types/stock-item'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchStockItem, deleteStockItem } = useStock()
+const stockStore = useStockStore()
 const { showToast } = useShowToast()
 
 const stockItemId = computed(() => route.params.id as string)
 
-const stockItem = ref<StockItem | null>(null)
-const loading = ref(true)
+const stockItem = computed(() => stockStore.currentStockItem)
+const loading = computed(() => stockStore.loading)
 const currentTab = ref('details')
 
 // Dialog states
@@ -203,19 +203,15 @@ const deleting = ref(false)
 
 // Fetch stock item details
 const loadStockItem = async () => {
-  loading.value = true
   try {
-    const response = await fetchStockItem(stockItemId.value)
-    stockItem.value = response.data
-
-    // Set page title
-    const partName = stockItem.value.part?.name || 'Unknown Part'
-    useHead({ title: `Stock Item: ${partName}` })
+    const success = await stockStore.fetchStockItem(stockItemId.value)
+    if (success && stockItem.value) {
+      // Set page title
+      const partName = stockItem.value.part?.name || 'Unknown Part'
+      useHead({ title: `Stock Item: ${partName}` })
+    }
   } catch (error) {
     console.error('Failed to fetch stock item:', error)
-    stockItem.value = null
-  } finally {
-    loading.value = false
   }
 }
 
@@ -257,11 +253,13 @@ const confirmDelete = async () => {
 
   deleting.value = true
   try {
-    await deleteStockItem(stockItem.value.id)
-    deleteDialogOpen.value = false
+    const success = await stockStore.deleteStockItem(stockItem.value.id)
+    if (success) {
+      deleteDialogOpen.value = false
 
-    // Navigate back to stock list
-    await router.push('/stock')
+      // Navigate back to stock list
+      await router.push('/stock')
+    }
   } catch (error) {
     console.error('Failed to delete stock item:', error)
   } finally {

@@ -190,7 +190,7 @@ const emit = defineEmits<{
   delete: [part: Part]
 }>()
 
-const { fetchParts } = useParts()
+const partsStore = usePartsStore()
 
 // State
 const parts = ref<Part[]>([])
@@ -218,17 +218,28 @@ const activeFilterCount = computed(() => {
 const loadParts = async () => {
   loading.value = true
   try {
-    const response = await fetchParts({
-      categoryId: props.categoryId,
-      search: searchQuery.value || undefined,
-      page: currentPage.value.toString(),
-      perPage: pageSize.value.toString(),
-      sortBy: sortField.value as any,
-      sortOrder: sortOrder.value,
-      ...props.filters
+    // Use extendedFetch directly to get pagination info
+    // Store's fetchParts doesn't return pagination data
+    const { extendedFetch } = useExtendedFetch()
+    const { ok, payload } = await extendedFetch('/v1/parts', {
+      method: 'GET',
+      query: {
+        categoryId: props.categoryId,
+        search: searchQuery.value || undefined,
+        page: currentPage.value.toString(),
+        perPage: pageSize.value.toString(),
+        sortBy: sortField.value as any,
+        sortOrder: sortOrder.value,
+        ...props.filters
+      }
     })
-    parts.value = response.data
-    totalCount.value = response.pagination.total
+
+    if (ok) {
+      parts.value = payload.data
+      totalCount.value = payload.pagination.total
+    } else {
+      parts.value = []
+    }
   } catch (error) {
     console.error('Failed to load parts:', error)
     parts.value = []

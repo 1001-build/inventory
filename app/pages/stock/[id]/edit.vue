@@ -78,39 +78,36 @@ import type { UpdateStockItemInput } from '#shared/validators/stock-item'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchStockItem, updateStockItem } = useStock()
+const stockStore = useStockStore()
 
 const stockItemId = computed(() => route.params.id as string)
 
-const stockItem = ref<StockItem | null>(null)
-const loading = ref(true)
+const stockItem = computed(() => stockStore.currentStockItem)
+const loading = computed(() => stockStore.loading)
 const updating = ref(false)
 
 // Fetch stock item details
 const loadStockItem = async () => {
-  loading.value = true
   try {
-    const response = await fetchStockItem(stockItemId.value)
-    stockItem.value = response.data
-
-    // Set page title
-    const partName = stockItem.value.part?.name || 'Unknown Part'
-    useHead({ title: `Edit Stock Item: ${partName}` })
+    const success = await stockStore.fetchStockItem(stockItemId.value)
+    if (success && stockItem.value) {
+      // Set page title
+      const partName = stockItem.value.part?.name || 'Unknown Part'
+      useHead({ title: `Edit Stock Item: ${partName}` })
+    }
   } catch (error) {
     console.error('Failed to fetch stock item:', error)
-    stockItem.value = null
-  } finally {
-    loading.value = false
   }
 }
 
 const handleSubmit = async (data: UpdateStockItemInput) => {
   updating.value = true
   try {
-    await updateStockItem(stockItemId.value, data)
-
-    // Navigate back to stock item detail page
-    await router.push(`/stock/${stockItemId.value}`)
+    const success = await stockStore.updateStockItem(stockItemId.value, data)
+    if (success) {
+      // Navigate back to stock item detail page
+      await router.push(`/stock/${stockItemId.value}`)
+    }
   } catch (error) {
     console.error('Failed to update stock item:', error)
   } finally {

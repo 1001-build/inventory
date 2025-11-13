@@ -170,6 +170,13 @@ export const useUserStore = defineStore("user-store", {
       // Clear user profile
       this.userProfile = null;
 
+      // Reset all stores (clear domain data)
+      const partsStore = usePartsStore();
+      const stockStore = useStockStore();
+
+      partsStore.reset();
+      stockStore.reset();
+
       // Track user logout
       posthog.reset();
 
