@@ -32,8 +32,10 @@ export { handleApiError, useErrorHandler } from '../app/composables/useErrorHand
 export { useExtendedFetch } from '../app/composables/useExtendedFetch';
 export { useIsMobile } from '../app/composables/useIsMobile';
 export { useMultitenancy } from '../app/composables/useMultitenancy';
+export { useParts } from '../app/composables/useParts';
 export { usePrimaryAnimation } from '../app/composables/usePrimaryAnimation';
 export { useShowToast } from '../app/composables/useShowToast';
+export { useStock } from '../app/composables/useStock';
 export { useSubdomain } from '../app/composables/useSubdomain';
 export { convertToInitials } from '../app/utils/stringutils';
 export { useUserStore } from '../app/stores/userStore';
