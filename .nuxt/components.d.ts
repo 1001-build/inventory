@@ -33,6 +33,13 @@ interface _GlobalComponents {
     'PartsPartParameters': typeof import("../app/components/Parts/PartParameters.vue")['default']
     'PartsPartStockSummary': typeof import("../app/components/Parts/PartStockSummary.vue")['default']
     'PartsPartTable': typeof import("../app/components/Parts/PartTable.vue")['default']
+    'StockItemAdjustDialog': typeof import("../app/components/Stock/StockItemAdjustDialog.vue")['default']
+    'StockItemCard': typeof import("../app/components/Stock/StockItemCard.vue")['default']
+    'StockItemDetails': typeof import("../app/components/Stock/StockItemDetails.vue")['default']
+    'StockItemForm': typeof import("../app/components/Stock/StockItemForm.vue")['default']
+    'StockItemMoveDialog': typeof import("../app/components/Stock/StockItemMoveDialog.vue")['default']
+    'StockItemStatusSelect': typeof import("../app/components/Stock/StockItemStatusSelect.vue")['default']
+    'StockItemTable': typeof import("../app/components/Stock/StockItemTable.vue")['default']
     'StockLocationActions': typeof import("../app/components/Stock/StockLocationActions.vue")['default']
     'StockLocationDeleteDialog': typeof import("../app/components/Stock/StockLocationDeleteDialog.vue")['default']
     'StockLocationForm': typeof import("../app/components/Stock/StockLocationForm.vue")['default']
@@ -365,6 +372,13 @@ interface _GlobalComponents {
     'LazyPartsPartParameters': LazyComponent<typeof import("../app/components/Parts/PartParameters.vue")['default']>
     'LazyPartsPartStockSummary': LazyComponent<typeof import("../app/components/Parts/PartStockSummary.vue")['default']>
     'LazyPartsPartTable': LazyComponent<typeof import("../app/components/Parts/PartTable.vue")['default']>
+    'LazyStockItemAdjustDialog': LazyComponent<typeof import("../app/components/Stock/StockItemAdjustDialog.vue")['default']>
+    'LazyStockItemCard': LazyComponent<typeof import("../app/components/Stock/StockItemCard.vue")['default']>
+    'LazyStockItemDetails': LazyComponent<typeof import("../app/components/Stock/StockItemDetails.vue")['default']>
+    'LazyStockItemForm': LazyComponent<typeof import("../app/components/Stock/StockItemForm.vue")['default']>
+    'LazyStockItemMoveDialog': LazyComponent<typeof import("../app/components/Stock/StockItemMoveDialog.vue")['default']>
+    'LazyStockItemStatusSelect': LazyComponent<typeof import("../app/components/Stock/StockItemStatusSelect.vue")['default']>
+    'LazyStockItemTable': LazyComponent<typeof import("../app/components/Stock/StockItemTable.vue")['default']>
     'LazyStockLocationActions': LazyComponent<typeof import("../app/components/Stock/StockLocationActions.vue")['default']>
     'LazyStockLocationDeleteDialog': LazyComponent<typeof import("../app/components/Stock/StockLocationDeleteDialog.vue")['default']>
     'LazyStockLocationForm': LazyComponent<typeof import("../app/components/Stock/StockLocationForm.vue")['default']>
@@ -703,6 +717,13 @@ export const PartsPartImageUpload: typeof import("../app/components/Parts/PartIm
 export const PartsPartParameters: typeof import("../app/components/Parts/PartParameters.vue")['default']
 export const PartsPartStockSummary: typeof import("../app/components/Parts/PartStockSummary.vue")['default']
 export const PartsPartTable: typeof import("../app/components/Parts/PartTable.vue")['default']
+export const StockItemAdjustDialog: typeof import("../app/components/Stock/StockItemAdjustDialog.vue")['default']
+export const StockItemCard: typeof import("../app/components/Stock/StockItemCard.vue")['default']
+export const StockItemDetails: typeof import("../app/components/Stock/StockItemDetails.vue")['default']
+export const StockItemForm: typeof import("../app/components/Stock/StockItemForm.vue")['default']
+export const StockItemMoveDialog: typeof import("../app/components/Stock/StockItemMoveDialog.vue")['default']
+export const StockItemStatusSelect: typeof import("../app/components/Stock/StockItemStatusSelect.vue")['default']
+export const StockItemTable: typeof import("../app/components/Stock/StockItemTable.vue")['default']
 export const StockLocationActions: typeof import("../app/components/Stock/StockLocationActions.vue")['default']
 export const StockLocationDeleteDialog: typeof import("../app/components/Stock/StockLocationDeleteDialog.vue")['default']
 export const StockLocationForm: typeof import("../app/components/Stock/StockLocationForm.vue")['default']
@@ -1035,6 +1056,13 @@ export const LazyPartsPartImageUpload: LazyComponent<typeof import("../app/compo
 export const LazyPartsPartParameters: LazyComponent<typeof import("../app/components/Parts/PartParameters.vue")['default']>
 export const LazyPartsPartStockSummary: LazyComponent<typeof import("../app/components/Parts/PartStockSummary.vue")['default']>
 export const LazyPartsPartTable: LazyComponent<typeof import("../app/components/Parts/PartTable.vue")['default']>
+export const LazyStockItemAdjustDialog: LazyComponent<typeof import("../app/components/Stock/StockItemAdjustDialog.vue")['default']>
+export const LazyStockItemCard: LazyComponent<typeof import("../app/components/Stock/StockItemCard.vue")['default']>
+export const LazyStockItemDetails: LazyComponent<typeof import("../app/components/Stock/StockItemDetails.vue")['default']>
+export const LazyStockItemForm: LazyComponent<typeof import("../app/components/Stock/StockItemForm.vue")['default']>
+export const LazyStockItemMoveDialog: LazyComponent<typeof import("../app/components/Stock/StockItemMoveDialog.vue")['default']>
+export const LazyStockItemStatusSelect: LazyComponent<typeof import("../app/components/Stock/StockItemStatusSelect.vue")['default']>
+export const LazyStockItemTable: LazyComponent<typeof import("../app/components/Stock/StockItemTable.vue")['default']>
 export const LazyStockLocationActions: LazyComponent<typeof import("../app/components/Stock/StockLocationActions.vue")['default']>
 export const LazyStockLocationDeleteDialog: LazyComponent<typeof import("../app/components/Stock/StockLocationDeleteDialog.vue")['default']>
 export const LazyStockLocationForm: LazyComponent<typeof import("../app/components/Stock/StockLocationForm.vue")['default']>

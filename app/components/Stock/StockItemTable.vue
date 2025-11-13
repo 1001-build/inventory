@@ -5,12 +5,7 @@
       <div class="flex-1 max-w-md">
         <div class="relative">
           <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            v-model="searchQuery"
-            type="search"
-            placeholder="Search by batch or serial..."
-            class="pl-9"
-          />
+          <Input v-model="searchQuery" type="search" placeholder="Search by batch or serial..." class="pl-9" />
         </div>
       </div>
       <div class="flex items-center gap-2">
@@ -52,11 +47,8 @@
             <TableHead class="cursor-pointer" @click="toggleSort('part')">
               <div class="flex items-center gap-1">
                 Part
-                <Icon
-                  v-if="sortField === 'part'"
-                  :name="sortOrder === 'asc' ? 'lucide:chevron-up' : 'lucide:chevron-down'"
-                  class="h-4 w-4"
-                />
+                <Icon v-if="sortField === 'part'"
+                  :name="sortOrder === 'asc' ? 'lucide:chevron-up' : 'lucide:chevron-down'" class="h-4 w-4" />
               </div>
             </TableHead>
             <TableHead>Location</TableHead>
@@ -68,7 +60,8 @@
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow v-for="item in stockItems" :key="item.id" class="cursor-pointer" @click="navigateTo(`/stock/${item.id}`)">
+          <TableRow v-for="item in stockItems" :key="item.id" class="cursor-pointer"
+            @click="navigateTo(`/stock/${item.id}`)">
             <TableCell @click.stop>
               <Checkbox v-model:checked="selectedItems" :value="item.id" />
             </TableCell>
@@ -145,10 +138,7 @@
                     Adjust Quantity
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    class="text-destructive focus:text-destructive"
-                    @click="$emit('delete', item)"
-                  >
+                  <DropdownMenuItem class="text-destructive focus:text-destructive" @click="$emit('delete', item)">
                     <Icon name="lucide:trash-2" class="mr-2 h-4 w-4" />
                     Delete Stock
                   </DropdownMenuItem>
@@ -176,24 +166,15 @@
     <!-- Pagination -->
     <div v-if="stockItems.length > 0" class="flex items-center justify-between">
       <p class="text-sm text-muted-foreground">
-        Showing {{ (currentPage - 1) * pageSize + 1 }} to {{ Math.min(currentPage * pageSize, totalCount) }} of {{ totalCount }} items
+        Showing {{ (currentPage - 1) * pageSize + 1 }} to {{ Math.min(currentPage * pageSize, totalCount) }} of {{
+        totalCount }} items
       </p>
       <div class="flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          :disabled="currentPage === 1"
-          @click="currentPage--"
-        >
+        <Button variant="outline" size="sm" :disabled="currentPage === 1" @click="currentPage--">
           <Icon name="lucide:chevron-left" class="h-4 w-4" />
         </Button>
         <span class="text-sm">Page {{ currentPage }} of {{ totalPages }}</span>
-        <Button
-          variant="outline"
-          size="sm"
-          :disabled="currentPage === totalPages"
-          @click="currentPage++"
-        >
+        <Button variant="outline" size="sm" :disabled="currentPage === totalPages" @click="currentPage++">
           <Icon name="lucide:chevron-right" class="h-4 w-4" />
         </Button>
       </div>
@@ -202,22 +183,6 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow
-} from '@/components/ui/table'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
 import type { StockItem } from '~/shared/types/stock-item'
 
 interface Props {
