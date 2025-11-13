@@ -1,1 +1,0 @@
-import{e,f as t,c as o,o as n}from"./DcS_IoLn.js";import{u as r}from"./jfAtkETX.js";const s={class:"main-content p-4 text-sm text-muted-foreground"},_={__name:"index",setup(a){return e(),t(()=>{r({identifier:".main-content"})}),(i,m)=>(n(),o("div",s,"home page"))}};export{_ as default};

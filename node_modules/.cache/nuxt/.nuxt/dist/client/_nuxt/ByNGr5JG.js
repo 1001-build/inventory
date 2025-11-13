@@ -1,1 +1,0 @@
-import{c as r}from"./0EevIDD-.js";import{g as t,c as a,o as n,n as c,h as p,r as l}from"./DcS_IoLn.js";const f=t({__name:"CardDescription",props:{class:{}},setup(s){const e=s;return(o,m)=>(n(),a("p",{"data-slot":"card-description",class:c(p(r)("text-muted-foreground text-sm",e.class))},[l(o.$slots,"default")],2))}});export{f as _};
