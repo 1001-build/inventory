@@ -194,8 +194,8 @@ import {
   updateStockItemSchema,
   type CreateStockItemInput,
   type UpdateStockItemInput
-} from '~/shared/validators/stock-item'
-import type { StockItem } from '~/shared/types/stock-item'
+} from '#shared/validators/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
 
 interface Props {
   stockItem?: StockItem

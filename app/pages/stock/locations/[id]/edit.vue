@@ -64,8 +64,8 @@
 </template>
 
 <script setup lang="ts">
-import type { StockLocation } from '~/shared/types/stock-location'
-import type { UpdateStockLocationInput } from '~/shared/validators/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
+import type { UpdateStockLocationInput } from '#shared/validators/stock-location'
 
 const route = useRoute()
 const router = useRouter()

@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import type { StockLocation } from '~/shared/types/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
 
 interface Props {
   rootOnly?: boolean

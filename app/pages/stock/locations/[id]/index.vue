@@ -156,7 +156,7 @@
 </template>
 
 <script setup lang="ts">
-import type { StockLocation } from '~/shared/types/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
 
 const route = useRoute()
 const router = useRouter()

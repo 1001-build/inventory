@@ -64,8 +64,8 @@
 </template>
 
 <script setup lang="ts">
-import type { PartCategory } from '~/shared/types/part-category'
-import type { UpdatePartCategoryInput } from '~/shared/validators/part-category'
+import type { PartCategory } from '#shared/types/part-category'
+import type { UpdatePartCategoryInput } from '#shared/validators/part-category'
 
 const route = useRoute()
 const router = useRouter()

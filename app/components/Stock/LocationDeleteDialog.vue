@@ -73,7 +73,7 @@ import {
   AlertDialogTitle
 } from '@/components/ui/alert-dialog'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import type { StockLocation } from '~/shared/types/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
 
 interface Props {
   open: boolean

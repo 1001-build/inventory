@@ -65,8 +65,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Part } from '~/shared/types/part'
-import type { UpdatePartInput } from '~/shared/validators/part'
+import type { Part } from '#shared/types/part'
+import type { UpdatePartInput } from '#shared/validators/part'
 
 const route = useRoute()
 const router = useRouter()

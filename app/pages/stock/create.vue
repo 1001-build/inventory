@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import type { CreateStockItemInput } from '~/shared/validators/stock-item'
+import type { CreateStockItemInput } from '#shared/validators/stock-item'
 
 useHead({ title: 'Add Stock' })
 

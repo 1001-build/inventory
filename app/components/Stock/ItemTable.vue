@@ -167,7 +167,7 @@
     <div v-if="stockItems.length > 0" class="flex items-center justify-between">
       <p class="text-sm text-muted-foreground">
         Showing {{ (currentPage - 1) * pageSize + 1 }} to {{ Math.min(currentPage * pageSize, totalCount) }} of {{
-        totalCount }} items
+          totalCount }} items
       </p>
       <div class="flex items-center gap-2">
         <Button variant="outline" size="sm" :disabled="currentPage === 1" @click="currentPage--">
@@ -183,7 +183,8 @@
 </template>
 
 <script setup lang="ts">
-import type { StockItem } from '~/shared/types/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
+import { useDebounceFn } from '@vueuse/core'
 
 interface Props {
   partId?: string

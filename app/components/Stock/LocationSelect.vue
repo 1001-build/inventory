@@ -39,7 +39,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select'
-import type { StockLocation } from '~/shared/types/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
 
 interface Props {
   modelValue?: string | null

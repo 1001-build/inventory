@@ -100,7 +100,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import type { StockItem } from '~/shared/types/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
 
 interface Props {
   stockItem: StockItem

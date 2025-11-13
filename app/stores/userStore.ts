@@ -1,8 +1,49 @@
 import { defineStore } from "pinia";
 import posthog from "posthog-js";
+import type { SafeUser } from "#shared/types/user";
+
+interface UserStoreState {
+  // Local UI state
+  // theme preference: 'light' | 'dark'
+  theme: 'light' | 'dark';
+
+  // User profile data from session
+  userProfile: SafeUser | null;
+
+  isLoading: boolean;
+  error: string | null;
+}
+
+interface SigninParams {
+  email: string;
+  password: string;
+  redirectTo?: string;
+}
+
+interface SignupParams {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+}
+
+interface SignoutParams {
+  redirectTo?: string;
+}
+
+interface RequestPasswordResetParams {
+  email: string;
+}
+
+interface ResetPasswordParams {
+  token: string;
+  newPassword: string;
+  newPasswordConfirmation: string;
+}
 
 export const useUserStore = defineStore("user-store", {
-  state: () => ({
+  state: (): UserStoreState => ({
     // Local UI state
     // theme preference: 'light' | 'dark'
     theme: 'light',
@@ -15,7 +56,7 @@ export const useUserStore = defineStore("user-store", {
   }),
   getters: {},
   actions: {
-    async signin({ email, password, redirectTo = "/" } = {}) {
+    async signin({ email, password, redirectTo = "/" }: SigninParams) {
       this.isLoading = true;
       const showToast = useShowToast();
       const { extendedFetch } = useExtendedFetch();
@@ -54,7 +95,7 @@ export const useUserStore = defineStore("user-store", {
       }
     },
 
-    async signup({ firstName, lastName, email, password, passwordConfirmation } = {}) {
+    async signup({ firstName, lastName, email, password, passwordConfirmation }: SignupParams) {
       this.isLoading = true;
       const showToast = useShowToast();
       const { extendedFetch } = useExtendedFetch();
@@ -89,8 +130,8 @@ export const useUserStore = defineStore("user-store", {
       }
     },
 
-    setTheme(theme) {
-      const allowed = ['light', 'dark']
+    setTheme(theme: 'light' | 'dark') {
+      const allowed: Array<'light' | 'dark'> = ['light', 'dark']
       if (!allowed.includes(theme)) return
       this.theme = theme
     },
@@ -104,7 +145,7 @@ export const useUserStore = defineStore("user-store", {
         });
 
         if (status === 200) {
-          this.userProfile = payload.data;
+          this.userProfile = payload.data as SafeUser;
         }
       } catch (error) {
         console.error('Failed to fetch user profile:', error);
@@ -112,7 +153,7 @@ export const useUserStore = defineStore("user-store", {
       }
     },
 
-    async signout({ redirectTo = "/auth/signin" } = {}) {
+    async signout({ redirectTo = "/auth/signin" }: SignoutParams = {}) {
       this.isLoading = true;
       const showToast = useShowToast();
       const { clear } = useUserSession();
@@ -144,7 +185,7 @@ export const useUserStore = defineStore("user-store", {
       return navigateTo(redirectTo);
     },
 
-    async requestPasswordReset({ email } = {}) {
+    async requestPasswordReset({ email }: RequestPasswordResetParams) {
       this.isLoading = true;
       const showToast = useShowToast();
       const { extendedFetch } = useExtendedFetch();
@@ -170,7 +211,7 @@ export const useUserStore = defineStore("user-store", {
       }
     },
 
-    async resetPassword({ token, newPassword, newPasswordConfirmation } = {}) {
+    async resetPassword({ token, newPassword, newPasswordConfirmation }: ResetPasswordParams) {
       this.isLoading = true;
       const showToast = useShowToast();
       const { extendedFetch } = useExtendedFetch();

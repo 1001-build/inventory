@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import type { CreatePartCategoryInput } from '~/shared/validators/part-category'
+import type { CreatePartCategoryInput } from '#shared/validators/part-category'
 
 useHead({ title: 'Create Part Category' })
 

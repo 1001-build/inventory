@@ -2,13 +2,13 @@ import type {
   CreateStockLocationInput,
   UpdateStockLocationInput,
   ListStockLocationsInput,
-} from '~/shared/validators/stock-location'
+} from '#shared/validators/stock-location'
 import type {
   CreateStockItemInput,
   UpdateStockItemInput,
   ListStockItemsInput,
   AdjustQuantityInput,
-} from '~/shared/validators/stock-item'
+} from '#shared/validators/stock-item'
 
 export function useStock() {
   const { $fetch } = useExtendedFetch()

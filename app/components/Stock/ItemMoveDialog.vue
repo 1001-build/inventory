@@ -82,7 +82,7 @@ import {
   DialogHeader,
   DialogTitle
 } from '@/components/ui/dialog'
-import type { StockItem } from '~/shared/types/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
 
 interface Props {
   open: boolean

@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import type { CreateStockLocationInput } from '~/shared/validators/stock-location'
+import type { CreateStockLocationInput } from '#shared/validators/stock-location'
 
 useHead({ title: 'Create Stock Location' })
 

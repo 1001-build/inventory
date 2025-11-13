@@ -151,7 +151,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Part } from '~/shared/types/part'
+import type { Part } from '#shared/types/part'
 
 useHead({ title: 'Parts' })
 

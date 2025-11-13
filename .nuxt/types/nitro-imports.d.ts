@@ -204,6 +204,21 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
+  export type { PartCategory, NewPartCategory } from '../../shared/types/part-category'
+  import('../../shared/types/part-category')
+  // @ts-ignore
+  export type { Part, NewPart, PartParameter, NewPartParameter } from '../../shared/types/part'
+  import('../../shared/types/part')
+  // @ts-ignore
+  export type { StockItem, NewStockItem, StockItemTracking, NewStockItemTracking } from '../../shared/types/stock-item'
+  import('../../shared/types/stock-item')
+  // @ts-ignore
+  export type { StockLocation, NewStockLocation, StockLocationType, NewStockLocationType } from '../../shared/types/stock-location'
+  import('../../shared/types/stock-location')
+  // @ts-ignore
+  export type { SafeUser, User, UserRole, NewUserRole, UserSettings, NewUserSettings } from '../../shared/types/user'
+  import('../../shared/types/user')
+  // @ts-ignore
   export type { OAuthAppleConfig, OAuthAppleTokens, OAuthAppleUser } from '../../node_modules/nuxt-auth-utils/dist/runtime/server/lib/oauth/apple.d'
   import('../../node_modules/nuxt-auth-utils/dist/runtime/server/lib/oauth/apple.d')
   // @ts-ignore

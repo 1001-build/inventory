@@ -112,8 +112,8 @@ import {
   updateStockLocationSchema,
   type CreateStockLocationInput,
   type UpdateStockLocationInput
-} from '~/shared/validators/stock-location'
-import type { StockLocation } from '~/shared/types/stock-location'
+} from '#shared/validators/stock-location'
+import type { StockLocation } from '#shared/types/stock-location'
 
 interface Props {
   location?: StockLocation

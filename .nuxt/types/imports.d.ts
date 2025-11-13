@@ -218,6 +218,21 @@ declare global {
   // @ts-ignore
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
+  // @ts-ignore
+  export type { PartCategory, NewPartCategory } from '../../shared/types/part-category'
+  import('../../shared/types/part-category')
+  // @ts-ignore
+  export type { Part, NewPart, PartParameter, NewPartParameter } from '../../shared/types/part'
+  import('../../shared/types/part')
+  // @ts-ignore
+  export type { StockItem, NewStockItem, StockItemTracking, NewStockItemTracking } from '../../shared/types/stock-item'
+  import('../../shared/types/stock-item')
+  // @ts-ignore
+  export type { StockLocation, NewStockLocation, StockLocationType, NewStockLocationType } from '../../shared/types/stock-location'
+  import('../../shared/types/stock-location')
+  // @ts-ignore
+  export type { SafeUser, User, UserRole, NewUserRole, UserSettings, NewUserSettings } from '../../shared/types/user'
+  import('../../shared/types/user')
 }
 // for vue template auto import
 import { UnwrapRef } from 'vue'

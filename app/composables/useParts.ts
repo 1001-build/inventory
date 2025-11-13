@@ -2,12 +2,12 @@ import type {
   CreatePartCategoryInput,
   UpdatePartCategoryInput,
   ListPartCategoriesInput,
-} from '~/shared/validators/part-category'
+} from '#shared/validators/part-category'
 import type {
   CreatePartInput,
   UpdatePartInput,
   ListPartsInput,
-} from '~/shared/validators/part'
+} from '#shared/validators/part'
 
 export function useParts() {
   const { $fetch } = useExtendedFetch()

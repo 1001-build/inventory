@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import type { StockItem } from '~/shared/types/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
 
 const route = useRoute()
 const router = useRouter()

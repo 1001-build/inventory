@@ -138,7 +138,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PartCategory } from '~/shared/types/part-category'
+import type { PartCategory } from '#shared/types/part-category'
 
 const route = useRoute()
 const router = useRouter()

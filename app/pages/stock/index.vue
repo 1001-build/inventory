@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-import type { StockItem } from '~/shared/types/stock-item'
+import type { StockItem } from '#shared/types/stock-item'
 
 useHead({ title: 'Stock Items' })
 
