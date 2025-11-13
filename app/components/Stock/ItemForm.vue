@@ -5,7 +5,7 @@
       <FormItem>
         <FormLabel>Part</FormLabel>
         <FormControl>
-          <PartCategorySelect
+          <PartsSelect
             v-bind="componentField"
             :disabled="loading || isEditing"
             placeholder="Select a part"
