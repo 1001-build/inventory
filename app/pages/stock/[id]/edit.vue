@@ -73,7 +73,6 @@
 </template>
 
 <script setup lang="ts">
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import type { StockItem } from '~/shared/types/stock-item'
 import type { UpdateStockItemInput } from '~/shared/validators/stock-item'
 

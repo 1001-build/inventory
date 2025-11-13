@@ -33,7 +33,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartCategoryForm
+          <PartsCategoryForm
             :category="category"
             :loading="updating"
             @submit="handleSubmit"

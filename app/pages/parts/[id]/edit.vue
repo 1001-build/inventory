@@ -33,7 +33,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartForm
+          <PartsForm
             :part="part"
             mode="edit"
             :loading="updating"

@@ -26,7 +26,7 @@
           <!-- Category Filter -->
           <div class="space-y-2">
             <Label>Category</Label>
-            <PartCategorySelect
+            <PartsCategorySelect
               v-model="filters.categoryId"
               placeholder="All categories"
             />
@@ -103,7 +103,7 @@
         <!-- Table View -->
         <Card v-if="viewMode === 'table'" class="main-content">
           <CardContent class="p-6">
-            <PartTable
+            <PartsTable
               ref="partTable"
               :category-id="filters.categoryId || undefined"
               :filters="activeFilters"
@@ -114,7 +114,7 @@
 
         <!-- Grid View -->
         <div v-else class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          <PartCard
+          <PartsCard
             v-for="part in gridParts"
             :key="part.id"
             :part="part"
@@ -151,24 +151,6 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle
-} from '@/components/ui/alert-dialog'
-import { Label } from '@/components/ui/label'
 import type { Part } from '~/shared/types/part'
 
 useHead({ title: 'Parts' })

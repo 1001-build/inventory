@@ -19,7 +19,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartCategoryTree
+          <PartsCategoryTree
             ref="categoryTree"
             :selected-id="selectedCategoryId"
             @select="handleCategorySelect"
@@ -39,7 +39,7 @@
                 {{ selectedCategory?.description || 'Browse and manage part categories' }}
               </CardDescription>
             </div>
-            <PartCategoryActions
+            <PartsCategoryActions
               v-if="selectedCategory"
               @view="handleView"
               @edit="handleEdit"
@@ -109,14 +109,14 @@
     </div>
 
     <!-- Delete Dialog -->
-    <PartCategoryDeleteDialog
+    <PartsCategoryDeleteDialog
       v-model:open="deleteDialogOpen"
       :category="categoryToDelete"
       @deleted="handleDeleted"
     />
 
     <!-- Move Dialog -->
-    <PartCategoryMoveDialog
+    <PartsCategoryMoveDialog
       v-model:open="moveDialogOpen"
       :category="categoryToMove"
       @moved="handleMoved"

@@ -7,7 +7,7 @@
             <Icon name="lucide:pencil" class="mr-2 h-4 w-4" />
             Edit
           </Button>
-          <PartCategoryActions
+          <PartsCategoryActions
             @view="() => {}"
             @edit="handleEdit"
             @move="handleMove"
@@ -97,7 +97,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartCategoryTree
+          <PartsCategoryTree
             :root-only="false"
             @select="handleSubcategorySelect"
           />
@@ -122,14 +122,14 @@
     </Card>
 
     <!-- Delete Dialog -->
-    <PartCategoryDeleteDialog
+    <PartsCategoryDeleteDialog
       v-model:open="deleteDialogOpen"
       :category="category"
       @deleted="handleDeleted"
     />
 
     <!-- Move Dialog -->
-    <PartCategoryMoveDialog
+    <PartsCategoryMoveDialog
       v-model:open="moveDialogOpen"
       :category="category"
       @moved="handleMoved"

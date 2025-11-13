@@ -15,7 +15,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartForm
+          <PartsForm
             mode="create"
             :loading="creating"
             @submit="handleSubmit"

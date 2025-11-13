@@ -15,7 +15,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PartCategoryForm
+          <PartsCategoryForm
             :loading="creating"
             @submit="handleSubmit"
             @cancel="handleCancel"

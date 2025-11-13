@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-import TooltipProvider from '@/components/ui/tooltip/TooltipProvider.vue'
 const userStore = useUserStore()
 
 const username = computed(() => {

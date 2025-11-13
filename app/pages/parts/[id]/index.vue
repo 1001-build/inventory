@@ -68,10 +68,10 @@
         <TabsContent value="overview" class="space-y-6 mt-6">
           <div class="grid gap-6 lg:grid-cols-2">
             <!-- Part Details -->
-            <PartDetailsCard :part="part" class="main-content" />
+            <PartsDetailsCard :part="part" class="main-content" />
 
             <!-- Stock Summary -->
-            <PartStockSummary
+            <PartsStockSummary
               :part-id="partId"
               :minimum-stock="part.minimumStock || 0"
               class="main-content"
@@ -138,7 +138,7 @@
 
         <!-- Parameters Tab -->
         <TabsContent value="parameters" class="space-y-6 mt-6">
-          <PartParameters :part-id="partId" :editable="true" class="main-content" />
+          <PartsParameters :part-id="partId" :editable="true" class="main-content" />
         </TabsContent>
 
         <!-- History Tab -->
@@ -206,24 +206,6 @@
 </template>
 
 <script setup lang="ts">
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle
-} from '@/components/ui/alert-dialog'
 import type { Part } from '~/shared/types/part'
 
 const route = useRoute()
