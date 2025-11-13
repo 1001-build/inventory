@@ -26,6 +26,10 @@ export {
   PartCategoryRepository,
 } from "./part-category";
 
+export {
+  AttachmentRepository,
+} from "./attachment";
+
 // Import for factory functions
 import {
   UserRepository,
