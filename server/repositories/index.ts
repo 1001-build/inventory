@@ -21,6 +21,11 @@ export {
   PermissionRepository,
 } from "./rbac";
 
+// Parts repositories
+export {
+  PartCategoryRepository,
+} from "./part-category";
+
 // Import for factory functions
 import {
   UserRepository,
@@ -33,6 +38,8 @@ import {
   UserRoleRepository,
   PermissionRepository,
 } from "./rbac";
+
+import { PartCategoryRepository } from "./part-category";
 
 // ========================================
 // FACTORY FUNCTIONS
@@ -61,12 +68,22 @@ export function createRBACRepositories(db: D1Database) {
 }
 
 /**
+ * Create all parts repositories
+ */
+export function createPartsRepositories(db: D1Database) {
+  return {
+    partCategoryRepo: new PartCategoryRepository(db),
+  };
+}
+
+/**
  * Create all repositories
  */
 export function createRepositories(db: D1Database) {
   return {
     ...createIdentityRepositories(db),
     ...createRBACRepositories(db),
+    ...createPartsRepositories(db),
   };
 }
 
