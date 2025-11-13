@@ -1,0 +1,95 @@
+<template>
+  <div class="space-y-2">
+    <!-- Loading State -->
+    <div v-if="loading" class="space-y-2">
+      <Skeleton v-for="i in 5" :key="i" class="h-10 w-full" />
+    </div>
+
+    <!-- Empty State -->
+    <div
+      v-else-if="!loading && categories.length === 0"
+      class="flex flex-col items-center justify-center py-12 px-4 text-center"
+    >
+      <Icon name="lucide:folder-open" class="h-12 w-12 text-muted-foreground mb-4" />
+      <h3 class="text-lg font-medium mb-2">No categories found</h3>
+      <p class="text-sm text-muted-foreground mb-4">
+        Get started by creating your first part category.
+      </p>
+    </div>
+
+    <!-- Category Tree -->
+    <div v-else class="space-y-1">
+      <PartCategoryTreeNode
+        v-for="category in categories"
+        :key="category.id"
+        :category="category"
+        :selected-id="selectedId"
+        :selectable="selectable"
+        @select="handleSelect"
+        @expand="handleExpand"
+        @collapse="handleCollapse"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type { PartCategory } from '~/shared/types/part-category'
+
+interface Props {
+  rootOnly?: boolean
+  selectable?: boolean
+  selectedId?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  rootOnly: false,
+  selectable: true
+})
+
+const emit = defineEmits<{
+  select: [category: PartCategory]
+  expand: [categoryId: string]
+  collapse: [categoryId: string]
+}>()
+
+const { fetchCategoryTree } = useParts()
+
+const categories = ref<PartCategory[]>([])
+const loading = ref(true)
+
+const loadCategories = async () => {
+  loading.value = true
+  try {
+    const response = await fetchCategoryTree(props.rootOnly ? null : undefined)
+    categories.value = response.data
+  } catch (error) {
+    console.error('Failed to load category tree:', error)
+    categories.value = []
+  } finally {
+    loading.value = false
+  }
+}
+
+const handleSelect = (category: PartCategory) => {
+  emit('select', category)
+}
+
+const handleExpand = (categoryId: string) => {
+  emit('expand', categoryId)
+}
+
+const handleCollapse = (categoryId: string) => {
+  emit('collapse', categoryId)
+}
+
+// Load categories on mount
+onMounted(() => {
+  loadCategories()
+})
+
+// Expose refresh method
+defineExpose({
+  refresh: loadCategories
+})
+</script>
