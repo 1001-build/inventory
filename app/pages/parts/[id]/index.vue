@@ -206,17 +206,16 @@
 </template>
 
 <script setup lang="ts">
-import type { Part } from '#shared/types/part'
-
 const route = useRoute()
 const router = useRouter()
-const { fetchPart, deletePart } = useParts()
+const partsStore = usePartsStore()
 const { showToast } = useShowToast()
 
 const partId = computed(() => route.params.id as string)
 
-const part = ref<Part | null>(null)
-const loading = ref(true)
+// Consume store state via computed
+const part = computed(() => partsStore.currentPart)
+const loading = computed(() => partsStore.loading)
 const currentTab = ref('overview')
 
 // Delete dialog
@@ -225,18 +224,11 @@ const deleting = ref(false)
 
 // Fetch part details
 const loadPart = async () => {
-  loading.value = true
-  try {
-    const response = await fetchPart(partId.value)
-    part.value = response.data
+  const success = await partsStore.fetchPart(partId.value)
 
+  if (success && partsStore.currentPart) {
     // Set page title
-    useHead({ title: `${part.value.name} - Parts` })
-  } catch (error) {
-    console.error('Failed to fetch part:', error)
-    part.value = null
-  } finally {
-    loading.value = false
+    useHead({ title: `${partsStore.currentPart.name} - Parts` })
   }
 }
 
@@ -249,11 +241,13 @@ const confirmDelete = async () => {
 
   deleting.value = true
   try {
-    await deletePart(part.value.id)
-    deleteDialogOpen.value = false
+    const success = await partsStore.deletePart(part.value.id)
+    if (success) {
+      deleteDialogOpen.value = false
 
-    // Navigate back to parts list
-    await router.push('/parts')
+      // Navigate back to parts list
+      await router.push('/parts')
+    }
   } catch (error) {
     console.error('Failed to delete part:', error)
   } finally {

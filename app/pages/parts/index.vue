@@ -155,7 +155,7 @@ import type { Part } from '#shared/types/part'
 
 useHead({ title: 'Parts' })
 
-const { deletePart, fetchParts } = useParts()
+const partsStore = usePartsStore()
 
 const viewMode = ref<'table' | 'grid'>('table')
 const partTable = ref()
@@ -170,14 +170,14 @@ const filters = ref({
   purchaseable: false
 })
 
-// Grid view data (only used in grid mode)
-const gridParts = ref<Part[]>([])
-const loadingGrid = ref(false)
-
 // Delete dialog
 const deleteDialogOpen = ref(false)
 const partToDelete = ref<Part | null>(null)
 const deleting = ref(false)
+
+// Consume store state via computed
+const gridParts = computed(() => partsStore.parts)
+const loadingGrid = computed(() => partsStore.loading)
 
 // Computed
 const activeFilters = computed(() => {
@@ -217,14 +217,15 @@ const confirmDelete = async () => {
 
   deleting.value = true
   try {
-    await deletePart(partToDelete.value.id)
-    deleteDialogOpen.value = false
+    const success = await partsStore.deletePart(partToDelete.value.id)
+    if (success) {
+      deleteDialogOpen.value = false
 
-    // Refresh the list
-    if (viewMode.value === 'table') {
-      partTable.value?.refresh()
-    } else {
-      loadGridParts()
+      // Refresh the list if in table mode
+      if (viewMode.value === 'table') {
+        partTable.value?.refresh()
+      }
+      // Grid view automatically updates via computed property
     }
   } catch (error) {
     console.error('Failed to delete part:', error)
@@ -234,20 +235,11 @@ const confirmDelete = async () => {
 }
 
 const loadGridParts = async () => {
-  loadingGrid.value = true
-  try {
-    const response = await fetchParts({
-      categoryId: filters.value.categoryId || undefined,
-      ...activeFilters.value,
-      limit: 50
-    })
-    gridParts.value = response.data
-  } catch (error) {
-    console.error('Failed to load parts:', error)
-    gridParts.value = []
-  } finally {
-    loadingGrid.value = false
-  }
+  await partsStore.fetchParts({
+    categoryId: filters.value.categoryId || undefined,
+    ...activeFilters.value,
+    limit: 50
+  })
 }
 
 // Watch for filter changes in grid mode

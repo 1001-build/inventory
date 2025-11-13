@@ -65,43 +65,38 @@
 </template>
 
 <script setup lang="ts">
-import type { Part } from '#shared/types/part'
 import type { UpdatePartInput } from '#shared/validators/part'
 
 const route = useRoute()
 const router = useRouter()
-const { fetchPart, updatePart } = useParts()
+const partsStore = usePartsStore()
 
 const partId = computed(() => route.params.id as string)
 
-const part = ref<Part | null>(null)
-const loading = ref(true)
+// Consume store state via computed
+const part = computed(() => partsStore.currentPart)
+const loading = computed(() => partsStore.loading)
 const updating = ref(false)
 
 // Fetch part details
 const loadPart = async () => {
-  loading.value = true
-  try {
-    const response = await fetchPart(partId.value)
-    part.value = response.data
+  const success = await partsStore.fetchPart(partId.value)
 
+  if (success && partsStore.currentPart) {
     // Set page title
-    useHead({ title: `Edit ${part.value.name} - Parts` })
-  } catch (error) {
-    console.error('Failed to fetch part:', error)
-    part.value = null
-  } finally {
-    loading.value = false
+    useHead({ title: `Edit ${partsStore.currentPart.name} - Parts` })
   }
 }
 
 const handleSubmit = async (data: UpdatePartInput) => {
   updating.value = true
   try {
-    await updatePart(partId.value, data)
+    const success = await partsStore.updatePart(partId.value, data)
 
-    // Navigate back to part detail page
-    await router.push(`/parts/${partId.value}`)
+    if (success) {
+      // Navigate back to part detail page
+      await router.push(`/parts/${partId.value}`)
+    }
   } catch (error) {
     console.error('Failed to update part:', error)
   } finally {

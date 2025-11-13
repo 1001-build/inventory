@@ -33,7 +33,7 @@ import type { CreatePartInput } from '#shared/validators/part'
 
 useHead({ title: 'Create Part' })
 
-const { createPart } = useParts()
+const partsStore = usePartsStore()
 const { showToast } = useShowToast()
 const router = useRouter()
 
@@ -42,10 +42,12 @@ const creating = ref(false)
 const handleSubmit = async (data: CreatePartInput) => {
   creating.value = true
   try {
-    const response = await createPart(data)
+    const newPart = await partsStore.createPart(data)
 
-    // Navigate to the new part detail page
-    await router.push(`/parts/${response.data.id}`)
+    if (newPart) {
+      // Navigate to the new part detail page
+      await router.push(`/parts/${newPart.id}`)
+    }
   } catch (error) {
     console.error('Failed to create part:', error)
   } finally {
